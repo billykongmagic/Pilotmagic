@@ -3,7 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>百樂魔術有限公司 Pilot Magic Co., Ltd. | 澳門大灣區專業魔術娛樂表演</title>
+    
+    <!-- 🎯 1. 基礎 SEO 關鍵字與描述優化 -->
+    <title>百樂魔術有限公司 Pilot Magic Co., Ltd. | 澳門大灣區專業魔術師與娛樂表演策劃</title>
+    <meta name="description" content="百樂魔術有限公司（Pilot Magic）紮根澳門20餘年，提供頂級澳門魔術師團隊、近距離魔術、大型舞台魔術、商業發布會、尾牙春酒宴會表演及魔術工作坊。專業客製化大灣區各類奢華品牌與政府活動娛樂策劃。">
+    <meta name="keywords" content="澳門魔術, 澳門魔術師, 澳門魔術表演, 大灣區魔術師, 澳門活動娛樂, 澳門宴會表演, 江尚峰, Billy Kong, 百樂魔術, Macau Magician, Professional Magic Show Macau">
+    <meta name="author" content="百樂魔術有限公司 Pilot Magic Co., Ltd.">
+
+    <!-- 📍 2. Geo 地理在地化標記 (告訴 Google 核心市場在澳門) -->
+    <meta name="geo.region" content="MO" />
+    <meta name="geo.placename" content="Macau" />
+    <meta name="position" content="22.1987;113.5439" />
+    <meta name="ICBM" content="22.1987, 113.5439" />
+
+    <!-- 📱 3. Open Graph 社群分享卡片優化 (微信、WhatsApp、FB 連結預覽) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.pilotmagic.com/"> <!-- 上線後可修改為實際網址 -->
+    <meta property="og:title" content="百樂魔術有限公司 | 澳門大灣區專業魔術娛樂表演首選品牌">
+    <meta property="og:description" content="擁有超過20年豐富演出經驗，主打高端品牌客製化魔術、公司年會互動、親子派對及小丑氣球服務，為您的活動注入驚喜與魔幻回憶。">
+    <meta property="og:image" content="https://www.pilotmagic.com/og_share_main.jpg"> <!-- 分享縮圖路徑 -->
+
+    <!-- 🧠 4. Google 商家結構化數據 (JSON-LD LocalBusiness Schema) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EntertainmentBusiness",
+      "name": "百樂魔術有限公司 Pilot Magic Co., Ltd.",
+      "alternateName": "百樂魔術, Pilot Magic",
+      "description": "擁有超過二十多年演出經驗，百樂魔術有限公司為澳門及大灣區各類活動提供高質素魔術娛樂服務、專業魔術師團隊及客製化商業品牌演出。",
+      "url": "https://www.pilotmagic.com/",
+      "telephone": "+853-6655-1654",
+      "email": "Bpilotmagic@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Macau",
+        "addressCountry": "MO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.1987",
+        "longitude": "113.5439"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "22:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/PilotMagic"
+      ]
+    }
+    </script>
+
     <style>
         /* 全局變數與重置 */
         :root {
@@ -36,14 +96,14 @@
             list-style: none;
         }
 
-        /* 👑 頂部導航欄：專為黑色透明 Logo 打造的高雅白金配色 */
+        /* 👑 頂部導航欄：高雅白金配色 */
         header {
-            background: rgba(255, 255, 255, 0.96); /* 改為亮色高透背景，完美襯托黑色 Logo */
+            background: rgba(255, 255, 255, 0.96); 
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 2px solid var(--gold); /* 璀璨金精緻下襯線 */
+            border-bottom: 2px solid var(--gold); 
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
         .nav-container {
@@ -54,24 +114,22 @@
             align-items: center;
             padding: 12px 20px;
         }
-        /* Logo 圖片樣式優化 */
         .logo img {
-            height: 48px; /* 設定合適的高度 */
+            height: 48px; 
             width: auto;
             display: block;
         }
-        /* 導航文字改為深色，確保高對比度與高質感 */
         .nav-links {
             display: flex;
             gap: 25px;
         }
         .nav-links a {
-            color: #160d24; /* 深色文字 */
+            color: #160d24; 
             font-weight: 600;
             letter-spacing: 0.5px;
         }
         .nav-links a:hover {
-            color: var(--gold); /* 懸停時變金色 */
+            color: var(--gold); 
         }
 
         /* 公用區塊樣式 */
@@ -96,13 +154,13 @@
             margin: 10px auto 0;
         }
 
-        /* Hero Banner 6張相片輪播 */
+        /* Hero Banner */
         .hero-section {
             position: relative;
             height: 85vh;
             min-height: 500px;
             overflow: hidden;
-            margin-top: 72px; /* 根據亮色 Header 厚度微調 */
+            margin-top: 72px; 
         }
         .slider-container {
             width: 100%;
@@ -514,9 +572,7 @@
             border-top: 1px solid rgba(197, 160, 89, 0.1);
         }
 
-        /* ==========================================
-           🚀 核心行動裝置手機版響應式優化 (Media Queries)
-           ========================================== */
+        /* 🚀 行動裝置手機版優化 */
         @media (max-width: 768px) {
             section {
                 padding: 60px 15px 40px; 
@@ -525,8 +581,6 @@
                 font-size: 1.8rem;
                 margin-bottom: 30px;
             }
-            
-            /* 導航欄手機版重排 */
             .nav-container {
                 flex-direction: column;
                 gap: 12px;
@@ -534,7 +588,7 @@
                 text-align: center;
             }
             .logo img {
-                height: 40px; /* 手機版略為縮小 Logo，保持畫面精緻 */
+                height: 40px; 
                 margin: 0 auto;
             }
             .nav-links {
@@ -543,10 +597,8 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-
-            /* Hero Banner 手機版字體與佈局優化 */
             .hero-section {
-                margin-top: 115px; /* 完美避開手機版亮色雙層 Header，絕不遮擋 */
+                margin-top: 115px; 
                 height: 70vh;
             }
             .hero-content h1 {
@@ -572,18 +624,13 @@
                 padding: 10px 20px;
                 font-size: 0.95rem;
             }
-
-            /* 網格區塊全部轉為單欄直排 */
             .about-grid, .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-            
             .services-grid {
                 gap: 20px;
             }
-
-            /* 劇照在庫手機上雙欄並排 */
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 8px;
@@ -596,10 +643,11 @@
 </head>
 <body>
 
+    <!-- 導航欄 -->
     <header>
         <div class="nav-container">
             <div class="logo">
-                <a href="#home"><img src="logo.png" alt="百樂魔術有限公司 Pilot Magic Co., Ltd."></a>
+                <a href="#home"><img src="logo.png" alt="百樂魔術有限公司 Pilot Magic Co., Ltd. 澳門頂級魔術表演品牌"></a>
             </div>
             <nav class="nav-links">
                 <a href="#about">關於我們</a>
@@ -611,6 +659,7 @@
         </div>
     </header>
 
+    <!-- Hero Banner (6張相片自動輪播) -->
     <section class="hero-section" id="home">
         <div class="slider-container">
             <div class="slide active" style="background-image: url('hero1.jpg');"></div>
@@ -622,44 +671,46 @@
         </div>
         <div class="hero-content">
             <h1>見證奇蹟．創造難忘回憶</h1>
-            <p class="subtitle">專業魔術表演｜企業活動｜婚禮宴會</p>
-            <p class="desc">擁有超過二十多年演出經驗，百樂魔術有限公司為澳門及大灣區各類活動提供高質素魔術娛樂服務，以精彩互動演出為您的活動注入驚喜與歡樂。</p>
+            <p class="subtitle">澳門專業魔術表演｜大灣區企業活動策劃｜奢華品牌客製化演出</p>
+            <p class="desc">擁有超過二十多年豐富演出經驗，百樂魔術有限公司為澳門及大灣區各類大型公關活動、酒店度假村及私人宴會提供高質素魔術娛樂服務。</p>
             <div class="cta-buttons">
-                <a href="#contact" class="btn btn-gold">立即查詢</a>
-                <a href="#contact" class="btn btn-outline">索取報價</a>
+                <a href="#contact" class="btn btn-gold">立即查詢服務</a>
+                <a href="#contact" class="btn btn-outline">索取活動報價</a>
             </div>
         </div>
     </section>
 
+    <!-- 關於我們 -->
     <section id="about">
-        <h2 class="section-title">關於我們</h2>
+        <h2 class="section-title">關於百樂魔術</h2>
         <div class="about-grid">
             <div class="about-text">
-                <h3>為您打造難忘的魔幻體驗</h3>
+                <h3>為大灣區打造尊榮的魔幻體驗</h3>
                 <p>自1997年成立以來，百樂魔術有限公司（Pilot Magic Co., Ltd.）一直秉承專業、創新及匠心精神，致力為澳門及大灣區各類活動提供高質素的魔術娛樂服務。</p>
-                <p>我們深信，每一場演出不只是表演，更是一場能夠連結觀眾、創造回憶的體驗。憑藉超過二十多年的豐富演出經驗，我們成功服務政府機構、企業品牌、酒店度假村、社區組織及私人客戶。</p>
-                <p>我們堅持以「傳統魔術匠人精神」為理念，根據不同活動主題、場地環境及觀眾群體，設計專屬演出內容，讓每一場活動都展現獨特魅力。</p>
+                <p>我們深信，每一場演出不只是表演，更是一場能夠連結觀眾、傳遞品牌價值的沉浸式體驗。憑藉超過二十多年的豐富演出經驗，我們成功服務各大政府機構、國際精品品牌、五星級酒店度假村及私人高端客戶。</p>
+                <p>我們堅持以「傳統魔術匠人精神」為理念，根據不同活動主題、場地環境及觀眾群體，客製化設計專屬演出內容，讓每一場商業活動都展現獨一無二的品牌魅力。</p>
             </div>
             <div class="about-img">
-                <img src="about_main.jpg" alt="關於百樂魔術" style="width:100%; border-radius:8px; border:1px solid var(--gold);">
+                <img src="about_main.jpg" alt="澳門專業魔術團隊 - 百樂魔術有限公司" style="width:100%; border-radius:8px; border:1px solid var(--gold);">
             </div>
         </div>
     </section>
 
+    <!-- 我們的服務 -->
     <section id="services">
-        <h2 class="section-title">我們的服務</h2>
+        <h2 class="section-title">專業娛樂服務</h2>
         <div class="services-grid">
 
             <div class="service-card">
-                <img src="service_closeup.jpg" alt="近距離魔術" class="service-img">
+                <img src="service_closeup.jpg" alt="澳門近距離魔術表演 Close-up Magic" class="service-img">
                 <div class="service-body">
                     <h3>近距離魔術 (Close-up Magic)</h3>
                     <p class="tagline">魔術就在觀眾眼前發生。</p>
-                    <p>魔術師穿梭於賓客之間，讓觀眾零距離見證奇蹟發生。</p>
+                    <p>頂級魔術師穿梭於賓客之間，讓觀眾零距離見證奇蹟，打破社交冰山。</p>
                     <div class="service-suitable">
                         <strong>適合活動：</strong>
                         <ul>
-                            <li>商業酒會</li><li>婚宴迎賓</li><li>餐飲活動</li><li>VIP接待</li>
+                            <li>商業酒會</li><li>婚宴迎賓</li><li>奢華VIP接待</li><li>餐飲活動</li>
                         </ul>
                     </div>
                     <a href="service-closeup.html" class="service-link">了解詳情 →</a>
@@ -667,15 +718,15 @@
             </div>
 
             <div class="service-card">
-                <img src="service_stage.jpg" alt="舞台魔術" class="service-img">
+                <img src="service_stage.jpg" alt="大型舞台魔術秀 Stage Magic" class="service-img">
                 <div class="service-body">
                     <h3>舞台魔術 (Stage Magic)</h3>
                     <p class="tagline">結合音樂、燈光及專業舞台效果。</p>
-                    <p>呈現震撼人心的魔幻演出，帶來極具視覺張力的宏大盛宴。</p>
+                    <p>呈現震撼人心的魔幻演出，帶來極具視覺張力的宏大盛宴與感官享受。</p>
                     <div class="service-suitable">
                         <strong>適合活動：</strong>
                         <ul>
-                            <li>公司周年晚宴</li><li>品牌發布會</li><li>商場活動</li><li>節慶慶典</li>
+                            <li>公司周年晚宴</li><li>品牌發布會</li><li>節慶大型慶典</li><li>商場吸引人流</li>
                         </ul>
                     </div>
                     <a href="service-stage.html" class="service-link">了解詳情 →</a>
@@ -683,15 +734,15 @@
             </div>
 
             <div class="service-card">
-                <img src="service_interactive.jpg" alt="互動舞台魔術" class="service-img">
+                <img src="service_interactive.jpg" alt="互動舞台魔術表演" class="service-img">
                 <div class="service-body">
-                    <h3>互動舞台魔術 (Interactive Magic Show)</h3>
+                    <h3>互動舞台魔術 (Interactive Show)</h3>
                     <p class="tagline">邀請觀眾親身參與演出。</p>
-                    <p>讓賓客成為魔法故事中的主角。提升現場參與感與歡樂氣氛。</p>
+                    <p>讓賓客成為魔法故事中的主角，大幅提升現場參與感與歡樂氣氛。</p>
                     <div class="service-suitable">
                         <strong>適合活動：</strong>
                         <ul>
-                            <li>公司周年晚宴</li><li>品牌發布會</li><li>商場活動</li><li>節慶慶典</li>
+                            <li>企業尾牙春酒</li><li>社區嘉年華</li><li>主題派對活動</li><li>頒獎典禮演出</li>
                         </ul>
                     </div>
                     <a href="service-interactive.html" class="service-link">了解詳情 →</a>
@@ -699,11 +750,11 @@
             </div>
 
             <div class="service-card">
-                <img src="service_clown.jpg" alt="小丑及造型氣球師" class="service-img">
+                <img src="service_clown.jpg" alt="小丑巡遊與造型氣球服務" class="service-img">
                 <div class="service-body">
                     <h3>小丑及造型氣球師</h3>
                     <p class="tagline">深受大小朋友歡迎的歡樂項目。</p>
-                    <p>現場製作各式造型氣球，增添活動歡樂氣氛。</p>
+                    <p>現場製作各式精美造型氣球互動，瞬間炒熱現場氣氛。</p>
                     <div class="service-suitable">
                         <strong>服務內容：</strong>
                         <ul>
@@ -715,11 +766,11 @@
             </div>
 
             <div class="service-card">
-                <img src="service_kids.jpg" alt="親子派對魔術" class="service-img">
+                <img src="service_kids.jpg" alt="兒童派對魔術表演" class="service-img">
                 <div class="service-body">
                     <h3>親子派對魔術</h3>
                     <p class="tagline">專為兒童設計的歡樂派對節目。</p>
-                    <p>結合魔術、互動遊戲，讓每位小朋友都能成為派對中的焦點。</p>
+                    <p>結合趣味魔術、幽默互動遊戲，讓每位小朋友都能沉浸在歡樂中。</p>
                     <div class="service-suitable">
                         <strong>節目特色：</strong>
                         <ul>
@@ -731,11 +782,11 @@
             </div>
 
             <div class="service-card">
-                <img src="service_workshop.jpg" alt="魔術教學及工作坊" class="service-img">
+                <img src="service_workshop.jpg" alt="澳門魔術教學工作坊" class="service-img">
                 <div class="service-body">
                     <h3>魔術教學及工作坊</h3>
                     <p class="tagline">透過系統化教學掌握表演藝術。</p>
-                    <p>魔術不僅是一種娛樂，更能培養創意思維與表達能力。</p>
+                    <p>專業魔術師親自授課，培養創意思維、自信心與舞台表達能力。</p>
                     <div class="service-suitable">
                         <strong>適合對象：</strong>
                         <ul style="grid-template-columns: 1fr;">
@@ -749,61 +800,63 @@
         </div>
     </section>
 
+    <!-- 影音專區 -->
     <section id="media">
-        <h2 class="section-title">影音特區</h2>
+        <h2 class="section-title">活動影音特區</h2>
         
         <div class="video-grid">
             <div class="video-wrapper">
                 <video controls poster="video_poster1.jpg">
                     <source src="video1.mp4" type="video/mp4">
                 </video>
-                <div class="video-title">精選演出精華剪輯 Video 1</div>
+                <div class="video-title">精選澳門演出精華剪輯 Video</div>
             </div>
             <div class="video-wrapper">
                 <video controls poster="video_poster2.jpg">
                     <source src="video2.mp4" type="video/mp4">
                 </video>
-                <div class="video-title">商業大片活動現場 Video 2</div>
+                <div class="video-title">大型商業品牌活動現場直擊</div>
             </div>
         </div>
 
         <h3 style="color: var(--gold); margin-bottom: 20px; text-align: center; font-size: 1.3rem;">精彩活動劇照庫</h3>
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="gallery1.jpg" alt="活動相片 1"></div>
-            <div class="gallery-item"><img src="gallery2.jpg" alt="活動相片 2"></div>
-            <div class="gallery-item"><img src="gallery3.jpg" alt="活動相片 3"></div>
-            <div class="gallery-item"><img src="gallery4.jpg" alt="活動相片 4"></div>
-            <div class="gallery-item"><img src="gallery5.jpg" alt="活動相片 5"></div>
-            <div class="gallery-item"><img src="gallery6.jpg" alt="活動相片 6"></div>
-            <div class="gallery-item"><img src="gallery7.jpg" alt="活動相片 7"></div>
-            <div class="gallery-item"><img src="gallery8.jpg" alt="活動相片 8"></div>
-            <div class="gallery-item"><img src="gallery9.jpg" alt="活動相片 9"></div>
-            <div class="gallery-item"><img src="gallery10.jpg" alt="活動相片 10"></div>
-            <div class="gallery-item"><img src="gallery11.jpg" alt="活動相片 11"></div>
-            <div class="gallery-item"><img src="gallery12.jpg" alt="活動相片 12"></div>
-            <div class="gallery-item"><img src="gallery13.jpg" alt="活動相片 13"></div>
-            <div class="gallery-item"><img src="gallery14.jpg" alt="活動相片 14"></div>
-            <div class="gallery-item"><img src="gallery15.jpg" alt="活動相片 15"></div>
-            <div class="gallery-item"><img src="gallery16.jpg" alt="活動相片 16"></div>
-            <div class="gallery-item"><img src="gallery17.jpg" alt="活動相片 17"></div>
-            <div class="gallery-item"><img src="gallery18.jpg" alt="活動相片 18"></div>
-            <div class="gallery-item"><img src="gallery19.jpg" alt="活動相片 19"></div>
-            <div class="gallery-item"><img src="gallery20.jpg" alt="活動相片 20"></div>
+            <div class="gallery-item"><img src="gallery1.jpg" alt="百樂魔術活動現場相片 1"></div>
+            <div class="gallery-item"><img src="gallery2.jpg" alt="百樂魔術活動現場相片 2"></div>
+            <div class="gallery-item"><img src="gallery3.jpg" alt="百樂魔術活動現場相片 3"></div>
+            <div class="gallery-item"><img src="gallery4.jpg" alt="百樂魔術活動現場相片 4"></div>
+            <div class="gallery-item"><img src="gallery5.jpg" alt="百樂魔術活動現場相片 5"></div>
+            <div class="gallery-item"><img src="gallery6.jpg" alt="百樂魔術活動現場相片 6"></div>
+            <div class="gallery-item"><img src="gallery7.jpg" alt="百樂魔術活動現場相片 7"></div>
+            <div class="gallery-item"><img src="gallery8.jpg" alt="百樂魔術活動現場相片 8"></div>
+            <div class="gallery-item"><img src="gallery9.jpg" alt="百樂魔術活動現場相片 9"></div>
+            <div class="gallery-item"><img src="gallery10.jpg" alt="百樂魔術活動現場相片 10"></div>
+            <div class="gallery-item"><img src="gallery11.jpg" alt="百樂魔術活動現場相片 11"></div>
+            <div class="gallery-item"><img src="gallery12.jpg" alt="百樂魔術活動現場相片 12"></div>
+            <div class="gallery-item"><img src="gallery13.jpg" alt="百樂魔術活動現場相片 13"></div>
+            <div class="gallery-item"><img src="gallery14.jpg" alt="百樂魔術活動現場相片 14"></div>
+            <div class="gallery-item"><img src="gallery15.jpg" alt="百樂魔術活動現場相片 15"></div>
+            <div class="gallery-item"><img src="gallery16.jpg" alt="百樂魔術活動現場相片 16"></div>
+            <div class="gallery-item"><img src="gallery17.jpg" alt="百樂魔術活動現場相片 17"></div>
+            <div class="gallery-item"><img src="gallery18.jpg" alt="百樂魔術活動現場相片 18"></div>
+            <div class="gallery-item"><img src="gallery19.jpg" alt="百樂魔術活動現場相片 19"></div>
+            <div class="gallery-item"><img src="gallery20.jpg" alt="百樂魔術活動現場相片 20"></div>
         </div>
     </section>
 
+    <!-- 核心團隊 -->
     <section id="team">
-        <h2 class="section-title">核心團隊</h2>
+        <h2 class="section-title">澳門專業魔術師團隊</h2>
         <div class="team-grid">
 
             <div class="team-card">
                 <div class="team-img-box">
-                    <img src="team_billy.jpg" alt="江尚峰 Billy Kong">
+                    <img src="team_billy.jpg" alt="澳門知名魔術師 江尚峰 Billy Kong">
                 </div>
                 <div class="team-info">
                     <h3>江尚峰 Billy Kong</h3>
                     <span class="title">首席魔術師及負責人</span>
-                    <p class="team-bio">擁有超過十多年專業演出經驗，長期活躍於澳門各大五星級酒店。演出風格以互動性強、節奏明快見稱。</p>
+                    <p class="team-bio">擁有超過十多年專業演出經驗，長期活躍於澳門各大五星級酒店。演出風格以互動性強、客製化度高、節奏明快見稱。</p>
                     <div class="team-experience">
                         <strong>主要經歷：</strong>
                         <ul>
@@ -818,12 +871,12 @@
 
             <div class="team-card">
                 <div class="team-img-box">
-                    <img src="team_brian.jpg" alt="王啟仁 Brian Wong">
+                    <img src="team_brian.jpg" alt="澳門魔術師 王啟仁 Brian Wong">
                 </div>
                 <div class="team-info">
                     <h3>王啟仁 Brian Wong</h3>
                     <span class="title">專業魔術師</span>
-                    <p class="team-bio">擁有十餘年專業演出經驗。以幽默風趣的近距離魔術聞名，深受家庭及企業客戶歡迎。</p>
+                    <p class="team-bio">擁有十餘年專業演出經驗。以幽默風趣的近距離魔術聞名，深受家庭、學校及企業客戶歡迎。</p>
                     <div class="team-experience">
                         <strong>主要經歷：</strong>
                         <ul>
@@ -837,7 +890,7 @@
 
             <div class="team-card">
                 <div class="team-img-box">
-                    <img src="team_yuma.jpg" alt="蘇大新 Magic Yu Ma">
+                    <img src="team_yuma.jpg" alt="澳門魔術總監 蘇大新 Magic Yu Ma">
                 </div>
                 <div class="team-info">
                     <h3>蘇大新 Magic Yu Ma</h3>
@@ -856,7 +909,7 @@
 
             <div class="team-card">
                 <div class="team-img-box">
-                    <img src="team_vincent.jpg" alt="黃嘉偉 Vincent">
+                    <img src="team_vincent.jpg" alt="小丑氣球演藝專家 黃嘉偉 Vincent">
                 </div>
                 <div class="team-info">
                     <h3>黃嘉偉 Vincent</h3>
@@ -875,7 +928,7 @@
 
             <div class="team-card">
                 <div class="team-img-box">
-                    <img src="team_jin.jpg" alt="京人 JIN">
+                    <img src="team_jin.jpg" alt="澳門川劇變臉藝術家 京人 JIN">
                 </div>
                 <div class="team-info">
                     <h3>京人 JIN</h3>
@@ -894,6 +947,7 @@
         </div>
     </section>
 
+    <!-- 代表合作客戶 -->
     <section id="clients">
         <h2 class="section-title">代表合作客戶</h2>
         <div class="clients-container">
@@ -924,24 +978,26 @@
         </div>
     </section>
 
+    <!-- 為什麼選擇我們 -->
     <section id="why-choose-us">
         <h2 class="section-title">為什麼選擇百樂魔術？</h2>
         <div class="why-grid">
-            <div class="why-item"><span>✓</span> 超過二十多年專業演出經驗</div>
-            <div class="why-item"><span>✓</span> 客製化活動設計</div>
-            <div class="why-item"><span>✓</span> 專業魔術師團隊</div>
-            <div class="why-item"><span>✓</span> 適合各類型活動</div>
-            <div class="why-item"><span>✓</span> 豐富酒店及大型活動演出經歷</div>
-            <div class="why-item"><span>✓</span> 澳門本地知名魔術品牌</div>
+            <div class="why-item"><span>✓</span> 超過二十多年澳門在地深耕演出經驗</div>
+            <div class="why-item"><span>✓</span> 頂級奢華品牌客製化活動設計</div>
+            <div class="why-item"><span>✓</span> 雲集澳門一線專業魔術師團隊</div>
+            <div class="why-item"><span>✓</span> 精通各類型商業與私人宴會娛樂</div>
+            <div class="why-item"><span>✓</span> 豐富星級酒店及大型博企演出資歷</div>
+            <div class="why-item"><span>✓</span> 澳門本地最具信譽魔術娛樂品牌</div>
         </div>
     </section>
 
+    <!-- 聯絡我們 -->
     <section id="contact">
-        <h2 class="section-title">聯絡我們</h2>
+        <h2 class="section-title">聯絡查詢與報價</h2>
         <div class="contact-grid">
             <div class="contact-info">
                 <h3>百樂魔術有限公司<br><span style="font-size: 1.1rem; color: #fff;">Pilot Magic Co., Ltd.</span></h3>
-                <p style="margin-bottom: 25px; color: var(--text-muted);">歡迎隨時聯絡我們，為您的下一次品牌活動或私人派對打造專屬魔幻體驗！</p>
+                <p style="margin-bottom: 25px; color: var(--text-muted);">歡迎隨時聯絡我們，為您的下一次品牌公關活動或私人派對打造專屬魔幻體驗！</p>
                 <ul class="contact-details">
                     <li><strong>Email:</strong> Bpilotmagic@gmail.com</li>
                     <li><strong>WhatsApp:</strong> +853 6655 1654</li>
@@ -961,11 +1017,11 @@
                     </div>
                     <div class="form-group">
                         <label>預計活動日期與類型</label>
-                        <input type="text" placeholder="例如：2026年尾牙晚宴">
+                        <input type="text" placeholder="例如：2026年尾牙晚宴 / 品牌發布會">
                     </div>
                     <div class="form-group">
-                        <label>您的具體需求</label>
-                        <textarea rows="4" placeholder="請告訴我們您需要的服務..."></textarea>
+                        <label>您的具體表演需求</label>
+                        <textarea rows="4" placeholder="請告訴我們您需要的服務，如：近距離魔術、舞台魔術等..."></textarea>
                     </div>
                     <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 10px;">提交查詢資料</button>
                 </form>
@@ -973,10 +1029,12 @@
         </div>
     </section>
 
+    <!-- 頁腳 -->
     <footer>
         <p>&copy; 2026 百樂魔術有限公司 Pilot Magic Co., Ltd. 版權所有。紮根澳門，服務大灣區。</p>
     </footer>
 
+    <!-- JavaScript：Hero 自動輪播 -->
     <script>
         const slides = document.querySelectorAll('.slide');
         let currentSlide = 0;
