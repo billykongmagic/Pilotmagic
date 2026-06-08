@@ -1742,7 +1742,8 @@
                 </div>
             </div>
             <div class="contact-form-box fade-up">
-                <form onsubmit="alert('感謝您的查詢，我們將盡快與您聯絡！'); return false;">
+                <form action="https://formspree.io/f/你的FormID" method="POST">
+                    <input type="hidden" name="_next" value="https://billykongmagic.github.io/?success=1">
                     <div class="form-group">
                         <label class="form-label">活動單位名稱 / 聯絡人</label>
                         <input type="text" class="form-input" required placeholder="例如：某某有限公司 / 陳先生">
@@ -1760,6 +1761,12 @@
                         <textarea class="form-textarea" rows="4" placeholder="請告訴我們您需要的服務，如：近距離魔術、舞台魔術等…"></textarea>
                     </div>
                     <button type="submit" class="form-submit">提交查詢資料</button>
+                    <a href="https://wa.me/85366551654?text=你好，我想查詢魔術表演服務" 
+   class="btn btn-outline" 
+   target="_blank"
+   style="display:block; text-align:center; margin-top:12px; padding:15px;">
+   💬 WhatsApp 直接查詢
+</a>
                 </form>
             </div>
         </div>
