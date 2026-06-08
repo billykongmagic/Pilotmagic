@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>近距離魔術 Close-up Magic | 百樂魔術有限公司 Pilot Magic Co., Ltd.</title>
+    <meta name="description" content="百樂魔術（Pilot Magic）頂級近距離魔術服務。由國際獲獎魔術師團隊親臨演出，專為奢華精品品牌、高端商業酒會、賭場 VIP 接待打造零距離的沉浸式魔幻盛宴。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ══════════════════════════════════════════
+           DESIGN SYSTEM — Arcane Luxury
+           Palette: Deep obsidian · Aged gold · Ghost white
+        ══════════════════════════════════════════ */
+        :root {
+            --obsidian:      #06040f;
+            --void:          #0d0818;
+            --velvet:        #120c22;
+            --velvet-mid:    #1c1235;
+            --purple-deep:   #2a1250;
+            --purple-glow:   #5c2d9a;
+            --gold-antique:  #b8922a;
+            --gold-bright:   #d4a84b;
+            --gold-pale:     #e8c97a;
+            --gold-shimmer:  #f5e0a0;
+            --cream:         #f5f0e8;
+            --mist:          #c9bdd8;
+            --ghost:         rgba(245,240,232,0.6);
+            --divider:       rgba(184,146,42,0.2);
+            --glow-soft:     rgba(92,45,154,0.15);
+            --glow-gold:     rgba(212,168,75,0.12);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; width: 100%; overflow-x: hidden; }
+        body {
+            background-color: var(--obsidian);
+            color: var(--cream);
+            font-family: 'Noto Serif TC', 'Cormorant Garamond', Georgia, serif;
+            line-height: 1.75;
+            width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Noise texture overlay */
+        body::before {
+            content: ''; position: fixed; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+            pointer-events: none; z-index: 9999; opacity: 0.4;
+        }
+
+        a { text-decoration: none; color: inherit; transition: color 0.35s ease; }
+        ul { list-style: none; }
+
+        /* ══════════════════════════════════════════
+           HEADER
+        ══════════════════════════════════════════ */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            background: rgba(6, 4, 15, 0.92); backdrop-filter: blur(20px) saturate(1.4);
+            -webkit-backdrop-filter: blur(20px) saturate(1.4); border-bottom: 1px solid var(--divider);
+        }
+        header::after {
+            content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-antique), transparent); opacity: 0.6;
+        }
+        .nav-container {
+            max-width: 1280px; width: 100%; margin: 0 auto; padding: 16px 40px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo img { height: 46px; width: auto; }
+        .nav-links { display: flex; gap: 36px; align-items: center; }
+        .nav-links a {
+            font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.18em;
+            text-transform: uppercase; color: var(--mist); position: relative; padding-bottom: 4px;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px;
+            background: var(--gold-bright); transition: width 0.4s ease;
+        }
+        .nav-links a:hover { color: var(--gold-pale); }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* ══════════════════════════════════════════
+           SUBPAGE HERO
+        ══════════════════════════════════════════ */
+        .sub-hero {
+            position: relative; width: 100%; height: 60vh; min-height: 400px;
+            display: flex; align-items: center; justify-content: center;
+            background-image: url('images/service_closeup_hero.jpg'); background-size: cover; background-position: center;
+        }
+        .sub-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at center, transparent 10%, rgba(6,4,15,0.8) 100%),
+                        linear-gradient(180deg, rgba(6,4,15,0.5) 0%, rgba(6,4,15,0.95) 100%);
+        }
+        .sub-hero-content {
+            position: relative; z-index: 10; text-align: center; padding: 0 24px; margin-top: 60px;
+        }
+        .sub-hero-eyebrow {
+            font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.4em;
+            text-transform: uppercase; color: var(--gold-bright); margin-bottom: 16px;
+        }
+        .sub-hero h1 {
+            font-family: 'Cinzel', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700;
+            letter-spacing: 0.05em; color: #fff; text-shadow: 0 4px 30px rgba(0,0,0,0.9);
+        }
+        .sub-hero-rule {
+            width: 80px; height: 1px; background: var(--gold-antique); margin: 24px auto 0; opacity: 0.6;
+        }
+
+        /* ══════════════════════════════════════════
+           SECTIONS
+        ══════════════════════════════════════════ */
+        .page-section { padding: 90px 40px; max-width: 1280px; width: 100%; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-tag {
+            font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.45em;
+            text-transform: uppercase; color: var(--gold-bright); margin-bottom: 12px; display: block;
+        }
+        .section-title {
+            font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 600; color: var(--cream); letter-spacing: 0.04em;
+        }
+        .section-title em { font-style: italic; color: var(--gold-pale); }
+
+        /* ─── Intro ─── */
+        .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .intro-text .lead {
+            font-size: 1.3rem; font-style: italic; color: var(--gold-pale); margin-bottom: 24px; line-height: 1.7;
+        }
+        .intro-text p { color: var(--mist); font-size: 0.95rem; line-height: 1.9; margin-bottom: 18px; }
+        .intro-img frame { position: relative; border: 1px solid var(--divider); padding: 12px; background: var(--void); }
+        .intro-img img { width: 100%; border: 1px solid rgba(184,146,42,0.2); }
+
+        /* ─── Core Formats ─── */
+        #formats { background: var(--void); position: relative; }
+        .formats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
+        .format-card {
+            background: var(--velvet); border: 1px solid var(--divider); padding: 40px 30px;
+            position: relative; transition: all 0.35s ease;
+        }
+        .format-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold-bright), transparent); transform: scaleX(0); transition: transform 0.4s ease;
+        }
+        .format-card:hover { background: var(--velvet-mid); transform: translateY(-5px); border-color: rgba(184,146,42,0.4); }
+        .format-card:hover::before { transform: scaleX(1); }
+        .format-icon {
+            font-family: 'Cinzel', serif; font-size: 1.8rem; color: var(--gold-bright); margin-bottom: 24px; display: block;
+        }
+        .format-card h3 { font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--gold-pale); margin-bottom: 14px; letter-spacing: 0.05em; }
+        .format-card p { font-size: 0.88rem; color: var(--mist); line-height: 1.8; margin-bottom: 20px; }
+        .format-features { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 18px; }
+        .format-features li { font-size: 0.82rem; color: var(--cream); margin-bottom: 8px; padding-left: 14px; position: relative; }
+        .format-features li::before { content: '✦'; position: absolute; left: 0; color: var(--gold-antique); font-size: 0.6rem; top: 1px; }
+
+        /* ─── Customization Features ─── */
+        .custom-banner {
+            background: linear-gradient(135deg, var(--velvet) 0%, var(--purple-deep) 100%);
+            border: 1px solid var(--divider); padding: 50px; border-radius: 4px; margin-top: 60px;
+            display: flex; align-items: center; gap: 40px;
+        }
+        .custom-info { flex: 1; }
+        .custom-info h3 { font-family: 'Cinzel', serif; color: var(--gold-bright); font-size: 1.2rem; margin-bottom: 12px; letter-spacing: 0.08em; }
+        .custom-info p { font-size: 0.9rem; color: var(--mist); line-height: 1.8; }
+        .custom-showcase { display: flex; gap: 12px; }
+        .custom-badge {
+            background: rgba(6,4,15,0.6); border: 1px solid rgba(184,146,42,0.3);
+            padding: 12px 20px; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.15em;
+            color: var(--gold-pale); text-transform: uppercase; text-align: center;
+        }
+
+        /* ─── Advantages ─── */
+        .adv-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
+        .adv-item { padding: 20px; }
+        .adv-num { font-family: 'Cinzel', serif; font-size: 2rem; color: rgba(184,146,42,0.3); display: block; margin-bottom: 8px; font-weight: 700; }
+        .adv-item h4 { font-family: 'Cinzel', serif; font-size: 0.9rem; color: var(--gold-pale); margin-bottom: 10px; letter-spacing: 0.05em; }
+        .adv-item p { font-size: 0.82rem; color: var(--mist); line-height: 1.7; }
+
+        /* ─── CTA ─── */
+        #sub-cta {
+            background: linear-gradient(180deg, var(--void) 0%, var(--obsidian) 100%);
+            border-top: 1px solid var(--divider); text-align: center; padding: 80px 40px;
+        }
+        .btn {
+            font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+            padding: 15px 40px; border-radius: 2px; cursor: pointer; display: inline-block;
+            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); position: relative; overflow: hidden;
+        }
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold-antique), var(--gold-bright)); color: var(--obsidian);
+            border: none; box-shadow: 0 4px 24px rgba(184,146,42,0.3); margin-top: 30px;
+        }
+        .btn-gold:hover {
+            background: linear-gradient(135deg, var(--gold-bright), var(--gold-pale));
+            box-shadow: 0 6px 32px rgba(212,168,75,0.5); transform: translateY(-2px);
+        }
+
+        /* ══════════════════════════════════════════
+           FOOTER
+        ══════════════════════════════════════════ */
+        footer { background: var(--obsidian); border-top: 1px solid var(--divider); padding: 40px; text-align: center; }
+        .footer-logo { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-antique); margin-bottom: 12px; opacity: 0.7; }
+        .footer-copy { font-size: 0.78rem; color: rgba(201,189,216,0.3); }
+
+        /* Animation class */
+        .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .stagger > * { transition-delay: calc(var(--i, 0) * 80ms); }
+
+        .section-bg-glow { position: absolute; width: 500px; height: 500px; border-radius: 50%; pointer-events: none; opacity: 0.03; filter: blur(80px); }
+
+        /* ══════════════════════════════════════════
+           RESPONSIVE
+        ══════════════════════════════════════════ */
+        @media (max-width: 1024px) {
+            .formats-grid { grid-template-columns: 1fr 1fr; }
+            .adv-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 10px; padding: 12px 16px; }
+            .nav-links { gap: 14px; flex-wrap: wrap; justify-content: center; }
+            .intro-grid { grid-template-columns: 1fr; gap: 36px; }
+            .formats-grid { grid-template-columns: 1fr; }
+            .custom-banner { flex-direction: column; padding: 30px; text-align: center; }
+            .custom-showcase { flex-wrap: wrap; justify-content: center; }
+            .adv-grid { grid-template-columns: 1fr; }
+            .page-section { padding: 60px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ══════ HEADER ══════ -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html#home">
+                    <img src="images/logo.png" alt="百樂魔術有限公司 Pilot Magic">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html#about">關於我們</a>
+                <a href="index.html#services">專業服務</a>
+                <a href="index.html#media">影音專區</a>
+                <a href="index.html#team">核心團隊</a>
+                <a href="index.html#contact">聯絡查詢</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ══════ HERO ══════ -->
+    <section class="sub-hero">
+        <div class="sub-hero-content">
+            <p class="sub-hero-eyebrow">Close-up Magic</p>
+            <h1>近距離魔術</h1>
+            <div class="sub-hero-rule"></div>
+        </div>
+    </section>
+
+    <!-- ══════ INTRO SECTION ══════ -->
+    <section class="page-section">
+        <div class="intro-grid">
+            <div class="intro-text fade-up">
+                <p class="lead">「真正的奇蹟，不在遙遠的舞台，而是在您的掌心之中。」</p>
+                <p>近距離魔術（Close-up Magic）是當代高端社交與商業公關活動中，最具震撼力的娛樂形式。魔術師不依賴大型舞台道具或燈光特效，僅憑藉精湛的手法、心理學引導以及優雅的談吐，在距離賓客僅有幾公分、甚至在賓客雙手中演繹不可思議的魔幻時刻。</p>
+                <p>百樂魔術擁有澳門一線頂級近景魔術專家團隊，演出風格優雅奢華、互動性極強，能瞬間打破社交冰山，為您的尊貴客戶營造無與倫比的沉浸式驚喜體驗。</p>
+            </div>
+            <div class="intro-img fade-up">
+                <div class="frame">
+                    <img src="images/service_closeup_detail.jpg" alt="澳門頂級近距離魔術表演">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ PERFORMANCE FORMATS ══════ -->
+    <section class="page-section" id="formats">
+        <div class="section-bg-glow rgba(92,45,154,0.15)" style="bottom:-100px; left:-100px;"></div>
+        <div class="section-header fade-up">
+            <span class="section-tag">Performance Formats</span>
+            <h2 class="section-title">客製化<em>演出形式</em></h2>
+        </div>
+
+        <div class="formats-grid stagger">
+            <!-- 形式 01 -->
+            <div class="format-card fade-up" style="--i:0">
+                <span class="format-icon">Ⅰ</span>
+                <h3>雞尾酒會巡迴 · Strolling</h3>
+                <p>魔術師不設固定舞台，著優雅正裝優游穿梭於端著酒杯的賓客之間。主動且禮貌地切入社交圈，用兩三分鐘的驚艷奇蹟為話題破冰，迅速炒熱酒會現場氛圍。</p>
+                <ul class="format-features">
+                    <li>最佳破冰利器，點燃社交話題</li>
+                    <li>靈活度極高，不受場地與音響限制</li>
+                    <li>完美適合：商業公關酒會、婚宴迎賓、時尚派對</li>
+                </ul>
+            </div>
+
+            <!-- 形式 02 -->
+            <div class="format-card fade-up" style="--i:1">
+                <span class="format-icon">Ⅱ</span>
+                <h3>貴賓桌前互動 · Table-to-Table</h3>
+                <p>在晚宴正式開席前或上菜間隙，魔術師親臨各個宴會桌前，為同桌的貴賓進行 5-8 分鐘的精緻專場演出。確保每一位現場貴賓都能獲得專屬的尊榮娛樂招待。</p>
+                <ul class="format-features">
+                    <li>照顧到每桌賓客，互動體驗尊崇</li>
+                    <li>完美填補宴會節目間隙與上菜空檔</li>
+                    <li>完美適合：企業年會、慈善晚宴、五星酒店晚宴</li>
+                </ul>
+            </div>
+
+            <!-- 形式 03 -->
+            <div class="format-card fade-up" style="--i:2">
+                <span class="format-icon">Ⅲ</span>
+                <h3>奢華品牌客製 · Luxury Branding</h3>
+                <p>專為高端國際精品與時尚品牌量身定制。將品牌的全新產品、Logo、核心理念或歷史故事，不著痕跡地融合在魔術的靈魂之中，讓精品在奇蹟發生的瞬間震撼登場。</p>
+                <ul class="format-features">
+                    <li>魔術效果深度客製，強化品牌印象</li>
+                    <li>可客製品牌專屬魔術禮品贈予 VIP</li>
+                    <li>完美適合：奢侈品 VIP 接待、新車發布、名錶珠寶展</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 奢華客製實績特別說明 -->
+        <div class="custom-banner fade-up">
+            <div class="custom-info">
+                <h3>頂級精品認證的客製實力</h3>
+                <p>百樂魔術團隊在高端商業與奢侈品定製領域擁有極高聲譽。我們曾為 **Hermès 愛馬仕** VIP 尊榮客製化專屬兩日品牌推廣活動、為 **SJM 澳娛綜合** 周年盛典打造驚艷壓軸，更受邀為 **Verifone APAC 亞太區合作夥伴大會** 等國際科技與金融巨頭進行雙語高定近景演出，將品牌價值轉化為深具質感的奇蹟藝術。</p>
+            </div>
+            <div class="custom-showcase">
+                <div class="custom-badge">Luxury Custom</div>
+                <div class="custom-badge">Bilingual Elite</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ ADVANTAGES ══════ -->
+        <section class="page-section">
+        <div class="section-header fade-up">
+            <span class="section-tag">Our Advantages</span>
+            <h2 class="section-title">近距離演出的<em>極致優勢</em></h2>
+        </div>
+        
+        <div class="adv-grid stagger">
+            <div class="adv-item fade-up" style="--i:0">
+                <span class="adv-num">01</span>
+                <h4>國際獲獎團隊</h4>
+                <p>雲集澳門獲獎頂級近景魔術師（如曾獲國際魔術節近景組大獎、星級酒店四年駐場頭銜的精英），技術與品味無庸置疑。</p>
+            </div>
+            <div class="adv-item fade-up" style="--i:1">
+                <span class="adv-num">02</span>
+                <h4>雙語流利切換</h4>
+                <p>團隊魔術師精通粵語、國語及流利英語演出，能輕鬆應對澳門大型國際度假村、博企以及跨國企業的國際商務貴賓。</p>
+            </div>
+            <div class="adv-item fade-up" style="--i:2">
+                <span class="adv-num">03</span>
+                <h4>極高社交情商</h4>
+                <p>除了魔術手法，我們更注重社交禮儀。魔術師具備極高公關素養，幽默得體，能完美融入任何高端奢華場合。</p>
+            </div>
+            <div class="adv-item fade-up" style="--i:3">
+                <span class="adv-num">04</span>
+                <h4>100% 動態客製</h4>
+                <p>拒絕千篇一律的魔術。我們從前期需求對接、腳本設計到舞台視聽控制，皆全力配合品牌方的核心公關目標。</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════ CTA SECTION ══════ -->
+    <section id="sub-cta">
+        <div class="fade-up">
+            <p class="section-tag">Booking & Inquiry</p>
+            <h2 class="section-title">為您的賓客預定一場<em>指尖上的奇蹟</em></h2>
+            <p style="color: var(--mist); font-size: 0.95rem; max-width: 600px; margin: 16px auto 0; line-height: 1.8;">
+                無論是數十人的奢華 VIP 晚宴，還是數千人的國際大型商務酒會，我們都能為您規劃最合適的近距離魔術招待方案。
+            </p>
+            <a href="index.html#contact" class="btn btn-gold">立即預約 / 索取客製報價</a>
+        </div>
+    </section>
+
+    <!-- ══════ FOOTER ══════ -->
+    <footer>
+        <div class="footer-logo">Pilot Magic Co., Ltd. · Macau</div>
+        <p class="footer-copy">&copy; 2026 百樂魔術有限公司 版權所有。紮根澳門，服務大灣區。</p>
+    </footer>
+
+    <!-- ══════ ANIMATION SCRIPT ══════ -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    entry.target.querySelectorAll('.stagger > *').forEach((child, i) => {
+                        child.style.transitionDelay = (i * 80) + 'ms';
+                        child.classList.add('fade-up', 'visible');
+                    });
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
