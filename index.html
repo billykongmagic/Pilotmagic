@@ -4,26 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 🎯 基礎 SEO 關鍵字與描述優化 -->
     <title>百樂魔術有限公司 Pilot Magic Co., Ltd. | 澳門大灣區專業魔術師與娛樂表演策劃</title>
     <meta name="description" content="百樂魔術有限公司（Pilot Magic）紮根澳門20餘年，提供頂級澳門魔術師團隊、近距離魔術、大型舞台魔術、商業發布會、尾牙春酒宴會表演及魔術工作坊。專業客製化大灣區各類奢華品牌與政府活動娛樂策劃。">
     <meta name="keywords" content="澳門魔術, 澳門魔術師, 澳門魔術表演, 大灣區魔術師, 澳門活動娛樂, 澳門宴會表演, 江尚峰, Billy Kong, 百樂魔術, Macau Magician, Professional Magic Show Macau">
     <meta name="author" content="百樂魔術有限公司 Pilot Magic Co., Ltd.">
 
-    <!-- 📍 Geo 地理在地化標記 (告訴 Google 核心市場在澳門) -->
     <meta name="geo.region" content="MO" />
     <meta name="geo.placename" content="Macau" />
     <meta name="position" content="22.1987;113.5439" />
     <meta name="ICBM" content="22.1987, 113.5439" />
 
-    <!-- 📱 Open Graph 社群分享卡片優化 -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.pilotmagic.com/"> 
     <meta property="og:title" content="百樂魔術有限公司 | 澳門大灣區專業魔術娛樂表演首選品牌">
     <meta property="og:description" content="擁有超過20年豐富演出經驗，主打高端品牌客製化魔術、公司年會互動、親子派對及小丑氣球服務，為您的活動注入驚喜與魔幻回憶。">
-    <meta property="og:image" content="https://www.pilotmagic.com/images/og_share_main.jpg"> <!-- 已更新路詢 -->
+    <meta property="og:image" content="https://www.pilotmagic.com/images/og_share_main.jpg">
 
-    <!-- 🧠 Google 商家結構化數據 (JSON-LD LocalBusiness Schema) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -67,12 +63,12 @@
     <style>
         /* 全局變數與重置 */
         :root {
-            --bg-main: #0a0512;        
-            --bg-card: #160d24;        
-            --purple-magic: #32105c;   
+            --bg-main: #0a0512;        /* 暗夜極深紫 */
+            --bg-card: #160d24;        /* 深天鵝絨紫 */
+            --purple-magic: #32105c;   /* 魔幻深紫色 */
             --purple-glow: rgba(81, 24, 138, 0.3); 
-            --gold: #c5a059;           
-            --gold-hover: #e5c17d;     
+            --gold: #c5a059;           /* 璀璨金 */
+            --gold-hover: #e5c17d;     /* 亮金 */
             --text-light: #f5f5f5;
             --text-muted: #bdaec6;     
         }
@@ -96,15 +92,17 @@
             list-style: none;
         }
 
-        /* 👑 頂部導航欄：高雅白金配色 */
+        /* 👑 頂部導航欄：神祕奢華暗色調（完美襯托透明白字 LOGO） */
         header {
-            background: rgba(255, 255, 255, 0.96); 
+            background: rgba(10, 5, 18, 0.85); /* 奢華暗夜紫黑，半透明調 */
+            backdrop-filter: blur(12px);      /* 現代磨砂玻璃效果 */
+            -webkit-backdrop-filter: blur(12px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 2px solid var(--gold); 
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.25); /* 輕奢細緻金邊 */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
         }
         .nav-container {
             max-width: 1200px;
@@ -112,7 +110,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 20px;
+            padding: 14px 20px;
         }
         .logo img {
             height: 48px; 
@@ -124,12 +122,12 @@
             gap: 25px;
         }
         .nav-links a {
-            color: #160d24; 
-            font-weight: 600;
+            color: var(--text-light); /* 改回亮色文字，與白字LOGO呼應 */
+            font-weight: 500;
             letter-spacing: 0.5px;
         }
         .nav-links a:hover {
-            color: var(--gold); 
+            color: var(--gold);       /* 懸停維持璀璨金 */
         }
 
         /* 公用區塊樣式 */
@@ -160,7 +158,7 @@
             height: 85vh;
             min-height: 500px;
             overflow: hidden;
-            margin-top: 72px; 
+            margin-top: 76px; 
         }
         .slider-container {
             width: 100%;
@@ -643,7 +641,6 @@
 </head>
 <body>
 
-    <!-- 👑 導航欄 -->
     <header>
         <div class="nav-container">
             <div class="logo">
@@ -659,7 +656,6 @@
         </div>
     </header>
 
-    <!-- Hero Banner (6張相片自動輪播) -->
     <section class="hero-section" id="home">
         <div class="slider-container">
             <div class="slide active" style="background-image: url('images/hero1.jpg');"></div>
@@ -680,7 +676,6 @@
         </div>
     </section>
 
-    <!-- 關於我們 -->
     <section id="about">
         <h2 class="section-title">關於百樂魔術</h2>
         <div class="about-grid">
@@ -696,7 +691,6 @@
         </div>
     </section>
 
-    <!-- 我們的服務 -->
     <section id="services">
         <h2 class="section-title">專業娛樂服務</h2>
         <div class="services-grid">
@@ -800,7 +794,6 @@
         </div>
     </section>
 
-    <!-- 影音專區 -->
     <section id="media">
         <h2 class="section-title">活動影音特區</h2>
         
@@ -844,7 +837,6 @@
         </div>
     </section>
 
-    <!-- 核心團隊 -->
     <section id="team">
         <h2 class="section-title">澳門專業魔術師團隊</h2>
         <div class="team-grid">
@@ -947,7 +939,6 @@
         </div>
     </section>
 
-    <!-- 代表合作客戶 -->
     <section id="clients">
         <h2 class="section-title">代表合作客戶</h2>
         <div class="clients-container">
@@ -978,7 +969,6 @@
         </div>
     </section>
 
-    <!-- 為什麼選擇我們 -->
     <section id="why-choose-us">
         <h2 class="section-title">為什麼選擇百樂魔術？</h2>
         <div class="why-grid">
@@ -987,11 +977,10 @@
             <div class="why-item"><span>✓</span> 雲集澳門一線專業魔術師團隊</div>
             <div class="why-item"><span>✓</span> 精通各類型商業與私人宴會娛樂</div>
             <div class="why-item"><span>✓</span> 豐富星級酒店及大型博企演出資歷</div>
-            <div class="why-item"><span>✓</span> 澳門本地最具信譽魔術娛樂 brand</div>
+            <div class="why-item"><span>✓</span> 澳門本地最具信譽魔術娛樂品牌</div>
         </div>
     </section>
 
-    <!-- 聯絡我們 -->
     <section id="contact">
         <h2 class="section-title">聯絡查詢與報價</h2>
         <div class="contact-grid">
@@ -1029,12 +1018,10 @@
         </div>
     </section>
 
-    <!-- 頁腳 -->
     <footer>
         <p>&copy; 2026 百樂魔術有限公司 Pilot Magic Co., Ltd. 版權所有。紮根澳門，服務大灣區。</p>
     </footer>
 
-    <!-- JavaScript：Hero 自動輪播 -->
     <script>
         const slides = document.querySelectorAll('.slide');
         let currentSlide = 0;
