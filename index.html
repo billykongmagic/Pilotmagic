@@ -1776,23 +1776,27 @@
             </div>
             <div class="contact-form-box fade-up">
                 <form action="https://formspree.io/f/mpqedbyg" method="POST">
-                    <div class="form-group">
-                        <label class="form-label">活動單位名稱 / 聯絡人</label>
-                        <input type="text" class="form-input" required placeholder="例如：某某有限公司 / 陳先生">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">聯絡電話 / WhatsApp</label>
-                        <input type="text" class="form-input" required placeholder="請輸入您的電話號碼">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">預計活動日期與類型</label>
-                        <input type="text" class="form-input" placeholder="例如：2026 年尾牙晚宴 / 品牌發布會">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">您的具體表演需求</label>
-                        <textarea class="form-textarea" rows="4" placeholder="請告訴我們您需要的服務，如：近距離魔術、舞台魔術等…"></textarea>
-                    </div>
-                    <button type="submit" class="form-submit">提交查詢資料</button>
+    <div class="form-group">
+        <label class="form-label">活動單位名稱 / 聯絡人</label>
+        <!-- 加上 name="聯絡人" -->
+        <input type="text" name="聯絡人" class="form-input" required placeholder="例如：某某有限公司 / 陳先生">
+    </div>
+    <div class="form-group">
+        <label class="form-label">聯絡電話 / WhatsApp</label>
+        <!-- 加上 name="聯絡電話" -->
+        <input type="text" name="聯絡電話" class="form-input" required placeholder="請輸入您的電話號碼">
+    </div>
+    <div class="form-group">
+        <label class="form-label">預計活動日期與類型</label>
+        <!-- 加上 name="活動日期與類型" -->
+        <input type="text" name="活動日期與類型" class="form-input" placeholder="例如：2026 年尾牙晚宴 / 品牌發布會">
+    </div>
+    <div class="form-group">
+        <label class="form-label">您的具體表演需求</label>
+        <!-- 加上 name="表演需求" -->
+        <textarea name="表演需求" class="form-textarea" rows="4" placeholder="請告訴我們您需要的服務，如：近距離魔術、舞台魔術等…"></textarea>
+    </div>
+    <button type="submit" class="form-submit">提交查詢資料</button>
                     <a href="https://wa.me/85366551654?text=你好，我想查詢魔術表演服務" 
    class="btn btn-outline" 
    target="_blank"
