@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pilot Magic | Kids Party Magic | Macau Birthday Party Magician</title>
+  <meta name="description" content="Macau kids party magician Pilot Magic, professional children's birthday party magic shows. Interactive magic, little magician segment, balloon twisting, and cake-cutting ceremony hosting. Suitable for 10-60 guests, from MOP$1800. Inquire via WhatsApp now!">
+  <meta name="keywords" content="Macau kids party magic, Macau birthday party magician, Pilot Magic, children magic show, Macau kids birthday party, party magic Macau">
+  <meta name="geo.region" content="MO">
+  <meta name="geo.placename" content="Macau">
+  <meta property="og:title" content="Pilot Magic | Macau Kids Party Magician">
+  <meta property="og:description" content="Let your child become today's magician! Professional kids party magic from MOP$1800. WhatsApp us now!">
+  <meta property="og:image" content="images/1.jpg">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      color-scheme: light; /* Prevent aggressive dark mode inversion */
+      --pink: #FF6B9D;
+      --pink-light: #FFB3D0;
+      --pink-bg: #FFF0F5;
+      --purple: #9B59B6;
+      --purple-light: #E8D5F5;
+      --yellow: #FFD93D;
+      --yellow-light: #FFF9E6;
+      --green: #6BCB77;
+      --white: #FFFFFF;
+      --text: #333333;
+      --text-light: #666666;
+      --radius: 20px;
+      --radius-sm: 12px;
+      --shadow: 0 4px 20px rgba(255,107,157,0.15);
+      --shadow-card: 0 8px 30px rgba(0,0,0,0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: #FFFBFD;
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── FLOATING CTA ── */
+    .float-cta {
+      position: fixed;
+      bottom: 24px;
+      right: 16px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .float-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 22px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+
+    .float-btn:hover { transform: scale(1.1); }
+    .float-wa { background: #25D366; }
+    .float-wc { background: #07C160; }
+    .float-ph { background: var(--pink); }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--pink-light);
+      padding: 6px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo-img {
+      height: 56px;       
+      width: auto;        
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(1.5px 0px 0px #ffffff) 
+              drop-shadow(-1.5px 0px 0px #ffffff) 
+              drop-shadow(0px 1.5px 0px #ffffff) 
+              drop-shadow(0px -1.5px 0px #ffffff)
+              drop-shadow(0px 0px 5px rgba(255,255,255,0.95));
+    }
+
+    .nav-logo-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--pink);
+    }
+
+    .nav-right-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lang-switch {
+      font-size: 13px;
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .lang-switch:hover { color: var(--pink); }
+
+    .nav-cta {
+      background: var(--pink);
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 92vh;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.05) 0%,
+        rgba(0,0,0,0.1) 40%,
+        rgba(255,107,157,0.75) 80%,
+        rgba(255,107,157,0.92) 100%
+      );
+    }
+
+    .hero-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 32px 24px 40px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-title {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .hero-title span { color: var(--yellow); }
+
+    .hero-sub {
+      font-size: 15px;
+      opacity: 0.95;
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+
+    .hero-capacity {
+      display: inline-block;
+      background: rgba(255,255,255,0.25);
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: 20px;
+      font-size: 13px;
+      padding: 4px 14px;
+      margin-bottom: 24px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .hero-btn-main {
+      background: white;
+      color: var(--pink);
+      padding: 13px 24px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .hero-btn-ghost {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      border: 2px solid white;
+      padding: 13px 20px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      padding: 40px 20px;
+      background: var(--pink-bg);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--pink);
+      margin-bottom: 6px;
+    }
+
+    .section-sub {
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 28px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 20px 10px;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+    }
+
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .feature-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .feature-desc {
+      font-size: 11px;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* ── CONTENT ── */
+    .content-section { padding: 40px 20px; }
+    .content-section.alt { background: var(--yellow-light); }
+
+    /* ── SHOW CONTENT ── */
+    .show-content-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .show-item {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+
+    .show-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .show-item-body { padding: 18px; }
+
+    .show-item-tag {
+      display: inline-block;
+      background: var(--pink-light);
+      color: var(--pink);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 10px;
+      margin-bottom: 8px;
+    }
+
+    .show-item-title {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .show-item-desc {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .highlight-text {
+      color: var(--pink);
+      font-weight: 700;
+    }
+
+    /* ── HIGHLIGHTS ── */
+    .highlights-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .highlight-item {
+      background: white;
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      box-shadow: var(--shadow-card);
+    }
+
+    .highlight-emoji {
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    .highlight-body h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--pink);
+    }
+
+    .highlight-body p {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ── VIDEO ── */
+    .video-section {
+      padding: 40px 20px;
+      background: #1a1a2e;
+    }
+
+    .video-section .section-title { color: white; }
+    .video-section .section-sub { color: rgba(255,255,255,0.6); }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(255,107,157,0.3);
+      aspect-ratio: 9/16;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* ── GALLERY ── */
+        /* ── GALLERY ── */
+    .gallery-section {
+      padding: 40px 20px;
+      background: var(--pink-bg);
+      overflow: hidden; /* 防止橫向滾動條撐破整個網頁框 */
+    }
+
+    .gallery-grid {
+      display: flex; /* 改為橫向排列 */
+      overflow-x: auto; /* 開啟左右滑動功能 */
+      scroll-snap-type: x mandatory; /* 讓滑動時照片能自動停在完美的對齊點 */
+      gap: 12px;
+      margin-top: 24px;
+      padding-bottom: 16px; /* 為下方預留一些優雅的呼吸空間 */
+      -webkit-overflow-scrolling: touch; /* 讓 iPhone 瀏覽器滑起來極度絲滑 */
+    }
+
+    /* 隱藏外觀不美觀的瀏覽器預設底線滾動條 */
+    .gallery-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .gallery-grid img {
+      flex: 0 0 160px; /* 固定每張照片寬度為 160px */
+      height: 220px; /* 固定相簿高度，建立整齊的卡片牆 */
+      object-fit: cover; /* 稍微裁切以完美填滿精緻的直式卡片 */
+      scroll-snap-align: start;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s;
+    }
+
+    .gallery-grid img:hover {
+      transform: translateY(-4px); /* 懸停時微微向上浮起 */
+    }
+
+    /* 清除舊有的 Grid 放大設定 */
+    .gallery-grid img:first-child {
+      grid-column: auto;
+      aspect-ratio: auto;
+    }
+
+
+    /* ── PRICING ── */
+    .pricing-section { padding: 40px 20px; }
+
+    .pricing-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .pricing-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      border: 2px solid transparent;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--pink);
+      transform: none;
+    }
+
+        .pricing-header {
+      padding: 18px 20px;
+      background: var(--pink-bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* 👈 加上這行，萬一手機螢幕真的太小，它也會優雅地整塊換行，不會重疊錯位 */
+      gap: 8px;        /* 加上間距 */
+    }
+
+    .pricing-card.featured .pricing-header {
+      background: var(--pink);
+      color: white;
+    }
+
+    .pricing-popular {
+      background: var(--yellow);
+      color: var(--text);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 10px;
+    }
+
+    .pricing-name { font-size: 17px; font-weight: 700; }
+    .pricing-price { font-size: 24px; font-weight: 700; color: var(--pink); }
+    .pricing-card.featured .pricing-price { color: white; }
+    .pricing-body { padding: 18px 20px; }
+
+    .pricing-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pricing-items li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .pricing-items li::before {
+      content: '✓';
+      width: 22px;
+      height: 22px;
+      background: var(--pink-bg);
+      color: var(--pink);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .pricing-card.featured .pricing-items li::before {
+      background: rgba(255,107,157,0.12);
+    }
+
+    /* ── NOTES ── */
+    .notes-box {
+      background: var(--yellow-light);
+      border: 2px dashed var(--yellow);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .notes-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #b8860b;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .notes-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .notes-list li {
+      font-size: 13px;
+      color: var(--text-light);
+      display: flex;
+      gap: 8px;
+      line-height: 1.5;
+    }
+
+    .notes-list li::before {
+      content: '•';
+      color: var(--yellow);
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .gift-highlight {
+      background: white;
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-top: 14px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      border: 1px solid var(--pink-light);
+    }
+
+    .gift-icon { font-size: 28px; }
+
+    .gift-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--pink);
+      margin-bottom: 2px;
+    }
+
+    .gift-text span {
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    /* ── WHY US ── */
+    .why-section {
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #FF6B9D15, #9B59B615);
+    }
+
+    .why-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .why-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 20px 10px;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+    }
+
+    .why-card-icon { font-size: 36px; margin-bottom: 10px; display: block; }
+    .why-card-title { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+    .why-card-desc { font-size: 11px; color: var(--text-light); line-height: 1.5; }
+
+    .why-quote {
+      background: var(--pink);
+      color: white;
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .why-quote p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .why-quote strong {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      padding: 40px 20px 60px;
+      background: var(--pink-bg);
+    }
+
+    .contact-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: white;
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      text-decoration: none;
+      color: var(--text);
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s;
+    }
+
+    .contact-card:hover { transform: translateY(-2px); }
+
+    .contact-card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      flex-shrink: 0;
+    }
+
+    .cc-wa { background: #E8FFF0; }
+    .cc-wc { background: #E8FFF5; }
+    .cc-ph { background: #FFF0F5; }
+
+    .contact-card-body strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .contact-card-body span {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .contact-card-arrow {
+      margin-left: auto;
+      font-size: 18px;
+      color: var(--text-light);
+    }
+
+    .contact-note {
+      background: white;
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-top: 16px;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+    }
+
+    .contact-note p {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .contact-note strong { color: var(--pink); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #333;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    footer strong { color: white; }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .lightbox.active { display: flex; }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 32px;
+      cursor: pointer;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+    }
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<div class="float-cta">
+  <a href="tel:+85366551654" class="float-btn float-ph" aria-label="Call">📞</a>
+  <a href="https://wa.me/85366551654?text=Hello! I would like to inquire about kids party magic shows!" class="float-btn float-wa" target="_blank" aria-label="WhatsApp">💬</a>
+  <a href="weixin://dl/chat?Billykongmagic" class="float-btn float-wc" aria-label="WeChat">🟢</a>
+</div>
+
+<nav>
+  <div class="nav-logo">
+    <img src="images/logo.png" alt="Pilot Magic Logo" class="nav-logo-img">
+  </div>
+  <div class="nav-right-box">
+    <a href="index.html" class="lang-switch">中文</a>
+    <a href="#contact" class="nav-cta">Inquire Now</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <img src="images/1.jpg" alt="Macau Kids Party Magician interacting with children" class="hero-img" fetchpriority="high">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🎪 Professional Kids Magician in Macau</div>
+    <h1 class="hero-title">Let Your Child Become<br>Today's <span>Magician</span>✨</h1>
+    <p class="hero-sub">Interactive Magic · Filled with Laughter · Unforgettable Memories</p>
+    <div class="hero-capacity">👨‍👩‍👧‍👦 Perfect for 10–60 Guests</div>
+    <div class="hero-btns">
+      <a href="#contact" class="hero-btn-main">💬 Book Now</a>
+      <a href="#pricing" class="hero-btn-ghost">Packages</a>
+    </div>
+  </div>
+</section>
+
+<section class="features reveal">
+  <h2 class="section-title">🌟 Why Choose Us?</h2>
+  <p class="section-sub">Making every birthday an unforgettable story</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <span class="feature-icon">🎭</span>
+      <div class="feature-title">Kids Specialist</div>
+      <div class="feature-desc">Tailored for all ages, fun for the family</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🙌</span>
+      <div class="feature-title">High Interaction</div>
+      <div class="feature-desc">Inviting kids to become "Little Magicians"</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🎁</span>
+      <div class="feature-title">Special Souvenir</div>
+      <div class="feature-desc">Amazing magic gift for the birthday star</div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section reveal" id="show">
+  <h2 class="section-title">🎩 Show Highlights</h2>
+  <p class="section-sub">Every performance is a unique surprise</p>
+
+  <div class="show-content-grid">
+    <div class="show-item">
+      <img src="images/2.jpg" alt="Pilot Magic Show Live" loading="lazy">
+      <div class="show-item-body">
+        <span class="show-item-tag">The Show</span>
+        <div class="show-item-title">Stunning Opening & Interactive Magic</div>
+        <p class="show-item-desc">Featuring an eye-catching opening and hilarious interactive magic, perfect for the whole family. The birthday star will be invited to become a <span class="highlight-text">"Little Magician"</span> to show off their skills, adding magical joy to the party!</p>
+      </div>
+    </div>
+
+    <div class="show-item">
+      <img src="images/3.jpg" alt="Pool Party Magic Show" loading="lazy">
+      <div class="show-item-body">
+        <span class="show-item-tag">The Experience</span>
+        <div class="show-item-title">Mini Magic Theater Experience</div>
+        <p class="show-item-desc">We set up a mini magic theater on-site where guests can sit together and enjoy close-up and parlor magic. It fits any venue, suitable for both indoors and outdoors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section alt reveal">
+  <h2 class="section-title">✨ Performance Features</h2>
+  <p class="section-sub">Every detail is designed for children</p>
+
+  <div class="highlights-list">
+    <div class="highlight-item">
+      <div class="highlight-emoji">👑</div>
+      <div class="highlight-body">
+        <h4>The Birthday Star First</h4>
+        <p>Let the birthday kid be the shining star of the party! Highly interactive segments ignite the joyful atmosphere.</p>
+      </div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-emoji">🪄</div>
+      <div class="highlight-body">
+        <h4>Next-Gen Magic</h4>
+        <p>Breaking traditional boundaries, blending innovation with stunning visuals for a fresh magical journey.</p>
+      </div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-emoji">🎨</div>
+      <div class="highlight-body">
+        <h4>Tailored Programs</h4>
+        <p>Crafting unique themed magic shows for schools, organizations, and private events to perfectly match your needs.</p>
+      </div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-emoji">🎈</div>
+      <div class="highlight-body">
+        <h4>Balloons & Hosting</h4>
+        <p>Not only skilled in magic, but also expert in balloon twisting, crowd interaction, and hosting to add color to your event!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="video-section reveal" id="video">
+  <h2 class="section-title">🎬 Show Highlights</h2>
+  <p class="section-sub">See the kids' real reactions</p>
+  <div class="video-wrapper">
+    <iframe
+      src="https://www.youtube.com/embed/qxlulELWYR0"
+      title="Pilot Magic Kids Party Show"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+<section class="gallery-section reveal" id="gallery">
+  <h2 class="section-title">📸 Photo Gallery</h2>
+  <p class="section-sub">Every picture is a snapshot of joy and surprise</p>
+  <div class="gallery-grid">
+    <img src="images/4.jpg" alt="Birthday Party Magic" loading="lazy">
+    <img src="images/5.jpg" alt="Magic with Kids" loading="lazy">
+    <img src="images/6.jpg" alt="Family Magic Show" loading="lazy">
+    <img src="images/7.jpg" alt="Kids laughing" loading="lazy">
+    <img src="images/8.jpg" alt="Family enjoying show" loading="lazy">
+    <img src="images/9.jpg" alt="Magic props" loading="lazy">
+    <img src="images/10.jpg" alt="Halloween Party Magic" loading="lazy">
+    <img src="images/11.jpg" alt="Party Highlights" loading="lazy">
+    <img src="images/12.jpg" alt="Close-up Magic" loading="lazy">
+    <img src="images/13.jpg" alt="Balloon Twisting" loading="lazy">
+    <img src="images/14.jpg" alt="Birthday Highlights" loading="lazy">
+    <img src="images/15.jpg" alt="Magic Moments" loading="lazy">
+    <img src="images/16.jpg" alt="Happy Kids" loading="lazy">
+    <img src="images/17.jpg" alt="Show Gallery" loading="lazy">
+    <img src="images/18.jpg" alt="Interactive Live" loading="lazy">
+    <img src="images/19.jpg" alt="Stage Magic" loading="lazy">
+    <img src="images/20.jpg" alt="Kids Cheering" loading="lazy">
+    <img src="images/21.jpg" alt="Magical Snapshot" loading="lazy">
+    <img src="images/22.jpg" alt="Birthday Boy Interaction" loading="lazy">
+    <img src="images/23.jpg" alt="Group Photo" loading="lazy">
+    <img src="images/24.jpg" alt="Magical Experience" loading="lazy">
+  </div>
+</section>
+
+<section class="pricing-section reveal" id="pricing">
+  <h2 class="section-title">💰 Service Packages</h2>
+  <p class="section-sub">MOP · All-Inclusive · No Hidden Fees</p>
+
+  <div class="pricing-cards">
+
+    <div class="pricing-card">
+      <div class="pricing-header">
+        <div class="pricing-name">30-Min Package</div>
+        <div class="pricing-price">MOP $1,800</div>
+      </div>
+      <div class="pricing-body">
+        <ul class="pricing-items">
+          <li>30 Minutes Magic Show</li>
+          <li>Interactive Session & Full Participation</li>
+          <li>Perfect for casual gatherings</li>
+        </ul>
+      </div>
+    </div>
+
+        <!-- 💡 修改後的完美對齊寫法 -->
+    <div class="pricing-card featured">
+      <!-- 1. 讓熱門標籤單獨在最上面一橫排，不搶空間 -->
+      <div style="background: rgba(0,0,0,0.15); text-align: center; padding: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.05em;">
+        🔥 MOST POPULAR ⭐⭐⭐⭐⭐
+      </div>
+      <!-- 2. 下方的名稱與價格就能像其他卡片一樣完美並排、絕不走位 -->
+      <div class="pricing-header">
+        <div class="pricing-name">1-Hour Package</div>
+        <div class="pricing-price">MOP $2,000</div>
+      </div>
+      <div class="pricing-body">
+
+        <ul class="pricing-items">
+          <li>35 Minutes Magic Show</li>
+          <li>10-Min Cake-Cutting Ceremony Hosting</li>
+          <li>15 Minutes Balloon Twisting</li>
+          <li>Interactive Little Magician Segment</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-header">
+        <div class="pricing-name">1.5-Hour Package</div>
+        <div class="pricing-price">MOP $2,600</div>
+      </div>
+      <div class="pricing-body">
+        <ul class="pricing-items">
+          <li>35 Minutes Magic Show</li>
+          <li>10-Min Cake-Cutting Ceremony Hosting</li>
+          <li>45 Minutes Balloon Twisting</li>
+          <li>Ideal for large parties with more interaction</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="gift-highlight">
+    <div class="gift-icon">🎁</div>
+    <div class="gift-text">
+      <strong>Magic Souvenir Favors · MOP $30 / Piece</strong>
+      <span>Includes a cool magic prop with live demonstration and teaching (Order 2 weeks in advance)</span>
+    </div>
+  </div>
+
+  <div class="notes-box">
+    <div class="notes-title">📋 Special Notes</div>
+    <ul class="notes-list">
+      <li>Recommended for children aged 4 and above</li>
+      <li>Shows are primarily conducted in Cantonese; English or Mandarin shows are available for an additional MOP $500</li>
+      <li>Outdoor venues and remote locations may incur extra fees</li>
+      <li>Suitable for 10–60 guests</li>
+    </ul>
+  </div>
+</section>
+<!-- ==================== FAQ Section Start ==================== -->
+<section class="faq-section reveal" id="faq" style="padding: 40px 20px; background: #ffffff;">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <h2 class="section-title">🎪 Frequently Asked Questions (FAQ)</h2>
+    <p class="section-sub">Magic answers to parents' most common questions</p>
+    
+    <!-- Category 1 -->
+    <h3 class="faq-category">【Show & Age】</h3>
+    
+    <details class="faq-item">
+        <summary class="faq-question">What age group is the magic show suitable for?</summary>
+        <div class="faq-answer">
+            <p>Our show is specially designed for children and families, <strong>highly recommended for ages 4 and above</strong>. Kids in this age group are the most engaged and fully experience the interaction and wonder of magic. Of course, the performance is suitable for all ages and perfect for the whole family to enjoy together!</p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary class="faq-question">When is the best time to schedule the magic show during the party?</summary>
+        <div class="faq-answer">
+            <p>It is generally recommended to schedule the show <strong>30 to 45 minutes after the party starts</strong>. By this time, most guests have arrived, and the children are getting excited—making it the golden window to gather everyone's attention and ignite the atmosphere.</p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary class="faq-question">How are the "Cake Cutting Ceremony" and "Balloon Twisting" arranged in the 1-hour and 1.5-hour packages?</summary>
+        <div class="faq-answer">
+            <p>Taking our most popular <strong>1-Hour Package</strong> as an example:</p>
+            <ul style="margin: 10px 0; padding-left: 20px;">
+                <li style="margin-bottom: 6px;"><strong>First 35 mins:</strong> High-interaction magic show, inviting the birthday star to become a "Little Magician."</li>
+                <li style="margin-bottom: 6px;"><strong>Middle 10 mins:</strong> The magician hypes up the crowd, leads everyone in singing the birthday song, and accompanies the host for the cake-cutting ceremony and photos.</li>
+                <li style="margin-bottom: 6px;"><strong>Last 15 mins:</strong> Balloon twisting for all the kids so everyone leaves with a joyful gift.</li>
+            </ul>
+            <p><small style="color: var(--text-light);">*(The 1.5-hour package extends the balloon twisting to 45 minutes, perfect for larger parties or more interactions.)*</small></p>
+        </div>
+    </details>
+
+    <!-- Category 2 -->
+    <h3 class="faq-category">【Venue & Preparation】</h3>
+
+    <details class="faq-item">
+        <summary class="faq-question">What are the venue requirements? Can it be held at homes, clubhouses, restaurants, or outdoors?</summary>
+        <div class="faq-answer">
+            <p>Our performance is designed as a "Mini Magic Theater Experience," <strong>not limited by the venue—both indoor and outdoor setups work perfectly</strong>. You just need to arrange seating for the audience.</p>
+            <p><small style="color: var(--text-light);;">*Note: Extra fees apply for outdoor or remote locations. Please inquire when booking.</small></p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary class="faq-question">Do parents need to prepare any equipment (like sound systems or tables) in advance?</summary>
+        <div class="faq-answer">
+            <p>Parents <strong>don't need to worry about equipment at all</strong>! We bring all our own professional magic props and sound systems. To ensure the best performance effect, simply reserve an area of about 2x2 meters as the performance zone.</p>
+        </div>
+    </details>
+
+    <!-- Category 3 -->
+    <h3 class="faq-category">【Language, Pricing & Booking】</h3>
+
+    <details class="faq-item">
+        <summary class="faq-question">What language is the magic show conducted in?</summary>
+        <div class="faq-answer">
+            <p>Our show is <strong>primarily conducted in Cantonese</strong>. If your party requires an all-<strong>English</strong> or <strong>Mandarin</strong> performance, an additional fee of MOP $500 applies. Please inform us when booking.</p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary class="faq-question">What is the "Magic Souvenir Add-on"? How far in advance should I decide?</summary>
+        <div class="faq-answer">
+            <p>Each magic souvenir (MOP $30/pack) includes an incredible magic prop. The magician will demonstrate and teach it live so kids can take the magic home! Since props need to be prepared in advance, <strong>please order at least 2 weeks before the party</strong>.</p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary class="faq-question">Are there any hidden fees? What information is needed for booking?</summary>
+        <div class="faq-answer">
+            <p>Our package rates are <strong>all-inclusive with absolutely no hidden fees</strong>. To instantly check availability, please contact us via WhatsApp or WeChat with the following details:</p>
+            <ol style="margin: 10px 0; padding-left: 20px;">
+                <li style="margin-bottom: 6px;">Date and time of the event</li>
+                <li style="margin-bottom: 6px;">Party venue (Indoor/Outdoor)</li>
+                <li style="margin-bottom: 6px;">Estimated number of guests</li>
+                <li style="margin-bottom: 6px;">Age of the birthday star</li>
+            </ol>
+        </div>
+    </details>
+  </div>
+</section>
+
+<!-- FAQ 專屬美化樣式 -->
+<style>
+  .faq-category {
+      font-size: 16px;
+      color: var(--pink);
+      margin-top: 30px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid var(--pink-light);
+      padding-bottom: 5px;
+      font-weight: 700;
+  }
+  .faq-item {
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+  }
+  /* 當該問題被打開時的樣式 */
+  .faq-item[open] {
+      border-color: var(--pink);
+      box-shadow: var(--shadow);
+  }
+  .faq-question {
+      /* 💡 核心修正：右邊內縮加大到 50px，確保文字絕對不會壓到加號 */
+      padding: 16px 50px 16px 20px; 
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      outline: none;
+      position: relative;
+      list-style: none;
+  }
+  .faq-question::-webkit-details-marker {
+      display: none;
+  }
+  /* 右側 ＋ 號 */
+  .faq-question::after {
+      content: '＋';
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+      font-weight: normal;
+      transition: transform 0.3s ease;
+  }
+  /* 打開時變 － 號 */
+  .faq-item[open] .faq-question::after {
+      content: '－';
+      color: var(--pink);
+  }
+  .faq-answer {
+      padding: 0 20px 20px 20px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-light);
+      border-top: 1px solid var(--pink-bg);
+      padding-top: 15px;
+  }
+  .faq-answer p {
+      margin: 0 0 10px 0;
+  }
+  .faq-answer p:last-child {
+      margin-bottom: 0;
+  }
+</style>
+
+<!-- ==================== FAQ Section End ==================== -->
+
+<section class="why-section reveal">
+  <h2 class="section-title">💕 Words from Parents</h2>
+  <p class="section-sub">Real laughter is our best review</p>
+
+  <div class="why-cards">
+    <div class="why-card">
+      <span class="why-card-icon">🏆</span>
+      <div class="why-card-title">Highly Experienced</div>
+      <div class="why-card-desc">Years of stage experience, highly adaptable to any crowd with guaranteed results.</div>
+    </div>
+    <div class="why-card">
+      <span class="why-card-icon">👨‍👩‍👧</span>
+      <div class="why-card-title">Fun for All Ages</div>
+      <div class="why-card-desc">Magic is not just a visual treat, but a joyful medium that connects family emotions.</div>
+    </div>
+    <div class="why-card">
+      <span class="why-card-icon">🙋</span>
+      <div class="why-card-title">Highly Interactive</div>
+      <div class="why-card-desc">Giving every member of the audience a chance to participate and feel the magic.</div>
+    </div>
+    <div class="why-card">
+      <span class="why-card-icon">💝</span>
+      <div class="why-card-title">Tailored Content</div>
+      <div class="why-card-desc">Designing exclusive performance content based on your party theme and preferences.</div>
+    </div>
+  </div>
+
+  <div class="why-quote">
+    <p>A child's birthday happens only once a year, and we understand you want to make it special and memorable. Our highly popular magic show creates sparkling memories for the little star and guests through high engagement.</p>
+    <strong>Choose us to make your party not just a show, but a magical experience filled with laughter and warmth! 🎪</strong>
+  </div>
+</section>
+
+<section class="contact-section reveal" id="contact">
+  <h2 class="section-title">📬 Inquire Now</h2>
+  <p class="section-sub">Tell us your party date, and we'll arrange everything for you!</p>
+
+  <div class="contact-cards">
+    <a href="https://wa.me/85366551654?text=Hello! I would like to inquire about kids party magic shows, do you have availability on this date?" class="contact-card" target="_blank">
+      <div class="contact-card-icon cc-wa">💬</div>
+      <div class="contact-card-body">
+        <strong>WhatsApp Inquiry</strong>
+        <span>Click here to send a message</span>
+      </div>
+      <div class="contact-card-arrow">→</div>
+    </a>
+
+    <a href="weixin://dl/chat?Billykongmagic" class="contact-card">
+      <div class="contact-card-icon cc-wc">🟢</div>
+      <div class="contact-card-body">
+        <strong>WeChat Inquiry</strong>
+        <span>WeChat ID: Billykongmagic</span>
+      </div>
+      <div class="contact-card-arrow">→</div>
+    </a>
+
+    <a href="tel:+85366551654" class="contact-card">
+      <div class="contact-card-icon cc-ph">📞</div>
+      <div class="contact-card-body">
+        <strong>Call Us</strong>
+        <span>+853 6655 1654</span>
+      </div>
+      <div class="contact-card-arrow">→</div>
+    </a>
+  </div>
+
+  <div class="contact-note">
+    <p>
+      Please let us know: <strong>Event Date · Venue · Guest Count · Child's Age</strong><br>
+      We will reply with a quote as soon as possible 🎩
+    </p>
+  </div>
+</section>
+
+<footer>
+  <strong>Pilot Magic Co. Ltd.</strong><br>
+  Macau Kids Party Magic<br>
+  +853 6655 1654 · BillyKongMagic@gmail.com<br>
+  <br>
+  © 2026 Pilot Magic · All Rights Reserved
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-close">✕</div>
+  <img id="lightbox-img" src="" alt="Show Photo">
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Scroll Reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Lightbox Improved
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    document.querySelectorAll('.gallery-grid img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    lightbox.addEventListener('click', (e) => {
+      if (e.target !== lightboxImg) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
