@@ -17,7 +17,7 @@
     <meta property="og:description" content="引進正宗非遺國粹「川劇變臉」！大師級零距離互動變臉、品牌面譜定制。專為澳門及大灣區高端商務年會、尾牙春酒、奢品發布會量身打造。">
     <meta property="og:url" content="https://www.pilotmagic.com/serivce-facechange.html">
     <meta property="og:site_name" content="百樂魔術有限公司 Pilot Magic Co., Ltd.">
-    <meta property="og:image" content="ec266718f75703481f178c48ff38d787.jpg">
+    <meta property="og:image" content="images/facechangehero.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
@@ -59,7 +59,7 @@
           "areaServed": [
             {"@type": "AdministrativeArea", "name": "Macau"},
             {"@type": "AdministrativeArea", "name": "Hong Kong"},
-            {"@type": "AdministrativeArea", "name": "Guangdong-Hong Kong-Macao Greater Bay Area"}
+            {"@type": "AdministrativeArea", "name": "Guangdong-Hong Hong-Macao Greater Bay Area"}
           ]
         },
         {
@@ -151,12 +151,12 @@
         }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-        /* ── Header (完全保留原始結構，透過 CSS 進行手機端漢堡化) ── */
+        /* ── Header (優化：放大純 Logo 結構) ── */
         header {
             position: fixed;
             top: 0; left: 0; width: 100%;
             z-index: 1000;
-            padding: 20px 0;
+            padding: 12px 0; /* 配合放大後的 Logo 略微收緊上下間距 */
             background: rgba(6, 4, 15, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
@@ -164,7 +164,16 @@
             transition: background 0.4s ease, padding 0.3s ease;
         }
         .nav-container { display: flex; justify-content: space-between; align-items: center; width: 90%; max-width: 1400px; margin: 0 auto; }
-        .logo img { height: 45px; width: auto; object-fit: contain; vertical-align: middle; }
+        
+        /* 桌機端大 Logo 樣式優化 */
+        .logo a { display: flex; align-items: center; }
+        .logo img { 
+            height: 68px; /* 高度由 45px 顯著提升至 68px，凸顯品牌感 */
+            width: auto; 
+            object-fit: contain; 
+            vertical-align: middle; 
+            transition: height 0.3s ease;
+        }
         
         /* 桌機版導覽列選單 */
         .nav-links { display: flex; gap: 35px; align-items: center; }
@@ -178,8 +187,8 @@
             display: none;
             flex-direction: column;
             justify-content: space-between;
-            width: 24px;
-            height: 18px;
+            width: 25px;
+            height: 19px;
             background: transparent;
             border: none;
             cursor: pointer;
@@ -364,7 +373,11 @@
            📱 全面響應式優化與手機漢堡選單 CSS 
         ══════════════════════════════════════════ */
         @media (max-width: 992px) {
-            header { padding: 15px 0; }
+            header { padding: 10px 0; }
+            
+            /* 手機版放大後的純 Logo 高度優化 */
+            .logo img { height: 54px; }
+            
             .grid-2col { grid-template-columns: 1fr; gap: 45px; }
             .image-showcase { max-width: 550px; margin: 0 auto; width: 100%; }
             .feature-grid { grid-template-columns: 1fr; gap: 20px; }
@@ -413,7 +426,7 @@
             body.nav-open { overflow: hidden; }
 
             /* ── 手機版文字與間距優化 ── */
-            .hero-section { height: auto; min-height: 480px; padding: 120px 0 60px; }
+            .hero-section { height: auto; min-height: 480px; padding: 130px 0 60px; }
             .hero-title { font-size: 28px; letter-spacing: 0.1em; line-height: 1.4; margin-bottom: 15px; }
             .hero-description { font-size: 14px; line-height: 1.7; }
             
@@ -434,7 +447,7 @@
         }
 
         @media (max-width: 480px) {
-            .logo img { height: 38px; }
+            .logo img { height: 46px; } /* 針對極小螢幕優化，保持高視覺識別度 */
             .hero-title { font-size: 25px; }
             .stamp-icon { right: 15px; bottom: -20px; padding: 12px 10px; font-size: 11px; }
         }
@@ -442,17 +455,17 @@
 </head>
 <body>
 
-    <!-- ── HEADER (完全保留與原本一模一樣的架構與 ID) ── -->
+    <!-- ── HEADER (純 Logo 放大優化版 + 漢堡選單) ── -->
     <header>
         <div class="nav-container">
             <div class="logo">
                 <a href="index.html">
+                    <!-- 已成功減去原先的 <span PILOTMAGIC> 標籤，純化視覺 -->
                     <img src="images/logo.png" alt="百樂魔術有限公司 Pilot Magic" onerror="this.style.display='none'">
-                    <span style="font-family:'Cinzel'; color:var(--gold-bright); font-size:18px; letter-spacing:2px; font-weight:700;">PILOT MAGIC</span>
                 </a>
             </div>
             
-            <!-- 手機版新增的漢堡按鈕，桌機版會自動隱藏，不破壞結構 -->
+            <!-- 手機版新增的漢堡按鈕 -->
             <button class="hamburger" aria-label="Toggle Navigation">
                 <span></span>
                 <span></span>
@@ -595,7 +608,7 @@
         <p class="footer-copy">&copy; 2026 百樂魔術有限公司 版權所有。紮根澳門，服務大灣區。</p>
     </footer>
 
-    <!-- ── SCRIPTS (完美支援漢堡選單邏輯，且不干擾其他動態特效) ── -->
+    <!-- ── SCRIPTS (支援漢堡選單邏輯，且不干擾其他動態特效) ── -->
     <script>
         // 1. 元素交會動畫 (Fade up)
         const observer = new IntersectionObserver((entries) => {
@@ -619,7 +632,7 @@
                 : 'rgba(6, 4, 15, 0.85)';
         });
 
-        // 3. 手機版漢堡選單控制邏輯 (不影響桌機版)
+        // 3. 手機版漢堡選單控制邏輯
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
         const body = document.body;
@@ -632,7 +645,7 @@
 
         hamburger.addEventListener('click', toggleMenu);
 
-        // 點擊導覽列連結後，自動關閉選單（優化單頁錨點跳轉的手機體驗）
+        // 點擊導覽列連結後，自動關閉選單
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 if(navLinks.classList.contains('active')) {
