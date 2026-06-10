@@ -163,19 +163,37 @@
         .nav-toggle.open span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
 
         /* ══════════════════════════════════════════
-           SUBPAGE HERO (主頁沉穩大氣結構)
+           SUBPAGE HERO (主頁沉穩大氣結構 — 支援背景圖與黑遮罩)
         ══════════════════════════════════════════ */
         .sub-hero {
             position: relative; width: 100%; height: 40vh; min-height: 280px;
             display: flex; align-items: center; justify-content: center;
-            background: linear-gradient(135deg, var(--obsidian) 0%, #1a0933 100%);
             text-align: center; padding-top: 60px;
+            
+            /* 1. 在這裡設定背景圖片路徑，並確保圖片置中、滿版 */
+            background-image: url('images/service_clown_hero.jpg'); /* 👈 請替換成你的圖片路徑 */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         .sub-hero::before {
             content: ''; position: absolute; inset: 0;
-            background: radial-gradient(circle, transparent 20%, rgba(6,4,15,0.8) 100%);
+            /* 2. 這行就是黑色的半透明遮罩，0.65 是透明度（可依需求微調，數值越大越黑） */
+            background: rgba(6, 4, 15, 0.65); 
+            z-index: 1;
         }
-        .sub-hero-content { position: relative; z-index: 10; padding: 0 20px; }
+        .sub-hero::after {
+            content: ''; position: absolute; inset: 0;
+            /* 3. 保留原本的放射狀漸層，讓邊緣有些微的暗角，增加高級感 */
+            background: radial-gradient(circle, transparent 40%, rgba(6,4,15,0.85) 100%);
+            z-index: 2;
+        }
+        .sub-hero-content { 
+            position: relative; 
+            /* 4. 確保文字層級高於遮罩（遮罩是 1 和 2，所以文字設定 10） */
+            z-index: 10; 
+            padding: 0 20px; 
+        }
         .sub-hero-eyebrow {
             font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.3em;
             text-transform: uppercase; color: var(--gold-bright); margin-bottom: 10px;
