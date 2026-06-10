@@ -122,14 +122,15 @@
         ul { list-style: none; }
 
         /* ══════════════════════════════════════════
-           HEADER
+           HEADER (完美同步官網主頁樣式，具備完整對齊與響應式邏輯)
         ══════════════════════════════════════════ */
         header {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            background: rgba(6,4,15,0.92);
+            background: rgba(6, 4, 15, 0.82);
             backdrop-filter: blur(20px) saturate(1.4);
             -webkit-backdrop-filter: blur(20px) saturate(1.4);
             border-bottom: 1px solid var(--divider);
+            transition: background 0.4s ease;
         }
         header::after {
             content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 1px;
@@ -140,33 +141,149 @@
             max-width: 1280px; width: 100%; margin: 0 auto; padding: 16px 40px;
             display: flex; justify-content: space-between; align-items: center;
         }
-        .logo img { height: 46px; width: auto; }
+        .logo img { height: 80px; width: auto; transition: height 0.4s ease; }
 
-        /* Desktop nav */
-        .nav-links { display: flex; gap: 36px; align-items: center; }
-        .nav-links a {
-            font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.18em;
-            text-transform: uppercase; color: var(--mist); position: relative; padding-bottom: 4px;
+        /* Hamburger button */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 36px;
+            height: 36px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            z-index: 1100;
         }
-        .nav-links a::after {
-            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px;
-            background: var(--gold-bright); transition: width 0.4s ease;
-        }
-        .nav-links a:hover { color: var(--gold-pale); }
-        .nav-links a:hover::after { width: 100%; }
 
-        /* Hamburger */
-        .nav-toggle {
-            display: none; flex-direction: column; gap: 5px; cursor: pointer;
-            background: none; border: none; padding: 4px;
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 1.5px;
+            background: var(--gold-pale);
+            transition: transform 0.35s ease, opacity 0.25s ease;
+            transform-origin: center;
         }
-        .nav-toggle span {
-            display: block; width: 22px; height: 1px;
-            background: var(--gold-bright); transition: all 0.3s ease;
+
+        .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+        /* ─── 選單排版與 100% 完美對齊控制 ─── */
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            align-items: center;
         }
-        .nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-        .nav-toggle.open span:nth-child(2) { opacity: 0; }
-        .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+        .nav-links > a,
+        .nav-item-services > a {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--mist);
+            position: relative;
+            padding-bottom: 4px;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        /* 統一 hover 底部金線效果 */
+        .nav-links > a::after,
+        .nav-item-services > a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 1px;
+            background: var(--gold-bright);
+            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .nav-links > a:hover::after,
+        .nav-item-services:hover > a::after {
+            width: 100%;
+        }
+
+        .nav-links > a:hover,
+        .nav-item-services:hover > a {
+            color: var(--gold-pale);
+        }
+
+        /* Services dropdown 結構對齊優化 */
+        .nav-item-services {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 增加感應區域防止滑鼠滑出中斷 */
+        .nav-item-services::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            height: 20px;
+        }
+
+        .services-dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 16px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(13, 8, 24, 0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--divider);
+            border-top: 1px solid var(--gold-antique);
+            min-width: 240px;
+            padding: 12px 0;
+            z-index: 2000;
+            border-radius: 2px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(184,146,42,0.08);
+            transform-origin: top center;
+            animation: dropdownFadeIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes dropdownFadeIn {
+            from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+
+        .nav-item-services:hover .services-dropdown { display: block; }
+
+        .services-dropdown a {
+            display: flex;
+            align-items: center;
+            padding: 10px 24px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--mist);
+            white-space: nowrap;
+            transition: color 0.25s ease, background 0.25s ease, padding-left 0.25s ease;
+        }
+
+        .services-dropdown a:hover {
+            color: var(--gold-pale);
+            background: rgba(184,146,42,0.06);
+            padding-left: 30px;
+        }
+
+        .services-dropdown a span.dot {
+            display: inline-block;
+            width: 4px; height: 4px;
+            background: var(--gold-antique);
+            border-radius: 50%;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
 
         /* ══════════════════════════════════════════
            SUBPAGE HERO
@@ -198,7 +315,7 @@
         }
 
         /* ══════════════════════════════════════════
-           SECTIONS
+           SECTIONS — Common
         ══════════════════════════════════════════ */
         .page-section {
             padding: 90px 40px;
@@ -235,11 +352,109 @@
         }
         .intro-text p { color: var(--mist); font-size: 0.95rem; line-height: 1.9; margin-bottom: 18px; }
 
-        /* FIX: was `.intro-img frame` (missing dot) */
+        /* ─── 6-Image Slide Carousel Component ─── */
         .intro-img .frame {
             position: relative; border: 1px solid var(--divider); padding: 12px; background: var(--void);
+            border-radius: 4px;
         }
-        .intro-img img { width: 100%; display: block; border: 1px solid rgba(184,146,42,0.2); }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            border: 1px solid rgba(184,146,42,0.25);
+            border-radius: 2px;
+            background: var(--obsidian);
+        }
+        .carousel-slides {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .carousel-slide {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 1;
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.9) contrast(1.05);
+            transition: transform 6s ease-out;
+        }
+        .carousel-slide.active img {
+            transform: scale(1.05);
+        }
+
+        /* Carousel controls */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(6, 4, 15, 0.75);
+            border: 1px solid var(--divider);
+            color: var(--gold-pale);
+            font-size: 1rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+        .carousel-container:hover .carousel-arrow {
+            opacity: 1;
+        }
+        .carousel-arrow:hover {
+            background: var(--gold-bright);
+            color: var(--obsidian);
+            border-color: var(--gold-bright);
+            box-shadow: 0 0 15px rgba(212, 168, 75, 0.4);
+        }
+        .carousel-arrow.prev { left: 16px; }
+        .carousel-arrow.next { right: 16px; }
+
+        /* Carousel Indicators */
+        .carousel-dots {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+        .carousel-dots .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(245, 240, 232, 0.35);
+            border: 1px solid rgba(6, 4, 15, 0.3);
+            cursor: pointer;
+            transition: all 0.35s ease;
+        }
+        .carousel-dots .dot.active {
+            background: var(--gold-bright);
+            width: 18px;
+            border-radius: 4px;
+            box-shadow: 0 0 8px var(--gold-antique);
+        }
 
         /* ─── Core Formats ─── */
         .formats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
@@ -284,7 +499,6 @@
             margin-bottom: 14px; letter-spacing: 0.08em;
         }
         .custom-info p { font-size: 0.9rem; color: var(--mist); line-height: 1.85; }
-        /* FIX: bold text inside custom-info using proper HTML <strong> instead of Markdown ** */
         .custom-info strong { color: var(--gold-pale); font-weight: 600; }
         .custom-showcase { display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; }
         .custom-badge {
@@ -365,25 +579,122 @@
         /* ══════════════════════════════════════════
            RESPONSIVE
         ══════════════════════════════════════════ */
+        @media (max-width: 1280px) {
+            .logo img { height: 72px; }
+        }
+
         @media (max-width: 1024px) {
             .formats-grid { grid-template-columns: 1fr 1fr; }
             .adv-grid { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 768px) {
-            /* Nav: hamburger */
-            .nav-container { padding: 14px 20px; }
-            .nav-toggle { display: flex; }
+            /* Nav */
+            .nav-container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12px 20px;
+                width: 100%;
+            }
+            .logo img { height: 68px; }
+            .hamburger { display: flex; }
+
+            /* Mobile nav drawer */
             .nav-links {
-                display: none; position: absolute; top: 100%; left: 0; right: 0;
-                background: rgba(6,4,15,0.97); border-top: 1px solid var(--divider);
-                flex-direction: column; gap: 0; padding: 8px 0;
+                display: none;
+                position: fixed;
+                top: 0; right: 0;
+                width: 80vw;
+                max-width: 320px;
+                height: 100vh;
+                background: rgba(13, 8, 24, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border-left: 1px solid var(--divider);
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 0;
+                padding: 100px 32px;
+                z-index: 1050;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
             }
+
             .nav-links.open { display: flex; }
-            .nav-links a {
-                padding: 12px 24px; font-size: 0.68rem; letter-spacing: 0.2em;
+
+            .nav-links > a, .nav-item-services {
+                width: 100%;
             }
-            .nav-links a::after { display: none; }
+
+            .nav-links > a {
+                font-size: 0.78rem;
+                letter-spacing: 0.2em;
+                color: var(--mist);
+                padding: 14px 0;
+                border-bottom: 1px solid var(--divider);
+                display: block;
+            }
+            .nav-links > a::after { display: none !important; }
+
+            /* Inline Mobile Dropdown */
+            .nav-item-services {
+                flex-direction: column;
+                align-items: flex-start;
+                border-bottom: 1px solid var(--divider);
+            }
+            .nav-item-services > a {
+                width: 100%;
+                font-size: 0.78rem;
+                letter-spacing: 0.2em;
+                color: var(--mist);
+                padding: 14px 0 10px 0;
+                display: block;
+            }
+            .nav-item-services > a::after { display: none !important; }
+
+            .services-dropdown {
+                position: static;
+                display: none;
+                transform: none;
+                border: none;
+                background: none;
+                box-shadow: none;
+                padding: 4px 0 14px 16px;
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+                min-width: 100%;
+                animation: none;
+            }
+            .services-dropdown.open {
+                display: block;
+            }
+            .services-dropdown a {
+                padding: 8px 0;
+                font-size: 0.65rem;
+                border-bottom: 1px solid rgba(184,146,42,0.08);
+                width: 100%;
+            }
+            .services-dropdown a:hover { padding-left: 8px; }
+
+            /* Overlay behind drawer */
+            .nav-overlay {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(6,4,15,0.7);
+                z-index: 1040;
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(4px);
+            }
+            .nav-overlay.open { display: block; }
+
+            /* Hero */
+            .sub-hero {
+                height: 45vh;
+                min-height: 300px;
+            }
 
             /* Layout */
             .intro-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -400,12 +711,13 @@
         @media (max-width: 480px) {
             .adv-grid { grid-template-columns: 1fr; }
             .custom-banner { padding: 24px 20px; }
+            .carousel-container { aspect-ratio: 4 / 3; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ══════ HEADER ══════ -->
+    <!-- ══════ HEADER (與官網完全同步的完美對齊版本) ══════ -->
     <header>
         <div class="nav-container">
             <div class="logo">
@@ -413,12 +725,25 @@
                     <img src="images/logo.png" alt="百樂魔術有限公司 Pilot Magic">
                 </a>
             </div>
-            <button class="nav-toggle" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="main-nav">
+            <button class="hamburger" id="hamburger" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks">
                 <span></span><span></span><span></span>
             </button>
-            <nav class="nav-links" id="main-nav">
+            <div class="nav-overlay" id="navOverlay"></div>
+            <nav class="nav-links" id="navLinks">
                 <a href="index.html#about">關於我們</a>
-                <a href="index.html#services">專業服務</a>
+                <div class="nav-item-services" id="navItemServices">
+                    <a href="index.html#services" id="servicesTrigger">專業服務</a>
+                    <div class="services-dropdown" id="servicesDropdown">
+                        <a href="service-closeup.html"><span class="dot"></span>Close-up · 近距離魔術</a>
+                        <a href="service-stage.html"><span class="dot"></span>Stage Magic · 舞台魔術</a>
+                        <a href="service-interactive.html"><span class="dot"></span>Interactive · 互動舞台魔術</a>
+                        <a href="service-clown.html"><span class="dot"></span>Clown · 小丑及造型氣球</a>
+                        <a href="service-kids.html"><span class="dot"></span>Kids Party · 親子派對魔術</a>
+                        <a href="service-workshop.html"><span class="dot"></span>Workshop · 魔術教學工作坊</a>
+                        <a href="service-bubble.html"><span class="dot"></span>Bubble Show · 泡泡秀</a>
+                        <a href="service-facechange.html"><span class="dot"></span>Face Changing · 川劇變臉</a>
+                    </div>
+                </div>
                 <a href="index.html#media">影音專區</a>
                 <a href="index.html#team">核心團隊</a>
                 <a href="index.html#contact">聯絡查詢</a>
@@ -443,17 +768,58 @@
                 <p>近距離魔術（Close-up Magic）是當代高端社交與商業公關場合中，震撼力最直接的娛樂藝術。魔術師無需仰賴舞台佈景或燈光特效，僅憑精湛的手法、心理引導與優雅談吐，在距離賓客幾公分之間——甚至在賓客雙手之中——讓不可能悄然成真。</p>
                 <p>百樂魔術擁有澳門頂尖的近景魔術師團隊，演出風格優雅奢華，互動性極強。我們擅長在最精緻的場合瞬間化解社交距離，為您的貴賓締造深刻難忘的沉浸式驚喜。</p>
             </div>
+            
+            <!-- 輪播主圖框架 (6張圖片自動/手動滑動系統) -->
             <div class="intro-img fade-up">
-                <!-- FIX: 加入正確的 .frame class wrapper -->
                 <div class="frame">
-                    <img src="images/service_closeup_main.jpg" alt="澳門頂級近距離魔術表演 Billy Kong">
+                    <div class="carousel-container" id="closeupCarousel">
+                        <div class="carousel-slides">
+                            <!-- Slide 1 -->
+                            <div class="carousel-slide active">
+                                <img src="images/service_closeup_main.jpg" alt="澳門頂級近距離魔術表演" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800'">
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="carousel-slide">
+                                <img src="images/closeup2.jpg" alt="商業酒會迎賓互動" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800'">
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="carousel-slide">
+                                <img src="images/closeup3.jpg" alt="奢侈品牌VIP客製" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800'">
+                            </div>
+                            <!-- Slide 4 -->
+                            <div class="carousel-slide">
+                                <img src="images/closeup4.jpg" alt="紙牌近景指法奇蹟" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'">
+                            </div>
+                            <!-- Slide 5 -->
+                            <div class="carousel-slide">
+                                <img src="images/closeup5.jpg" alt="中英雙語高端商務演出" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516280440614-37939bbacd6a?auto=format&fit=crop&q=80&w=800'">
+                            </div>
+                            <!-- Slide 6 -->
+                            <div class="carousel-slide">
+                                <img src="images/closeup6.jpg" alt="零距離驚奇視覺瞬間" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800'">
+                            </div>
+                        </div>
+                        
+                        <!-- 導航控制鍵 -->
+                        <button class="carousel-arrow prev" id="carouselPrev" aria-label="上一張圖片">&#10094;</button>
+                        <button class="carousel-arrow next" id="carouselNext" aria-label="下一張圖片">&#10095;</button>
+
+                        <!-- 指示圓點 -->
+                        <div class="carousel-dots" id="carouselDots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                            <span class="dot" data-index="3"></span>
+                            <span class="dot" data-index="4"></span>
+                            <span class="dot" data-index="5"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ══════ PERFORMANCE FORMATS ══════ -->
-    <!-- FIX: full-bleed bg, with inner container for content -->
     <section id="formats">
         <div class="section-bg-glow" style="background-color: rgba(92,45,154,0.15); bottom:-100px; left:-100px;"></div>
         <div class="formats-inner">
@@ -501,7 +867,6 @@
             </div>
 
             <!-- 奢華客製實績 -->
-            <!-- FIX: 將 Markdown **粗體** 替換為 HTML <strong> -->
             <div class="custom-banner fade-up">
                 <div class="custom-info">
                     <h3>頂級精品認證的客製實力</h3>
@@ -546,7 +911,7 @@
         </div>
     </section>
 
-    <!-- ══════ CTA SECTION ══════ -->
+    <!-- ══════ CTA SECTION (表情符號已徹底移除，更顯尊榮檔次) ══════ -->
     <section id="sub-cta">
         <div class="fade-up">
             <p class="section-tag">Booking & Inquiry</p>
@@ -566,31 +931,104 @@
 
     <!-- ══════ SCRIPTS ══════ -->
     <script>
-        // ─── Hamburger Menu ───
-        const toggle = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
+        // ─── Header background resize on scroll ───
+        const header = document.querySelector('header');
+        const logoImg = document.querySelector('.logo img');
+        
+        window.addEventListener('scroll', () => {
+            const isMobile = window.innerWidth <= 768;
+            if (window.scrollY > 60) {
+                header.style.background = 'rgba(6, 4, 15, 0.96)';
+                logoImg.style.height = isMobile ? '56px' : '60px';
+            } else {
+                header.style.background = 'rgba(6, 4, 15, 0.82)';
+                logoImg.style.height = isMobile ? '68px' : '80px';
+            }
+        }, { passive: true });
 
-        toggle.addEventListener('click', () => {
-            const isOpen = navLinks.classList.toggle('open');
-            toggle.classList.toggle('open', isOpen);
-            toggle.setAttribute('aria-expanded', isOpen);
+        // ─── Hamburger Menu drawer controls ───
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
+        const servicesTrigger = document.getElementById('servicesTrigger');
+        const servicesDropdown = document.getElementById('servicesDropdown');
+
+        function toggleMenu(open) {
+            hamburger.classList.toggle('open', open);
+            navLinks.classList.toggle('open', open);
+            navOverlay.classList.toggle('open', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+            if (!open) {
+                servicesDropdown.classList.remove('open');
+            }
+        }
+
+        hamburger.addEventListener('click', () => toggleMenu(!navLinks.classList.contains('open')));
+        navOverlay.addEventListener('click', () => toggleMenu(false));
+
+        // Close menu panel when clicking standard anchors
+        navLinks.querySelectorAll('a[href^="index.html#"]').forEach(a => {
+            a.addEventListener('click', () => toggleMenu(false));
         });
 
-        // Close nav on link click
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('open');
-                toggle.classList.remove('open');
-                toggle.setAttribute('aria-expanded', 'false');
+        // Toggle service dropdown accordion under mobile viewport
+        servicesTrigger.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                servicesDropdown.classList.toggle('open');
+            }
+        });
+
+        // ─── Multi-Image Slideshow Carousel Logic (6 images) ───
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dots .dot');
+        const prevBtn = document.getElementById('carouselPrev');
+        const nextBtn = document.getElementById('carouselNext');
+        let activeIdx = 0;
+        let slideTimer;
+
+        function updateCarousel(targetIdx) {
+            slides[activeIdx].classList.remove('active');
+            dots[activeIdx].classList.remove('active');
+            
+            activeIdx = (targetIdx + slides.length) % slides.length;
+            
+            slides[activeIdx].classList.add('active');
+            dots[activeIdx].classList.add('active');
+        }
+
+        function startAutoSlide() {
+            clearInterval(slideTimer);
+            slideTimer = setInterval(() => {
+                updateCarousel(activeIdx + 1);
+            }, 4000);
+        }
+
+        prevBtn.addEventListener('click', () => {
+            updateCarousel(activeIdx - 1);
+            startAutoSlide();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            updateCarousel(activeIdx + 1);
+            startAutoSlide();
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                const targetIdx = parseInt(e.target.getAttribute('data-index'));
+                updateCarousel(targetIdx);
+                startAutoSlide();
             });
         });
 
-        // ─── Scroll Animations ───
-        // FIX: observe each .fade-up element individually (not stagger parent);
-        // stagger delay set via CSS custom property at render time
+        // Initialize slideshow
+        startAutoSlide();
+
+        // ─── Scroll Intersection Observer Animations ───
         const fadeEls = document.querySelectorAll('.fade-up');
 
-        // Assign stagger delay to siblings within same parent
+        // Assign stagger delay to siblings within same parent containers
         document.querySelectorAll('.formats-grid, .adv-grid').forEach(grid => {
             grid.querySelectorAll('.fade-up').forEach((child, i) => {
                 child.style.transitionDelay = (i * 100) + 'ms';
@@ -601,10 +1039,10 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // once is enough
+                    observer.unobserve(entry.target); 
                 }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
         fadeEls.forEach(el => observer.observe(el));
     </script>
