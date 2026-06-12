@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>澳門專業魔術教學與工作坊 Magic Workshop | 百樂魔術有限公司 Pilot Magic Co., Ltd. 大灣區企業培訓與學校課程</title>
+    <meta name="description" content="百樂魔術（Pilot Magic）提供澳門、香港及大灣區最系統化的魔術教學、創意工作坊與企業 Team Building 培訓。結合創意思維、心理學、演說技巧與動手能力，為政府機構、各中小學校、星級企業及私人 VIP 提供量身定制的教育及娛樂課程。">
+    <meta name="keywords" content="澳門魔術教學, 澳門魔術工作坊, 大灣區企業培訓, 澳門Team Building, 澳門學校暑期班, 澳門魔術班, 兒童創意思維培訓, 百樂魔術, Pilot Magic">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- SEO & GEO 結構化數據 (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "百樂魔術有限公司 Pilot Magic Co., Ltd. - 魔術工作坊",
+      "url": "https://www.pilotmagic.com/service-workshop.html",
+      "telephone": "+853-6655-1654",
+      "image": "images/service_workshop_main.jpg",
+      "description": "提供澳門、香港及大灣區專業系統化的魔術工作坊與魔術教學課程，適合學校興趣班、企業團隊建設、品牌推廣及高端私人一對一培訓。",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Macau",
+        "addressCountry": "MO"
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            --obsidian:      #06040f;
+            --void:          #0d0818;
+            --velvet:        #120c22;
+            --velvet-mid:    #1c1235;
+            --purple-deep:   #2a1250;
+            --purple-glow:   #5c2d9a;
+            --gold-antique:  #b8922a;
+            --gold-bright:   #d4a84b;
+            --gold-pale:     #e8c97a;
+            --gold-shimmer:  #f5e0a0;
+            --cream:         #f5f0e8;
+            --mist:          #c9bdd8;
+            --ghost:         rgba(245,240,232,0.6);
+            --divider:       rgba(184,146,42,0.2);
+            --glow-soft:     rgba(92,45,154,0.15);
+            --glow-gold:     rgba(212,168,75,0.12);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; width: 100%; overflow-x: hidden; }
+        body {
+            background-color: var(--obsidian);
+            color: var(--cream);
+            font-family: 'Noto Serif TC', 'Cormorant Garamond', Georgia, serif;
+            line-height: 1.75;
+            width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* 磨砂雜訊質感疊加 */
+        body::before {
+            content: ''; position: fixed; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+            pointer-events: none; z-index: 9999; opacity: 0.4;
+        }
+
+        a { text-decoration: none; color: inherit; transition: color 0.35s ease; }
+        ul { list-style: none; }
+        img { display: block; max-width: 100%; }
+
+        header {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            background: rgba(6, 4, 15, 0.82);
+            backdrop-filter: blur(20px) saturate(1.4);
+            -webkit-backdrop-filter: blur(20px) saturate(1.4);
+            border-bottom: 1px solid var(--divider);
+            transition: background 0.4s ease;
+        }
+        header::after {
+            content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-antique), transparent);
+            opacity: 0.6;
+        }
+        .nav-container {
+            max-width: 1280px; width: 100%; margin: 0 auto; padding: 16px 40px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo img { height: 86px; width: auto; transition: height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+        /* 漢堡選單 (手機版) */
+        .hamburger {
+            display: none; flex-direction: column; justify-content: center; gap: 5px;
+            width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 1100;
+        }
+        .hamburger span {
+            display: block; width: 100%; height: 1.5px; background: var(--gold-pale);
+            transition: transform 0.35s ease, opacity 0.25s ease; transform-origin: center;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+        /* 導航連結 */
+        .nav-links { display: flex; gap: 36px; align-items: center; }
+        .nav-links > a, .nav-item-services > a {
+            font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.18em;
+            text-transform: uppercase; color: var(--mist); position: relative; padding-bottom: 4px; display: inline-block; transition: color 0.3s ease;
+        }
+        .nav-links > a::after, .nav-item-services > a::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px;
+            background: var(--gold-bright); transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .nav-links > a:hover::after, .nav-item-services:hover > a::after { width: 100%; }
+        .nav-links > a:hover, .nav-item-services:hover > a { color: var(--gold-pale); }
+
+        .nav-item-services { position: relative; display: flex; align-items: center; }
+        .nav-item-services::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); width: 120%; height: 20px; }
+        
+        .services-dropdown {
+            display: none; position: absolute; top: calc(100% + 16px); left: 50%; transform: translateX(-50%);
+            background: rgba(13, 8, 24, 0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--divider); border-top: 1px solid var(--gold-antique); min-width: 240px; padding: 12px 0; z-index: 2000;
+            border-radius: 2px; box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(184,146,42,0.08);
+            transform-origin: top center; animation: dropdownFadeIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .nav-item-services:hover .services-dropdown { display: block; }
+        .services-dropdown a {
+            display: flex; align-items: center; padding: 10px 24px; font-family: 'Cinzel', serif; font-size: 0.65rem;
+            letter-spacing: 0.15em; text-transform: uppercase; color: var(--mist); white-space: nowrap; transition: all 0.25s ease;
+        }
+        .services-dropdown a:hover { color: var(--gold-pale); background: rgba(184,146,42,0.06); padding-left: 30px; }
+        .services-dropdown a span.dot { display: inline-block; width: 4px; height: 4px; background: var(--gold-antique); border-radius: 50%; margin-right: 12px; flex-shrink: 0; }
+
+        .inner-hero {
+            position: relative; width: 100%; height: 60vh; min-height: 400px;
+            background: url('images/service_workshop_hero.jpg') no-repeat center center; background-size: cover;
+            display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 80px;
+        }
+        .inner-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at center, transparent 15%, rgba(6,4,15,0.7) 100%),
+                        linear-gradient(180deg, rgba(6,4,15,0.4) 0%, rgba(6,4,15,0.0) 50%, rgba(6,4,15,0.92) 100%);
+            z-index: 1;
+        }
+        .inner-hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 24px; }
+        .inner-hero-eyebrow {
+            font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.4em; text-transform: uppercase;
+            color: var(--gold-bright); margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 14px;
+        }
+        .inner-hero-eyebrow::before, .inner-hero-eyebrow::after { content: ''; width: 30px; height: 1px; background: var(--gold-antique); opacity: 0.6; }
+        .inner-hero h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; letter-spacing: 0.05em; color: #fff; text-shadow: 0 4px 30px rgba(0,0,0,0.8); margin-bottom: 12px; }
+        .inner-hero .tagline { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.25rem; font-style: italic; color: var(--gold-pale); letter-spacing: 0.05em; }
+
+        /* MAIN區佈局與 6 張相片輪播 */
+        .page-section { padding: 100px 40px; max-width: 1280px; width: 100%; margin: 0 auto; }
+        .grid-2col { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px; align-items: center; margin-bottom: 100px; }
+        
+        .service-intro-text h2 { font-family: 'Cinzel', serif; font-size: 1.8rem; color: var(--gold-pale); margin-bottom: 24px; letter-spacing: 0.05em; }
+        .service-intro-text p { color: var(--mist); font-size: 0.95rem; line-height: 1.95; margin-bottom: 20px; }
+        .service-intro-text .highlight-box {
+            background: var(--velvet); border-left: 3px solid var(--gold-bright); padding: 20px; border-radius: 2px;
+            margin: 30px 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.15rem; color: var(--cream);
+        }
+
+        /* ─── 6張精選相片自動輪播元件 ─── */
+        .intro-img .frame { position: relative; border: 1px solid var(--divider); padding: 12px; background: var(--void); border-radius: 4px; }
+        .carousel-container { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid rgba(184,146,42,0.25); border-radius: 2px; background: var(--obsidian); }
+        .carousel-slides { position: relative; width: 100%; height: 100%; }
+        .carousel-slide { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; z-index: 1; transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); display: flex; align-items: center; justify-content: center; }
+        .carousel-slide.active { opacity: 1; z-index: 2; }
+        .carousel-slide img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.95) contrast(1.05); transition: transform 6s ease-out; }
+        .carousel-slide.active img { transform: scale(1.05); }
+
+        .carousel-arrow {
+            position: absolute; top: 50%; transform: translateY(-50%); background: rgba(6, 4, 15, 0.75); border: 1px solid var(--divider);
+            color: var(--gold-pale); font-size: 1rem; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; transition: all 0.3s ease; opacity: 0;
+        }
+        .carousel-container:hover .carousel-arrow { opacity: 1; }
+        .carousel-arrow:hover { background: var(--gold-bright); color: var(--obsidian); border-color: var(--gold-bright); box-shadow: 0 0 15px rgba(212, 168, 75, 0.4); }
+        .carousel-arrow.prev { left: 16px; }
+        .carousel-arrow.next { right: 16px; }
+
+        .carousel-dots { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
+        .carousel-dots .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(245, 240, 232, 0.35); border: 1px solid rgba(6, 4, 15, 0.3); cursor: pointer; transition: all 0.35s ease; }
+        .carousel-dots .dot.active { background: var(--gold-bright); width: 20px; border-radius: 4px; box-shadow: 0 0 8px var(--gold-antique); }
+
+        .highlight-section { background: var(--void); padding: 100px 40px; position: relative; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-tag { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold-bright); margin-bottom: 16px; display: block; }
+        .section-title { font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 600; color: var(--cream); letter-spacing: 0.04em; }
+        .section-title em { font-style: italic; color: var(--gold-pale); }
+
+        .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1280px; margin: 0 auto; }
+        .feature-card { background: var(--velvet); border: 1px solid var(--divider); border-radius: 4px; padding: 36px 24px; position: relative; transition: all 0.35s ease; }
+        .feature-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold-bright), transparent); }
+        .feature-card:hover { border-color: rgba(184,146,42,0.4); transform: translateY(-5px); background: var(--velvet-mid); }
+        .feature-icon-wrapper { width: 44px; height: 44px; background: rgba(184,146,42,0.1); border: 1px solid rgba(184,146,42,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .feature-icon { font-family: 'Cinzel', serif; font-size: 0.95rem; font-weight: 600; color: var(--gold-bright); text-shadow: 0 0 10px var(--gold-antique); }
+        .feature-card h3 { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--gold-pale); margin-bottom: 14px; letter-spacing: 0.05em; line-height: 1.4; }
+        .feature-card p { font-size: 0.88rem; color: var(--mist); line-height: 1.8; }
+
+        .scene-section { background: var(--void); padding: 100px 40px; }
+        .scene-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1280px; margin: 0 auto; }
+        .scene-card { background: var(--velvet); border: 1px solid var(--divider); padding: 30px 24px; border-radius: 2px; text-align: center; transition: border-color 0.3s; }
+        .scene-card:hover { border-color: rgba(184,146,42,0.45); }
+        .scene-card h4 { font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--gold-pale); letter-spacing: 0.1em; margin-bottom: 12px; text-transform: uppercase; }
+        .scene-card p { font-size: 0.85rem; color: var(--mist); line-height: 1.7; }
+
+        .cta-booking-section { background: var(--obsidian); padding: 110px 40px; border-top: 1px solid var(--divider); text-align: center; position: relative; }
+        .cta-booking-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px; height: 400px; background: var(--purple-glow); border-radius: 50%; opacity: 0.08; filter: blur(120px); pointer-events: none; }
+        .cta-container { max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
+        .cta-container p.cta-desc { color: var(--mist); font-size: 1.05rem; line-height: 1.9; max-width: 600px; margin: 0 auto 40px; }
+        
+        .cta-actions { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .btn-premium { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; padding: 16px 42px; border-radius: 2px; cursor: pointer; transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); display: inline-flex; align-items: center; justify-content: center; min-width: 250px; }
+        .btn-gold { background: linear-gradient(135deg, var(--gold-antique), var(--gold-bright)); color: var(--obsidian); border: none; box-shadow: 0 4px 24px rgba(184,146,42,0.3); font-weight: 600; }
+        .btn-gold:hover { background: linear-gradient(135deg, var(--gold-bright), var(--gold-pale)); box-shadow: 0 6px 32px rgba(212,168,75,0.5), 0 0 0 1px var(--gold-pale); transform: translateY(-2px); }
+        .btn-outline { background: transparent; color: var(--gold-pale); border: 1px solid rgba(184,146,42,0.5); }
+        .btn-outline:hover { background: rgba(184,146,42,0.08); border-color: var(--gold-bright); color: var(--gold-shimmer); transform: translateY(-2px); }
+
+        /* 頁尾 */
+        footer { background: var(--obsidian); border-top: 1px solid var(--divider); padding: 40px; text-align: center; }
+        .footer-logo { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-antique); margin-bottom: 12px; opacity: 0.7; }
+        .footer-copy { font-size: 0.78rem; color: rgba(201,189,216,0.3); }
+
+        .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* 響應式優化 */
+        @media (max-width: 1200px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 1024px) { .grid-2col { grid-template-columns: 1fr; gap: 50px; } .scene-grid { grid-template-columns: repeat(2, 1fr); } }
+        
+        /* 手機抽屜式選單 */
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: row; justify-content: space-between; align-items: center; padding: 12px 20px; width: 100%; }
+            .logo img { height: 64px; }
+            .hamburger { display: flex; }
+
+            .nav-links {
+                display: none; position: fixed; top: 0; right: 0; width: 80vw; max-width: 320px; height: 100vh;
+                background: rgba(13, 8, 24, 0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+                border-left: 1px solid var(--divider); flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 0;
+                padding: 100px 32px; z-index: 1050; overflow-y: auto; -webkit-overflow-scrolling: touch;
+            }
+            .nav-links.open { display: flex; }
+            .nav-links > a, .nav-item-services { width: 100%; }
+            .nav-links > a { font-size: 0.78rem; letter-spacing: 0.2em; color: var(--mist); padding: 14px 0; border-bottom: 1px solid var(--divider); display: block; }
+            .nav-links > a::after { display: none !important; }
+
+            .nav-item-services { flex-direction: column; align-items: flex-start; border-bottom: 1px solid var(--divider); }
+            .nav-item-services > a { width: 100%; font-size: 0.78rem; letter-spacing: 0.2em; color: var(--mist); padding: 14px 0 10px 0; display: block; }
+            .nav-item-services > a::after { display: none !important; }
+
+            .services-dropdown {
+                position: static; display: none; transform: none; border: none; background: none; box-shadow: none;
+                padding: 4px 0 14px 16px; backdrop-filter: none; -webkit-backdrop-filter: none; min-width: 100%; animation: none;
+            }
+            .services-dropdown.open { display: block; }
+            .services-dropdown a { padding: 8px 0; font-size: 0.65rem; border-bottom: 1px solid rgba(184,146,42,0.08); width: 100%; }
+            .services-dropdown a:hover { padding-left: 8px; }
+
+            .nav-overlay { display: none; position: fixed; inset: 0; background: rgba(6,4,15,0.7); z-index: 1040; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+            .nav-overlay.open { display: block; }
+
+            .inner-hero { height: 45vh; min-height: 300px; }
+            .page-section, .highlight-section, .scene-section, .cta-booking-section { padding: 60px 20px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .cta-actions { flex-direction: column; align-items: center; gap: 14px; }
+            .btn-premium { width: 100%; max-width: 320px; }
+        }
+
+        @media (max-width: 480px) {
+            .scene-grid { grid-template-columns: 1fr; }
+            .carousel-container { aspect-ratio: 4 / 3; }
+            .carousel-arrow { opacity: 1 !important; width: 38px; height: 38px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ══════ HEADER (與官網完美對齊) ══════ -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html#home">
+                    <img src="images/logo.png" alt="百樂魔術有限公司 Pilot Magic">
+                </a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-overlay" id="navOverlay"></div>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html#about">關於我們</a>
+                <div class="nav-item-services" id="navItemServices">
+                    <a href="index.html#services" id="servicesTrigger">專業服務</a>
+                    <div class="services-dropdown" id="servicesDropdown">
+                        <a href="service-closeup.html"><span class="dot"></span>Close-up · 近距離魔術</a>
+                        <a href="service-stage.html"><span class="dot"></span>Manipulation · 舞台手彩魔術</a>
+                        <a href="service-interactive.html"><span class="dot"></span>Interactive · 互動舞台魔術</a>
+                        <a href="service-clown.html"><span class="dot"></span>Clown · 小丑及造型氣球</a>
+                        <a href="service-kids.html"><span class="dot"></span>Kids Party · 親子派對魔術</a>
+                        <a href="service-workshop.html"><span class="dot"></span>Workshop · 魔術教學工作坊</a>
+                        <a href="service-bubble.html"><span class="dot"></span>Bubble Show · 泡泡秀</a>
+                        <a href="service-facechange.html"><span class="dot"></span>Face Changing · 川劇變臉</a>
+                    </div>
+                </div>
+                <a href="index.html#media">影音專區</a>
+                <a href="index.html#team">核心團隊</a>
+                <a href="index.html#contact">聯絡查詢</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ══════ HERO ══════ -->
+    <section class="inner-hero">
+        <div class="inner-hero-content">
+            <p class="inner-hero-eyebrow">Professional Magic Pedagogy</p>
+            <h1>魔術教學及工作坊</h1>
+            <p class="tagline">以神奇之鑰 · 開啟創意思維與自信表達</p>
+        </div>
+    </section>
+
+    <!-- ══════ INTRODUCTION ══════ -->
+    <section class="page-section">
+        <div class="grid-2col">
+            <div class="service-intro-text fade-up">
+                <h2>系統化魔術教學，啟迪大灣區菁英大腦</h2>
+                <p>百樂魔術（Pilot Magic）深耕魔術教育領域二十餘年，我們堅信魔術不僅是一門表演藝術，更是一種全方位心智發展的強效媒介。我們的工作坊專為大灣區不同年齡段的學員客製化設計，將專業手腦協調、心理認知與戲劇演說技巧融入課堂。</p>
+                <div class="highlight-box">
+                    「學習魔術的過程，是讓學員學會站在觀眾角度思考，並以流暢、自信的表達方式去構建一幕幕奇蹟，對個人自信、邏輯思維有著驚人的提升。」
+                </div>
+                <p>我們所有的課程均由百樂魔術一線演藝、教學名師親自授課。不論是校園趣味興趣課程、常規社區康樂班，還是為高端企業量身定制的 Team Building 協作培訓，我們都提供全套精美的客製化魔術道具和系統化教學大綱，確保每位學員在輕鬆愉快的氣氛中真正掌握這門獨特的藝術特長。</p>
+            </div>
+            
+            <div class="intro-img fade-up">
+                <div class="frame">
+                    <div class="carousel-container" id="workshopCarousel">
+                        <div class="carousel-slides">
+                            <div class="carousel-slide active">
+                                <img src="images/service_workshop_main.jpg" alt="魔術大師專業指導一" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800'">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/workshop2.jpg" alt="紙牌技法與細膩指法教學二" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800'">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/workshop3.jpg" alt="學員分組破解及溝通訓練三" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=800'">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/workshop4.jpg" alt="舞台膽量與演說魅力塑造四" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=800'">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/workshop5.jpg" alt="企業團隊協作互動五" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800'">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/workshop6.jpg" alt="專業進口質感道具分發六" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800'">
+                            </div>
+                        </div>
+                        <button class="carousel-arrow prev" id="carouselPrev" aria-label="上一張圖片">&#10094;</button>
+                        <button class="carousel-arrow next" id="carouselNext" aria-label="下一張圖片">&#10095;</button>
+                        <div class="carousel-dots" id="carouselDots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                            <span class="dot" data-index="3"></span>
+                            <span class="dot" data-index="4"></span>
+                            <span class="dot" data-index="5"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ FEATURES ══════ -->
+    <section class="highlight-section">
+        <div class="section-header fade-up">
+            <span class="section-tag">Curriculum Features</span>
+            <h2 class="section-title">四大<em>核心教學亮點</em></h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card fade-up">
+                <div class="feature-icon-wrapper"><span class="feature-icon">01</span></div>
+                <h3>Structured Skills<br>系統漸進指法</h3>
+                <p>從最基礎的道具物理原理、基礎紙牌與硬幣技法開始，由淺入深，不強記死背，而是教導手部的精細肌肉協調，讓每位學員都能優雅流暢地展現手腦奇蹟。</p>
+            </div>
+            <div class="feature-card fade-up">
+                <div class="feature-icon-wrapper"><span class="feature-icon">02</span></div>
+                <h3>Spectator Psychology<br>觀眾心理認知</h3>
+                <p>深度探討魔術背後的錯覺藝術與注意力轉移（Misdirection）原理。學員將學會如何洞察人心、引導觀眾的視覺與思維焦點，從而大幅提升社交溝通技巧。</p>
+            </div>
+            <div class="feature-card fade-up">
+                <div class="feature-icon-wrapper"><span class="feature-icon">03</span></div>
+                <h3>Presentation Art<br>舞台表達與自信</h3>
+                <p>魔術是表達的藝術。我們著重訓練學員的說故事能力（Storytelling）、肢體語言與眼神接觸，幫助每個人在眾人面前大方展示，徹底克服怯場心理，重塑強大自信心。</p>
+            </div>
+            <div class="feature-card fade-up">
+                <div class="feature-icon-wrapper"><span class="feature-icon">04</span></div>
+                <h3>Exclusive Magic props<br>專屬進口道具</h3>
+                <p>百樂魔術為所有工作坊課程配備精美、安全且極具質感的專業魔術套裝道具。學員在帶回驚喜道具的同時，也帶回了一套受用一生的表演與人際互動技巧。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ SCENES ══════ -->
+    <section class="scene-section">
+        <div class="section-header fade-up">
+            <span class="section-tag">Target Audiences</span>
+            <h2 class="section-title">適合<em>各類型授課對象</em></h2>
+        </div>
+        <div class="scene-grid">
+            <div class="scene-card fade-up">
+                <h4>學校、社區中心 & 暑期班</h4>
+                <p>深受澳門教青局暑期班、大中小學校興趣課程歡迎，有效啟迪學員思維能力，培育第二特長，提升群體合作精神。</p>
+            </div>
+            <div class="scene-card fade-up">
+                <h4>企業團隊建設 Team Building</h4>
+                <p>打破部門隔閡、突破傳統培訓。在分組魔術破解與競賽中，深度訓練企業員工的創新問題解決力、默契度與內部溝通效率。</p>
+            </div>
+            <div class="scene-card fade-up">
+                <h4>品牌推廣 & VIP 尊享日</h4>
+                <p>專為高端汽車、奢侈珠寶、金融博企尊貴客戶設計。將品牌元素融入魔術工作坊，加深 VIP 賓客對品牌的特殊記憶與好感度。</p>
+            </div>
+            <div class="scene-card fade-up">
+                <h4>私人一對一高端定制</h4>
+                <p>為有特定登台表演需求、晚宴演講暖場、或者愛好社交魔術的高級行政人員、商務菁英或婚宴新人，量身打造專屬奇蹟 routines。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ CTA BOOKING ══════ -->
+    <section class="cta-booking-section" id="booking-cta">
+        <div class="cta-container fade-up">
+            <span class="section-tag">Booking & Course Inquiry</span>
+            <h2 class="section-title" style="margin-bottom: 20px;">預約<em>專屬魔術工作坊課程</em></h2>
+            <p class="cta-desc">
+                不論是需要單次 1-2 小時體驗的工作坊，還是數周的常規帶課系統培訓，百樂魔術大灣區策劃團隊都將在 24 小時內為您設計出完美的教案與完整報價。
+            </p>
+            <div class="cta-actions">
+                <a href="index.html#contact" class="btn-premium btn-gold">填寫線上預約表單</a>
+                <a href="https://wa.me/85366551654?text=你好，我想查詢魔術教學及工作坊課程服務" class="btn-premium btn-outline" target="_blank">WhatsApp 直接查詢 (Billy)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ FOOTER ══════ -->
+    <footer>
+        <div class="footer-logo">Pilot Magic Co., Ltd. · Macau</div>
+        <p class="footer-copy">&copy; 2026 百樂魔術有限公司 版權所有。紮根澳門，服務大灣區。</p>
+    </footer>
+
+    <script>
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            const isMobile = window.innerWidth <= 768;
+            if (window.scrollY > 60) {
+                header.style.background = 'rgba(6, 4, 15, 0.96)';
+                document.querySelector('.logo img').style.height = isMobile ? '56px' : '68px';
+            } else {
+                header.style.background = 'rgba(6, 4, 15, 0.82)';
+                document.querySelector('.logo img').style.height = isMobile ? '64px' : '86px';
+            }
+        }, { passive: true });
+
+        // 手機版抽屜式導航控制
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
+        const servicesTrigger = document.getElementById('servicesTrigger');
+        const servicesDropdown = document.getElementById('servicesDropdown');
+
+        function toggleMenu(open) {
+            hamburger.classList.toggle('open', open);
+            navLinks.classList.toggle('open', open);
+            navOverlay.classList.toggle('open', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+            if (!open) servicesDropdown.classList.remove('open');
+        }
+
+        hamburger.addEventListener('click', () => toggleMenu(!navLinks.classList.contains('open')));
+        navOverlay.addEventListener('click', () => toggleMenu(false));
+        navLinks.querySelectorAll('a[href^="index.html#"]').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+
+        servicesTrigger.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                servicesDropdown.classList.toggle('open');
+            }
+        });
+
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dots .dot');
+        const prevBtn = document.getElementById('carouselPrev');
+        const nextBtn = document.getElementById('carouselNext');
+        let activeIdx = 0;
+        let slideTimer;
+
+        function updateCarousel(targetIdx) {
+            slides[activeIdx].classList.remove('active');
+            dots[activeIdx].classList.remove('active');
+            activeIdx = (targetIdx + slides.length) % slides.length;
+            slides[activeIdx].classList.add('active');
+            dots[activeIdx].classList.add('active');
+        }
+
+        function startAutoSlide() {
+            clearInterval(slideTimer);
+            slideTimer = setInterval(() => { updateCarousel(activeIdx + 1); }, 4000);
+        }
+
+        prevBtn.addEventListener('click', () => { updateCarousel(activeIdx - 1); startAutoSlide(); });
+        nextBtn.addEventListener('click', () => { updateCarousel(activeIdx + 1); startAutoSlide(); });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                const targetIdx = parseInt(e.target.getAttribute('data-index'));
+                updateCarousel(targetIdx); startAutoSlide();
+            });
+        });
+
+        // 手勢拖拽支援
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const carouselContainer = document.getElementById('workshopCarousel');
+        carouselContainer.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+        carouselContainer.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            const swipeThreshold = 50;
+            if (touchStartX - touchEndX > swipeThreshold) { updateCarousel(activeIdx + 1); startAutoSlide(); }
+            else if (touchEndX - touchStartX > swipeThreshold) { updateCarousel(activeIdx - 1); startAutoSlide(); }
+        }, { passive: true });
+
+        startAutoSlide();
+
+        // 滾動監聽動畫
+        const fadeEls = document.querySelectorAll('.fade-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        fadeEls.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
