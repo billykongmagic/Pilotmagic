@@ -1,17 +1,14 @@
-```html
 <!DOCTYPE html>
 <html lang="zh-HK">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     
-    <!-- ── SEO 標題與關鍵字優化 ── -->
     <title>澳門川劇變臉表演服務 | 大灣區商務宴會與春酒尾牙節目企劃 - 百樂魔術 Pilot Magic</title>
     <meta name="description" content="百樂魔術有限公司（Pilot Magic）為澳門及大灣區（香港、珠海、廣州）引進正宗非遺國粹「川劇變臉表演」服務。結合傳統大師身段與現代奢華舞台燈光，提供零距離下台互動、品牌專屬面譜定製。完美契合澳門娛樂場活動、商業發布會、尾牙春酒晚宴與景區文旅盛典。">
     <meta name="keywords" content="澳門川劇變臉, 澳門變臉表演, 大灣區宴會表演, 尾牙節目企劃, 春酒表演推薦, 澳門魔術公司, 百樂魔術, 非遺變臉大師, 商業發布會節目, 澳門活動策劃">
     <link rel="canonical" href="https://www.pilotmagic.com/service-facechange.html">
 
-    <!-- ── Open Graph ── -->
     <meta property="og:locale" content="zh_HK">
     <meta property="og:type" content="article">
     <meta property="og:title" content="澳門川劇變臉表演服務 | 大灣區商務宴會與春酒尾牙節目企劃 - 百樂魔術">
@@ -20,7 +17,6 @@
     <meta property="og:site_name" content="百樂魔術有限公司 Pilot Magic Co., Ltd.">
     <meta property="og:image" content="images/facechangehero.jpg">
 
-    <!-- ── GEO 地理位置 ── -->
     <meta name="geo.region" content="MO-MO">
     <meta name="geo.placename" content="Macau">
     
@@ -29,9 +25,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* ══════════════════════════════════════════
-           DESIGN SYSTEM — Arcane Luxury
-        ══════════════════════════════════════════ */
         :root {
             --obsidian:      #06040f;
             --void:          #0d0818;
@@ -67,19 +60,15 @@
 
         ::selection { background: var(--purple-deep); color: var(--gold-shimmer); }
 
-        /* 確保中英文完美對齊字體 */
         h1, h2, h3 { font-family: 'Cinzel', 'Noto Serif TC', serif; }
         p { font-weight: 300; color: #d0c8be; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
         a { text-decoration: none; color: inherit; transition: all 0.4s ease; }
         .container { width: 90%; max-width: 1200px; margin: 0 auto; }
 
-        /* 動畫 */
         .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1), transform 1s cubic-bezier(0.215, 0.61, 0.355, 1); }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-        /* ══════════════════════════════════════════
-           UNIFIED HEADER & FOOTER
-        ══════════════════════════════════════════ */
+        /* ── HEADER ── */
         header {
             position: fixed; top: 0; left: 0; width: 100%; max-width: 100%; z-index: 1000;
             background: rgba(6, 4, 15, 0.82); backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4);
@@ -113,6 +102,7 @@
         .services-dropdown a:hover { color: var(--gold-pale); background: rgba(184,146,42,0.06); padding-left: 30px; }
         .services-dropdown a span.dot { display: inline-block; width: 4px; height: 4px; background: var(--gold-antique); border-radius: 50%; margin-right: 12px; flex-shrink: 0; }
 
+        /* ── FOOTER ── */
         footer { background: var(--obsidian); border-top: 1px solid var(--divider); padding: 40px; text-align: center; }
         .footer-logo { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-antique); margin-bottom: 12px; opacity: 0.7; }
         .footer-copy { font-size: 0.78rem; color: rgba(201,189,216,0.3); margin:0; }
@@ -137,7 +127,7 @@
             .nav-overlay.open { display: block; }
         }
 
-        /* ── Hero Banner ── */
+        /* ── HERO ── */
         .hero-section {
             position: relative; height: 75vh; min-height: 550px;
             display: flex; align-items: center; justify-content: center; text-align: center;
@@ -151,19 +141,17 @@
         .hero-section::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(6,4,15,0.4) 0%, rgba(6,4,15,0.0) 50%, rgba(6,4,15,0.92) 100%); z-index: 1; }
         .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
         .hero-eyebrow { font-family: 'Cinzel', serif; font-size: 0.65rem; color: var(--gold-bright); letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 15px; display: block; }
-        
         .hero-title { font-size: 42px; font-weight: 700; color: var(--cream); margin-bottom: 25px; letter-spacing: 0.18em; line-height: 1.3; text-transform: uppercase; }
         .hero-title span { color: var(--gold-bright); }
         .hero-description { font-size: 15px; color: var(--mist); max-width: 650px; margin: 0 auto; line-height: 1.8; font-weight: 300; letter-spacing: 0.04em; }
         @keyframes subtleZoom { from { transform: scale(1); } to { transform: scale(1.08); } }
 
-        /* ── Main Content Grid & Carousel ── */
+        /* ── DETAIL SECTION ── */
         .detail-layout { padding: 90px 0; background: var(--obsidian); position: relative; }
         .grid-2col { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 70px; align-items: center; }
         
         .image-showcase { position: relative; }
         
-        /* 6張相片輪播組件 ── 解決 opacity + display 衝突問題 */
         .frame { position: relative; border: 1px solid var(--divider); padding: 12px; background: var(--void); border-radius: 4px; box-shadow: 0 30px 60px rgba(0,0,0,0.8); z-index: 5; }
         .carousel-container { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid rgba(184,146,42,0.25); border-radius: 2px; background: var(--obsidian); }
         .carousel-slides { position: relative; width: 100%; height: 100%; }
@@ -193,13 +181,12 @@
         
         .stamp-icon { position: absolute; bottom: -25px; right: 30px; background: var(--crimson-bright); color: var(--cream); font-family: 'Noto Serif TC', serif; font-weight: 700; padding: 15px 12px; font-size: 13px; line-height: 1.2; writing-mode: vertical-rl; text-shadow: 0 1px 2px rgba(0,0,0,0.5); box-shadow: 0 10px 20px rgba(0,0,0,0.5); letter-spacing: 0.2em; z-index: 20;}
 
-        /* Right Column: Performance Intro */
         .text-content .section-tag { font-family: 'Cinzel', serif; color: var(--gold-bright); font-size: 0.65rem; letter-spacing: 0.45em; display: block; margin-bottom: 10px; text-transform: uppercase; }
         .text-content h2 { font-size: 32px; color: var(--cream); margin-bottom: 25px; font-weight: 600; letter-spacing: 0.08em; }
         .text-content .accent-line { width: 60px; height: 1px; background: var(--gold-bright); margin-bottom: 30px; }
         .text-content p { font-size: 15px; margin-bottom: 20px; text-align: justify; letter-spacing: 0.04em; }
 
-        /* ── Highlights / Features ── */
+        /* ── FEATURES ── */
         .features-section { background: var(--void); padding: 80px 0; border-top: 1px solid var(--divider); border-bottom: 1px solid var(--divider); }
         .section-title-center { text-align: center; margin-bottom: 60px; }
         .section-title-center h2 { font-size: 30px; color: var(--gold-pale); letter-spacing: 0.15em; margin-bottom: 15px; }
@@ -214,7 +201,7 @@
         .feature-card h3 { font-size: 18px; color: var(--cream); margin-bottom: 15px; letter-spacing: 0.06em; }
         .feature-card p { font-size: 14px; color: var(--mist); line-height: 1.7; letter-spacing: 0.04em; }
 
-        /* ── Configuration / Customization ── */
+        /* ── CONFIG ── */
         .config-section { padding: 90px 0; background: var(--obsidian); }
         .config-box { border: 1px solid var(--divider); background: radial-gradient(ellipse at top right, var(--velvet-mid), var(--void)); padding: 50px; position: relative; }
         .config-header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--divider); padding-bottom: 25px; margin-bottom: 35px; }
@@ -227,7 +214,7 @@
         .config-label::before { content: '♦'; color: var(--crimson-bright); font-size: 11px; }
         .config-desc { font-size: 14px; color: var(--mist); letter-spacing: 0.04em; }
 
-        /* ── Call To Action ── */
+        /* ── CTA ── */
         .cta-section { padding: 100px 0; background: linear-gradient(rgba(13,8,24,0.9), rgba(13,8,24,0.95)), url('images/facechange_cta.jpg') center/cover no-repeat fixed; text-align: center; border-top: 1px solid var(--divider); }
         .cta-content h2 { font-size: 36px; color: var(--cream); margin-bottom: 20px; font-weight: 400; letter-spacing: 0.12em; }
         .cta-content p { max-width: 600px; margin: 0 auto 40px; font-size: 15px; color: var(--mist); letter-spacing: 0.04em; }
@@ -260,7 +247,7 @@
 </head>
 <body>
 
-    <!-- ── UNIFIED HEADER ── -->
+    <!-- ── HEADER ── -->
     <header>
         <div class="nav-container">
             <div class="logo">
@@ -294,10 +281,9 @@
         </div>
     </header>
 
-    <!-- ── HERO BANNER ── -->
+    <!-- ── HERO ── -->
     <section class="hero-section">
-        <!-- 優先讀取本地圖片，若失敗自動熱加載備用網圖 -->
-        <img src="images/facechangehero.jpg" data-fallback="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&q=80&w=1920" alt="澳門百樂魔術川劇變臉大師舞台展演" class="hero-bg-img">
+        <img src="images/facechangehero.jpg" alt="澳門百樂魔術川劇變臉大師舞台展演" class="hero-bg-img">
         <div class="hero-content fade-up">
             <span class="hero-eyebrow">Eastern Mystic Art · Macau & Greater Bay Area</span>
             <h1 class="hero-title">澳門川劇變臉表演 <span>極致東方幻術</span></h1>
@@ -308,34 +294,32 @@
         </div>
     </section>
 
-    <!-- ── PERFORMANCE DETAIL SECTION ── -->
+    <!-- ── PERFORMANCE DETAIL ── -->
     <section class="detail-layout">
         <div class="container">
             <div class="grid-2col">
                 
-                <!-- Left: 6 Images Carousel (純淨 JS 備用路徑檢測) -->
                 <div class="image-showcase fade-up">
                     <div class="frame">
                         <div class="carousel-container" id="facechangeCarousel">
                             <div class="carousel-slides">
-                                <!-- 優先讀取本地 src，若圖片不在將由最下方的 JS 無縫替換 -->
                                 <div class="carousel-slide active">
-                                    <img src="images/facechangedetail.jpg" data-fallback="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800" alt="川劇變臉現場">
+                                    <img src="images/facechangedetail.jpg" alt="川劇變臉現場">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="images/fc2.jpg" data-fallback="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&q=80&w=800" alt="變臉大師近照">
+                                    <img src="images/fc2.jpg" alt="變臉大師近照">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="images/fc3.jpg" data-fallback="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&q=80&w=800" alt="非物質文化遺產川劇藝術">
+                                    <img src="images/fc3.jpg" alt="非物質文化遺產川劇藝術">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="images/fc4.jpg" data-fallback="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800" alt="變臉下台互動">
+                                    <img src="images/fc4.jpg" alt="變臉下台互動">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="images/fc5.jpg" data-fallback="https://images.unsplash.com/photo-1540224769541-7e6e9047f566?auto=format&fit=crop&q=80&w=800" alt="傳統中國戲劇身段">
+                                    <img src="images/fc5.jpg" alt="傳統中國戲劇身段">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="images/fc6.jpg" data-fallback="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800" alt="舞台燈光與折扇特寫">
+                                    <img src="images/fc6.jpg" alt="舞台燈光與折扇特寫">
                                 </div>
                             </div>
                             <button class="carousel-arrow prev" id="fcPrev" aria-label="上一張圖片">&#10094;</button>
@@ -353,7 +337,6 @@
                     </div>
                 </div>
                 
-                <!-- Right: Content Narrative -->
                 <div class="text-content fade-up" style="transition-delay: 150ms;">
                     <span class="section-tag">Premium Macau Entertainment</span>
                     <h2>大灣區商務宴會節目推薦</h2>
@@ -373,7 +356,7 @@
         </div>
     </section>
 
-    <!-- ── CORE FEATURES ── -->
+    <!-- ── FEATURES ── -->
     <section class="features-section">
         <div class="container">
             <div class="section-title-center fade-up">
@@ -402,7 +385,7 @@
         </div>
     </section>
 
-    <!-- ── SERVICE CONFIGURATION ── -->
+    <!-- ── CONFIG ── -->
     <section class="config-section">
         <div class="container">
             <div class="config-box fade-up">
@@ -433,7 +416,7 @@
         </div>
     </section>
 
-    <!-- ── CALL TO ACTION ── -->
+    <!-- ── CTA ── -->
     <section class="cta-section">
         <div class="container">
             <div class="cta-content fade-up">
@@ -446,26 +429,23 @@
         </div>
     </section>
 
-    <!-- ── UNIFIED FOOTER ── -->
+    <!-- ── FOOTER ── -->
     <footer>
         <div class="footer-logo">Pilot Magic Co., Ltd. · Macau</div>
         <p class="footer-copy">&copy; 2026 百樂魔術有限公司 版權所有。紮根澳門，服務大灣區。</p>
     </footer>
 
-    <!-- ── SCRIPTS ── -->
     <script>
-        // 1. 元素交會動畫 (Fade up)
+        // 1. Fade-up on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.05, rootMargin: '0px 0px -10px 0px' });
 
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-        // 2. Header Background & Scroll
+        // 2. Header scroll shrink
         const header = document.querySelector('header');
         window.addEventListener('scroll', () => {
             const isMobile = window.innerWidth <= 768;
@@ -478,7 +458,7 @@
             }
         }, { passive: true });
 
-        // 3. Hamburger Menu & Dropdown
+        // 3. Hamburger menu
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
         const navOverlay = document.getElementById('navOverlay');
@@ -490,7 +470,7 @@
             navLinks.classList.toggle('open', open);
             navOverlay.classList.toggle('open', open);
             document.body.style.overflow = open ? 'hidden' : '';
-            if(!open) servicesDropdown.classList.remove('open');
+            if (!open) servicesDropdown.classList.remove('open');
         }
 
         hamburger.addEventListener('click', () => toggleMenu(!navLinks.classList.contains('open')));
@@ -500,7 +480,7 @@
             a.addEventListener('click', () => toggleMenu(false));
         });
 
-        if(servicesTrigger) {
+        if (servicesTrigger) {
             servicesTrigger.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
@@ -509,31 +489,7 @@
             });
         }
 
-        // 4. 完美圖片回退機制 (100% 確保顯示)
-        document.addEventListener("DOMContentLoaded", function() {
-            const images = document.querySelectorAll('img[data-fallback]');
-            images.forEach(img => {
-                // 如果載入出錯，立刻替換
-                img.addEventListener('error', function() {
-                    const fallbackUrl = this.getAttribute('data-fallback');
-                    if (fallbackUrl && this.src !== fallbackUrl) {
-                        this.src = fallbackUrl;
-                        this.removeAttribute('data-fallback'); // 防止無窮迴圈
-                    }
-                });
-                
-                // 強制檢查：有時候瀏覽器會快取損壞的圖片但不觸發 error
-                if (img.complete && img.naturalHeight === 0) {
-                    const fallbackUrl = img.getAttribute('data-fallback');
-                    if (fallbackUrl) {
-                        img.src = fallbackUrl;
-                        img.removeAttribute('data-fallback');
-                    }
-                }
-            });
-        });
-
-        // 5. Carousel Logic
+        // 4. Carousel
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.carousel-dots .dot');
         const prevBtn = document.getElementById('fcPrev');
@@ -563,15 +519,15 @@
             });
         });
 
-        // Touch Swipe
-        let touchStartX = 0; let touchEndX = 0;
+        // Touch swipe
+        let touchStartX = 0;
         const carouselContainer = document.getElementById('facechangeCarousel');
         if (carouselContainer) {
             carouselContainer.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
             carouselContainer.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                if (touchStartX - touchEndX > 50) { updateCarousel(activeIdx + 1); startAutoSlide(); }
-                else if (touchEndX - touchStartX > 50) { updateCarousel(activeIdx - 1); startAutoSlide(); }
+                const diff = touchStartX - e.changedTouches[0].screenX;
+                if (diff > 50) { updateCarousel(activeIdx + 1); startAutoSlide(); }
+                else if (diff < -50) { updateCarousel(activeIdx - 1); startAutoSlide(); }
             }, { passive: true });
         }
 
@@ -579,6 +535,3 @@
     </script>
 </body>
 </html>
-
-
-```
