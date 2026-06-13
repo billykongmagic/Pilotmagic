@@ -70,7 +70,7 @@
 
         ::selection { background: var(--purple-deep); color: var(--gold-shimmer); }
 
-        /* 確保中文字體完美套用 Noto Serif TC */
+        /* 中文字體對齊 Noto Serif TC */
         h1, h2, h3 { font-family: 'Cinzel', 'Noto Serif TC', serif; }
         
         p { font-weight: 300; color: #d0c8be; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
@@ -82,7 +82,7 @@
         .fade-up.visible { opacity: 1; transform: translateY(0); }
 
         /* ══════════════════════════════════════════
-           UNIFIED HEADER & FOOTER (與首頁完美同步)
+           UNIFIED HEADER & FOOTER (與首頁完全對齊)
         ══════════════════════════════════════════ */
         header {
             position: fixed; top: 0; left: 0; width: 100%; max-width: 100%; z-index: 1000;
@@ -156,7 +156,6 @@
         .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
         .hero-eyebrow { font-family: 'Cinzel', serif; font-size: 0.65rem; color: var(--gold-bright); letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 15px; display: block; }
         
-        /* 確保 Hero 字體完美 */
         .hero-title { font-family: 'Cinzel', 'Noto Serif TC', serif; font-size: 42px; font-weight: 700; color: var(--cream); margin-bottom: 25px; letter-spacing: 0.18em; line-height: 1.3; text-transform: uppercase; }
         
         .hero-title span { color: var(--gold-bright); }
@@ -169,19 +168,19 @@
         
         .image-showcase { position: relative; }
         
-        /* 6張相片輪播組件 ── 修復遮罩遮擋與層級 */
+        /* 6張相片輪播組件 ── 徹底重構層級控制，排除重疊干擾 */
         .frame { position: relative; border: 1px solid var(--divider); padding: 12px; background: var(--void); border-radius: 4px; box-shadow: 0 30px 60px rgba(0,0,0,0.8); z-index: 5; }
         .carousel-container { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid rgba(184,146,42,0.25); border-radius: 2px; background: var(--obsidian); }
         .carousel-slides { position: relative; width: 100%; height: 100%; }
         
-        /* 修復隱藏投影片的干涉問題 */
+        /* 用隱藏的 display: none / block 配合微秒動畫，解決 opacity 為 0 卻阻擋圖片加載與點擊的 CSS Bug */
         .carousel-slide { 
             position: absolute; inset: 0; width: 100%; height: 100%; 
-            opacity: 0; visibility: hidden; pointer-events: none; z-index: 1; 
-            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0.8s; 
-            display: flex; align-items: center; justify-content: center; 
+            opacity: 0; display: none; z-index: 1; 
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            align-items: center; justify-content: center; 
         }
-        .carousel-slide.active { opacity: 1; visibility: visible; pointer-events: auto; z-index: 2; }
+        .carousel-slide.active { opacity: 1; display: flex; z-index: 2; }
         
         .carousel-slide img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.95) contrast(1.05); transition: transform 6s ease-out; }
         .carousel-slide.active img { transform: scale(1.05); }
@@ -301,7 +300,7 @@
 
     <!-- ── HERO BANNER ── -->
     <section class="hero-section">
-        <img src="images/facechangehero.jpg" alt="澳門百樂魔術川劇變臉大師舞台展演" class="hero-bg-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&q=80&w=1920'">
+        <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&q=80&w=1920" alt="澳門百樂魔術川劇變臉大師舞台展演" class="hero-bg-img" id="heroBg">
         <div class="hero-content fade-up">
             <span class="hero-eyebrow">Eastern Mystic Art · Macau & Greater Bay Area</span>
             <h1 class="hero-title">澳門川劇變臉表演 <span>極致東方幻術</span></h1>
@@ -317,28 +316,29 @@
         <div class="container">
             <div class="grid-2col">
                 
-                <!-- Left: 6 Images Carousel (備用加載檢測與高質感備用網圖) -->
+                <!-- Left: 6 Images Carousel (主動載入 Unsplash 替代圖片，並異步優雅檢測本地圖片是否存在) -->
                 <div class="image-showcase fade-up">
                     <div class="frame">
                         <div class="carousel-container" id="facechangeCarousel">
                             <div class="carousel-slides">
+                                <!-- src 預設放 100% 絕對可載入的高清中國藝術/光影/川劇意境網圖 -->
                                 <div class="carousel-slide active">
-                                    <img src="images/facechangedetail.jpg" data-fallback="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800" alt="川劇變臉現場">
+                                    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800" data-local="images/facechangedetail.jpg" alt="川劇變臉現場">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="images/fc2.jpg" data-fallback="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&q=80&w=800" alt="變臉大師近照">
+                                    <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&q=80&w=800" data-local="images/fc2.jpg" alt="變臉大師近照">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="images/fc3.jpg" data-fallback="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&q=80&w=800" alt="非物質文化遺產川劇藝術">
+                                    <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&q=80&w=800" data-local="images/fc3.jpg" alt="非物質文化遺產川劇藝術">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="images/fc4.jpg" data-fallback="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800" alt="變臉下台互動">
+                                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800" data-local="images/fc4.jpg" alt="變臉下台互動">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="images/fc5.jpg" data-fallback="https://images.unsplash.com/photo-1540224769541-7e6e9047f566?auto=format&fit=crop&q=80&w=800" alt="傳統中國戲劇身段">
+                                    <img src="https://images.unsplash.com/photo-1540224769541-7e6e9047f566?auto=format&fit=crop&q=80&w=800" data-local="images/fc5.jpg" alt="傳統中國戲劇身段">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="images/fc6.jpg" data-fallback="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800" alt="舞台燈光與折扇特寫">
+                                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800" data-local="images/fc6.jpg" alt="舞台燈光與折扇特寫">
                                 </div>
                             </div>
                             <button class="carousel-arrow prev" id="fcPrev" aria-label="上一張圖片">&#10094;</button>
@@ -512,7 +512,7 @@
             });
         }
 
-        // 4. Carousel Dynamic Fallback & Logic
+        // 4. Carousel 邏輯 ── 異步熱加載本地圖片檢測機制
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.carousel-dots .dot');
         const prevBtn = document.getElementById('fcPrev');
@@ -520,34 +520,40 @@
         let activeIdx = 0;
         let slideTimer;
 
-        // 在客戶端動態檢測圖片可用度
+        // 在後台默默檢測本地圖片是否能被讀取（不會阻塞頁面、也不會留下空白）
         slides.forEach(slide => {
             const img = slide.querySelector('img');
             if (img) {
-                // 如果加載失敗，立即替換為 Data Fallback
-                img.addEventListener('error', function() {
-                    const fallbackUrl = this.getAttribute('data-fallback');
-                    if (fallbackUrl && this.src !== fallbackUrl) {
-                        this.src = fallbackUrl;
-                    }
-                });
-                
-                // 主動利用 Image 物件預檢，確保即使瀏覽器快取異常也能觸發 onerror 替換
-                const testImg = new Image();
-                testImg.src = img.src;
-                testImg.onerror = () => {
-                    const fallbackUrl = img.getAttribute('data-fallback');
-                    if (fallbackUrl) {
-                        img.src = fallbackUrl;
-                    }
-                };
+                const localPath = img.getAttribute('data-local');
+                if (localPath) {
+                    const tempImg = new Image();
+                    tempImg.src = localPath;
+                    // 如果本地圖片存在，立刻把 Unsplash 備用網址熱替換為您的本地圖片！
+                    tempImg.onload = function() {
+                        img.src = localPath;
+                    };
+                }
             }
         });
 
+        // 檢測 Hero背景本地圖片是否存在，若存在則替換為本地
+        const heroBg = document.getElementById('heroBg');
+        if (heroBg) {
+            const tempHero = new Image();
+            tempHero.src = 'images/facechangehero.jpg';
+            tempHero.onload = function() {
+                heroBg.src = 'images/facechangehero.jpg';
+            };
+        }
+
         function updateCarousel(targetIdx) {
+            // 先隱藏當前 slide (切換 display 狀態避免層級遮擋)
             slides[activeIdx].classList.remove('active');
             dots[activeIdx].classList.remove('active');
+            
             activeIdx = (targetIdx + slides.length) % slides.length;
+            
+            // 顯示新的 slide
             slides[activeIdx].classList.add('active');
             dots[activeIdx].classList.add('active');
         }
