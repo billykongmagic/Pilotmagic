@@ -70,7 +70,7 @@
 
         ::selection { background: var(--purple-deep); color: var(--gold-shimmer); }
 
-        /* 確保中文文字完美套用 Noto Serif TC */
+        /* 確保中文字體完美套用 Noto Serif TC */
         h1, h2, h3 { font-family: 'Cinzel', 'Noto Serif TC', serif; }
         
         p { font-weight: 300; color: #d0c8be; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
@@ -152,7 +152,7 @@
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
             mix-blend-mode: luminosity; transform: scale(1.05); animation: subtleZoom 20s infinite alternate ease-in-out;
         }
-        .hero-section::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(6,4,15,0.4) 0%, rgba(6,4,15,0.9) 100%); z-index: 1; }
+        .hero-section::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(6,4,15,0.4) 0%, rgba(6,4,15,0.0) 50%, rgba(6,4,15,0.92) 100%); z-index: 1; }
         .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
         .hero-eyebrow { font-family: 'Cinzel', serif; font-size: 0.65rem; color: var(--gold-bright); letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 15px; display: block; }
         
@@ -169,19 +169,29 @@
         
         .image-showcase { position: relative; }
         
-        /* 6張相片輪播組件 */
-        .frame { position: relative; border: 1px solid var(--divider); padding: 12px; background: var(--void); border-radius: 4px; box-shadow: 0 30px 60px rgba(0,0,0,0.8);}
+        /* 6張相片輪播組件 ── 修復遮罩遮擋與層級 */
+        .frame { position: relative; border: 1px solid var(--divider); padding: 12px; background: var(--void); border-radius: 4px; box-shadow: 0 30px 60px rgba(0,0,0,0.8); z-index: 5; }
         .carousel-container { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid rgba(184,146,42,0.25); border-radius: 2px; background: var(--obsidian); }
         .carousel-slides { position: relative; width: 100%; height: 100%; }
-        .carousel-slide { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; z-index: 1; transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); display: flex; align-items: center; justify-content: center; }
-        .carousel-slide.active { opacity: 1; z-index: 2; }
+        
+        /* 修復隱藏投影片的干涉問題 */
+        .carousel-slide { 
+            position: absolute; inset: 0; width: 100%; height: 100%; 
+            opacity: 0; visibility: hidden; pointer-events: none; z-index: 1; 
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0.8s; 
+            display: flex; align-items: center; justify-content: center; 
+        }
+        .carousel-slide.active { opacity: 1; visibility: visible; pointer-events: auto; z-index: 2; }
+        
         .carousel-slide img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.95) contrast(1.05); transition: transform 6s ease-out; }
         .carousel-slide.active img { transform: scale(1.05); }
+        
         .carousel-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(6, 4, 15, 0.75); border: 1px solid var(--divider); color: var(--gold-pale); font-size: 1rem; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; transition: all 0.3s ease; opacity: 0; }
         .carousel-container:hover .carousel-arrow { opacity: 1; }
         .carousel-arrow:hover { background: var(--gold-bright); color: var(--obsidian); border-color: var(--gold-bright); box-shadow: 0 0 15px rgba(212, 168, 75, 0.4); }
         .carousel-arrow.prev { left: 16px; }
         .carousel-arrow.next { right: 16px; }
+        
         .carousel-dots { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
         .carousel-dots .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(245, 240, 232, 0.35); border: 1px solid rgba(6, 4, 15, 0.3); cursor: pointer; transition: all 0.35s ease; }
         .carousel-dots .dot.active { background: var(--gold-bright); width: 20px; border-radius: 4px; box-shadow: 0 0 8px var(--gold-antique); }
@@ -202,7 +212,7 @@
         
         .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         .feature-card { background: var(--velvet); border: 1px solid var(--divider); padding: 40px 30px; text-align: center; transition: all 0.4s ease; position: relative; overflow: hidden; }
-        .feature-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--gold-antique), var(--crimson-bright)); opacity: 0; transition: opacity 0.4s ease; }
+        .feature-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--gold-antique), var(--gold-bright)); opacity: 0; transition: opacity 0.4s ease; }
         .feature-card:hover { transform: translateY(-5px); background: var(--velvet-mid); box-shadow: 0 20px 4px rgba(0,0,0,0.3); border-color: rgba(184,146,42,0.4); }
         .feature-card:hover::before { opacity: 1; }
         .feature-icon { font-size: 28px; color: var(--gold-bright); margin-bottom: 20px; font-family: 'Cinzel', serif; letter-spacing: 0.12em; }
@@ -219,11 +229,11 @@
         .config-list { display: grid; grid-template-columns: 1fr 1fr; gap: 30px 50px; }
         .config-item { display: flex; flex-direction: column; }
         .config-label { font-size: 15px; color: var(--gold-pale); font-weight: 600; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; letter-spacing: 0.06em; }
-        .config-label::before { content: '♦'; color: var(--crimson-bright); font-size: 11px; }
+        .config-label::before { content: '♦'; color: var(--gold-bright); font-size: 11px; }
         .config-desc { font-size: 14px; color: var(--mist); letter-spacing: 0.04em; }
 
         /* ── Call To Action ── */
-        .cta-section { padding: 100px 0; background: linear-gradient(rgba(13,8,24,0.9), rgba(13,8,24,0.95)), url('images/ebb2bc4df80d0630c9abe7d9e6573495.jpg') center/cover no-repeat fixed; text-align: center; border-top: 1px solid var(--divider); }
+        .cta-section { padding: 100px 0; background: linear-gradient(rgba(13,8,24,0.9), rgba(13,8,24,0.95)), url('images/facechange_cta.jpg') center/cover no-repeat fixed; text-align: center; border-top: 1px solid var(--divider); }
         .cta-content h2 { font-size: 36px; color: var(--cream); margin-bottom: 20px; font-weight: 400; letter-spacing: 0.12em; }
         .cta-content p { max-width: 600px; margin: 0 auto 40px; font-size: 15px; color: var(--mist); letter-spacing: 0.04em; }
         .btn-gold { display: inline-block; padding: 16px 45px; font-family: 'Cinzel', serif; font-size: 13px; font-weight: 600; letter-spacing: 0.3em; color: var(--obsidian); background: linear-gradient(135deg, var(--gold-shimmer) 0%, var(--gold-bright) 50%, var(--gold-antique) 100%); border: none; cursor: pointer; position: relative; box-shadow: 0 4px 24px rgba(212,168,75,0.3); transition: all 0.3s ease; text-transform: uppercase; }
@@ -291,7 +301,7 @@
 
     <!-- ── HERO BANNER ── -->
     <section class="hero-section">
-        <img src="images/facechangehero.jpg" alt="澳門百樂魔術川劇變臉大師舞台展演" class="hero-bg-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=1920'">
+        <img src="images/facechangehero.jpg" alt="澳門百樂魔術川劇變臉大師舞台展演" class="hero-bg-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&q=80&w=1920'">
         <div class="hero-content fade-up">
             <span class="hero-eyebrow">Eastern Mystic Art · Macau & Greater Bay Area</span>
             <h1 class="hero-title">澳門川劇變臉表演 <span>極致東方幻術</span></h1>
@@ -307,29 +317,28 @@
         <div class="container">
             <div class="grid-2col">
                 
-                <!-- Left: 6 Images Carousel (完美整合 Unsplash 高級中國風與面譜備用圖片) -->
+                <!-- Left: 6 Images Carousel (備用加載檢測與高質感備用網圖) -->
                 <div class="image-showcase fade-up">
                     <div class="frame">
                         <div class="carousel-container" id="facechangeCarousel">
                             <div class="carousel-slides">
-                                <!-- 第一張：嘗試載入本地圖片，若加載不成功則自動切換為高質感備用網圖 -->
                                 <div class="carousel-slide active">
-                                    <img src="images/facechangedetail.jpg" alt="川劇變臉現場" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800'">
+                                    <img src="images/facechangedetail.jpg" data-fallback="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800" alt="川劇變臉現場">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="images/fc2.jpg" alt="變臉大師近照" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&q=80&w=800'">
+                                    <img src="images/fc2.jpg" data-fallback="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&q=80&w=800" alt="變臉大師近照">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="images/fc3.jpg" alt="非物質文化遺產川劇藝術" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&q=80&w=800'">
+                                    <img src="images/fc3.jpg" data-fallback="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&q=80&w=800" alt="非物質文化遺產川劇藝術">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="images/fc4.jpg" alt="變臉下台互動" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800'">
+                                    <img src="images/fc4.jpg" data-fallback="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800" alt="變臉下台互動">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="images/fc5.jpg" alt="傳統中國戲劇身段" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1540224769541-7e6e9047f566?auto=format&fit=crop&q=80&w=800'">
+                                    <img src="images/fc5.jpg" data-fallback="https://images.unsplash.com/photo-1540224769541-7e6e9047f566?auto=format&fit=crop&q=80&w=800" alt="傳統中國戲劇身段">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="images/fc6.jpg" alt="舞台燈光與折扇特寫" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'">
+                                    <img src="images/fc6.jpg" data-fallback="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800" alt="舞台燈光與折扇特寫">
                                 </div>
                             </div>
                             <button class="carousel-arrow prev" id="fcPrev" aria-label="上一張圖片">&#10094;</button>
@@ -503,13 +512,37 @@
             });
         }
 
-        // 4. Carousel Logic
+        // 4. Carousel Dynamic Fallback & Logic
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.carousel-dots .dot');
         const prevBtn = document.getElementById('fcPrev');
         const nextBtn = document.getElementById('fcNext');
         let activeIdx = 0;
         let slideTimer;
+
+        // 在客戶端動態檢測圖片可用度
+        slides.forEach(slide => {
+            const img = slide.querySelector('img');
+            if (img) {
+                // 如果加載失敗，立即替換為 Data Fallback
+                img.addEventListener('error', function() {
+                    const fallbackUrl = this.getAttribute('data-fallback');
+                    if (fallbackUrl && this.src !== fallbackUrl) {
+                        this.src = fallbackUrl;
+                    }
+                });
+                
+                // 主動利用 Image 物件預檢，確保即使瀏覽器快取異常也能觸發 onerror 替換
+                const testImg = new Image();
+                testImg.src = img.src;
+                testImg.onerror = () => {
+                    const fallbackUrl = img.getAttribute('data-fallback');
+                    if (fallbackUrl) {
+                        img.src = fallbackUrl;
+                    }
+                };
+            }
+        });
 
         function updateCarousel(targetIdx) {
             slides[activeIdx].classList.remove('active');
@@ -533,15 +566,17 @@
             });
         });
 
-        // Touch Swipe
+        // Touch Swipe 觸控滑動
         let touchStartX = 0; let touchEndX = 0;
         const carouselContainer = document.getElementById('facechangeCarousel');
-        carouselContainer.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-        carouselContainer.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            if (touchStartX - touchEndX > 50) { updateCarousel(activeIdx + 1); startAutoSlide(); }
-            else if (touchEndX - touchStartX > 50) { updateCarousel(activeIdx - 1); startAutoSlide(); }
-        }, { passive: true });
+        if (carouselContainer) {
+            carouselContainer.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+            carouselContainer.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                if (touchStartX - touchEndX > 50) { updateCarousel(activeIdx + 1); startAutoSlide(); }
+                else if (touchEndX - touchStartX > 50) { updateCarousel(activeIdx - 1); startAutoSlide(); }
+            }, { passive: true });
+        }
 
         startAutoSlide();
     </script>
