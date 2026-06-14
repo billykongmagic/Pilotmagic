@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="zh-HK">
 <head>
@@ -64,7 +65,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "奢華品牌專屬客製化魔術 (Luxury Brand Customization)",
-              "description": "將品牌核心理念、新品或 Logo 融入奇蹟效果的頂級高定演出，曾服務於 Hermès、SJM、Verifone 等國際大牌。"
+              "description": "將品牌核心理念、新品 or Logo 融入奇蹟效果的頂級高定演出，曾服務於 Hermès、SJM、Verifone 等國際大牌。"
             }
           }
         ]
@@ -111,7 +112,6 @@
             position: relative;
         }
 
-        /* Grain texture overlay */
         body::before {
             content: ''; position: fixed; inset: 0;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
@@ -122,7 +122,7 @@
         ul { list-style: none; }
 
         /* ══════════════════════════════════════════
-           HEADER (完美同步官網主頁樣式，具備完整對齊與響應式邏輯)
+           HEADER & NAVIGATION (按鈕調至最右端優化版)
         ══════════════════════════════════════════ */
         header {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
@@ -143,39 +143,13 @@
         }
         .logo img { height: 80px; width: auto; transition: height 0.4s ease; }
 
-        /* Hamburger button */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            gap: 5px;
-            width: 36px;
-            height: 36px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 4px;
-            z-index: 1100;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 100%;
-            height: 1.5px;
-            background: var(--gold-pale);
-            transition: transform 0.35s ease, opacity 0.25s ease;
-            transform-origin: center;
-        }
-
-        .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-        .hamburger.open span:nth-child(2) { opacity: 0; }
-        .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-        /* ─── 選單排版與 100% 完美對齊控制 ─── */
+        /* 導航選單靠右並與最右側按鈕保持完美間隔 */
         .nav-links {
             display: flex;
             gap: 36px;
             align-items: center;
+            margin-left: auto;
+            margin-right: 36px;
         }
 
         .nav-links > a,
@@ -191,7 +165,6 @@
             transition: color 0.3s ease;
         }
 
-        /* 統一 hover 底部金線效果 */
         .nav-links > a::after,
         .nav-item-services > a::after {
             content: '';
@@ -212,14 +185,12 @@
             color: var(--gold-pale);
         }
 
-        /* Services dropdown 結構對齊優化 */
         .nav-item-services {
             position: relative;
             display: flex;
             align-items: center;
         }
 
-        /* 增加感應區域防止滑鼠滑出中斷 */
         .nav-item-services::after {
             content: '';
             position: absolute;
@@ -285,6 +256,62 @@
             flex-shrink: 0;
         }
 
+        /* 右側按鈕容器行為 */
+        .nav-right-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            z-index: 1100;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 36px;
+            height: 36px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 1.5px;
+            background: var(--gold-pale);
+            transition: transform 0.35s ease, opacity 0.25s ease;
+            transform-origin: center;
+        }
+
+        .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+        .lang-switch {
+            font-family: 'Cinzel', serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-antique);
+            border: 1px solid rgba(184,146,42,0.45);
+            padding: 6px 14px;
+            border-radius: 2px;
+            background: transparent;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .lang-switch:hover {
+            background: rgba(184,146,42,0.1);
+            border-color: var(--gold-bright);
+            color: var(--gold-shimmer);
+        }
+
         /* ══════════════════════════════════════════
            SUBPAGE HERO
         ══════════════════════════════════════════ */
@@ -322,7 +349,6 @@
             max-width: 1280px; width: 100%; margin: 0 auto;
         }
 
-        /* #formats overrides max-width to full-bleed bg, content still constrained */
         #formats {
             background: var(--void);
             max-width: 100%;
@@ -344,7 +370,7 @@
         }
         .section-title em { font-style: italic; color: var(--gold-pale); }
 
-        /* ─── Intro ─── */
+        /* Intro */
         .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .intro-text .lead {
             font-size: 1.25rem; font-style: italic; color: var(--gold-pale);
@@ -352,7 +378,7 @@
         }
         .intro-text p { color: var(--mist); font-size: 0.95rem; line-height: 1.9; margin-bottom: 18px; }
 
-        /* ─── 6-Image Slide Carousel Component ─── */
+        /* Carousel Component */
         .intro-img .frame {
             position: relative; border: 1px solid var(--divider); padding: 12px; background: var(--void);
             border-radius: 4px;
@@ -398,7 +424,6 @@
             transform: scale(1.05);
         }
 
-        /* Carousel controls */
         .carousel-arrow {
             position: absolute;
             top: 50%;
@@ -430,7 +455,6 @@
         .carousel-arrow.prev { left: 16px; }
         .carousel-arrow.next { right: 16px; }
 
-        /* Carousel Indicators */
         .carousel-dots {
             position: absolute;
             bottom: 16px;
@@ -456,7 +480,7 @@
             box-shadow: 0 0 8px var(--gold-antique);
         }
 
-        /* ─── Core Formats ─── */
+        /* Core Formats */
         .formats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
         .format-card {
             background: var(--velvet); border: 1px solid var(--divider); padding: 40px 30px;
@@ -487,7 +511,7 @@
             content: '✦'; position: absolute; left: 0; color: var(--gold-antique); font-size: 0.58rem; top: 2px;
         }
 
-        /* ─── Customization Banner ─── */
+        /* Customization Banner */
         .custom-banner {
             background: linear-gradient(135deg, var(--velvet) 0%, var(--purple-deep) 100%);
             border: 1px solid var(--divider); padding: 50px; border-radius: 4px;
@@ -508,7 +532,7 @@
             white-space: nowrap;
         }
 
-        /* ─── Advantages ─── */
+        /* Advantages */
         .adv-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
         .adv-item { padding: 28px 20px; }
         .adv-num {
@@ -521,7 +545,7 @@
         }
         .adv-item p { font-size: 0.82rem; color: var(--mist); line-height: 1.75; }
 
-        /* ─── CTA ─── */
+        /* CTA */
         #sub-cta {
             background: linear-gradient(180deg, var(--void) 0%, var(--obsidian) 100%);
             border-top: 1px solid var(--divider); text-align: center; padding: 90px 40px;
@@ -542,9 +566,7 @@
             box-shadow: 0 6px 32px rgba(212,168,75,0.5); transform: translateY(-2px);
         }
 
-        /* ══════════════════════════════════════════
-           FOOTER
-        ══════════════════════════════════════════ */
+        /* FOOTER */
         footer {
             background: var(--obsidian); border-top: 1px solid var(--divider);
             padding: 40px; text-align: center;
@@ -555,9 +577,7 @@
         }
         .footer-copy { font-size: 0.78rem; color: rgba(201,189,216,0.3); }
 
-        /* ══════════════════════════════════════════
-           ANIMATION
-        ══════════════════════════════════════════ */
+        /* ANIMATION */
         .fade-up {
             opacity: 0; transform: translateY(24px);
             transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
@@ -569,7 +589,6 @@
             pointer-events: none; opacity: 0.03; filter: blur(80px);
         }
 
-        /* Reduced motion */
         @media (prefers-reduced-motion: reduce) {
             .fade-up { opacity: 1; transform: none; transition: none; }
             .format-card { transition: none; }
@@ -589,7 +608,6 @@
         }
 
         @media (max-width: 768px) {
-            /* Nav */
             .nav-container {
                 flex-direction: row;
                 justify-content: space-between;
@@ -620,6 +638,7 @@
                 z-index: 1050;
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
+                margin: 0; /* 清除電腦版 Margin */
             }
 
             .nav-links.open { display: flex; }
@@ -638,7 +657,6 @@
             }
             .nav-links > a::after { display: none !important; }
 
-            /* Inline Mobile Dropdown */
             .nav-item-services {
                 flex-direction: column;
                 align-items: flex-start;
@@ -678,7 +696,6 @@
             }
             .services-dropdown a:hover { padding-left: 8px; }
 
-            /* Overlay behind drawer */
             .nav-overlay {
                 display: none;
                 position: fixed;
@@ -690,13 +707,11 @@
             }
             .nav-overlay.open { display: block; }
 
-            /* Hero */
             .sub-hero {
                 height: 45vh;
                 min-height: 300px;
             }
 
-            /* Layout */
             .intro-grid { grid-template-columns: 1fr; gap: 36px; }
             .formats-grid { grid-template-columns: 1fr; }
             .adv-grid { grid-template-columns: 1fr 1fr; }
@@ -706,6 +721,15 @@
             #formats { padding: 60px 0; }
             #formats .formats-inner { padding: 0 20px; }
             #sub-cta { padding: 60px 20px; }
+
+            /* 手機版按鈕緊湊間距 */
+            .nav-right-actions {
+                gap: 12px;
+            }
+            .lang-switch {
+                font-size: 0.58rem;
+                padding: 5px 11px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -717,7 +741,7 @@
 </head>
 <body>
 
-    <!-- ══════ HEADER (與官網完全同步的完美對齊版本) ══════ -->
+    <!-- ══════ HEADER ══════ -->
     <header>
         <div class="nav-container">
             <div class="logo">
@@ -725,9 +749,6 @@
                     <img src="images/logo.png" alt="百樂魔術有限公司 Pilot Magic">
                 </a>
             </div>
-            <button class="hamburger" id="hamburger" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks">
-                <span></span><span></span><span></span>
-            </button>
             <div class="nav-overlay" id="navOverlay"></div>
             <nav class="nav-links" id="navLinks">
                 <a href="index.html#about">關於我們</a>
@@ -748,6 +769,13 @@
                 <a href="index.html#team">核心團隊</a>
                 <a href="index.html#contact">聯絡查詢</a>
             </nav>
+            <!-- 右側操作按鈕區：完美將 EN 按鈕固定在電腦版最右端 -->
+            <div class="nav-right-actions">
+                <a href="service-closeupen.html" class="lang-switch">EN</a>
+                <button class="hamburger" id="hamburger" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -911,7 +939,7 @@
         </div>
     </section>
 
-    <!-- ══════ CTA SECTION (表情符號已徹底移除，更顯尊榮檔次) ══════ -->
+    <!-- ══════ CTA SECTION ══════ -->
     <section id="sub-cta">
         <div class="fade-up">
             <p class="section-tag">Booking & Inquiry</p>
@@ -979,7 +1007,7 @@
             }
         });
 
-        // ─── Multi-Image Slideshow Carousel Logic (6 images) ───
+        // ─── Multi-Image Slideshow Carousel Logic ───
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.carousel-dots .dot');
         const prevBtn = document.getElementById('carouselPrev');
@@ -1048,3 +1076,5 @@
     </script>
 </body>
 </html>
+
+```
