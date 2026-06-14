@@ -1,6 +1,4 @@
 
-
-```html
 <!DOCTYPE html>
 <html lang="zh-HK">
 <head>
@@ -124,7 +122,7 @@
         ul { list-style: none; }
 
         /* ══════════════════════════════════════════
-           HEADER & NAVIGATION
+           HEADER & NAVIGATION (按鈕調至最右端優化版)
         ══════════════════════════════════════════ */
         header {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
@@ -145,6 +143,7 @@
         }
         .logo img { height: 80px; width: auto; transition: height 0.4s ease; }
 
+        /* 導航選單靠右並與最右側按鈕保持完美間隔 */
         .nav-links {
             display: flex;
             gap: 36px;
@@ -257,6 +256,7 @@
             flex-shrink: 0;
         }
 
+        /* 右側按鈕容器行為 */
         .nav-right-actions {
             display: flex;
             align-items: center;
@@ -318,7 +318,7 @@
         .sub-hero {
             position: relative; width: 100%; height: 60vh; min-height: 400px;
             display: flex; align-items: center; justify-content: center;
-            background-image: url('/images/service_closeup_hero.jpg'); /* 使用絕對路徑 */
+            background-image: url('images/service_closeup_hero.jpg');
             background-size: cover; background-position: center;
         }
         .sub-hero::before {
@@ -387,7 +387,6 @@
             position: relative;
             width: 100%;
             aspect-ratio: 4 / 3;
-            min-height: 300px;   /* 保險高度，防止某些瀏覽器不支援 aspect-ratio */
             overflow: hidden;
             border: 1px solid rgba(184,146,42,0.25);
             border-radius: 2px;
@@ -409,7 +408,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            /* 確保圖片加載時容器保持尺寸 */
         }
         .carousel-slide.active {
             opacity: 1;
@@ -421,8 +419,6 @@
             object-fit: cover;
             filter: brightness(0.9) contrast(1.05);
             transition: transform 6s ease-out;
-            display: block;        /* 避免 inline 預留空間問題 */
-            background: #111;      /* 加載前背景色，方便看到區域 */
         }
         .carousel-slide.active img {
             transform: scale(1.05);
@@ -622,6 +618,7 @@
             .logo img { height: 68px; }
             .hamburger { display: flex; }
 
+            /* Mobile nav drawer */
             .nav-links {
                 display: none;
                 position: fixed;
@@ -641,7 +638,7 @@
                 z-index: 1050;
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
-                margin: 0;
+                margin: 0; /* 清除電腦版 Margin */
             }
 
             .nav-links.open { display: flex; }
@@ -725,6 +722,7 @@
             #formats .formats-inner { padding: 0 20px; }
             #sub-cta { padding: 60px 20px; }
 
+            /* 手機版按鈕緊湊間距 */
             .nav-right-actions {
                 gap: 12px;
             }
@@ -737,10 +735,7 @@
         @media (max-width: 480px) {
             .adv-grid { grid-template-columns: 1fr; }
             .custom-banner { padding: 24px 20px; }
-            .carousel-container { 
-                aspect-ratio: 4 / 3;
-                min-height: 250px; 
-            }
+            .carousel-container { aspect-ratio: 4 / 3; }
         }
     </style>
 </head>
@@ -750,32 +745,33 @@
     <header>
         <div class="nav-container">
             <div class="logo">
-                <a href="/index.html#home">
-                    <img src="/images/logo.png" alt="百樂魔術有限公司 Pilot Magic">
+                <a href="index.html#home">
+                    <img src="images/logo.png" alt="百樂魔術有限公司 Pilot Magic">
                 </a>
             </div>
             <div class="nav-overlay" id="navOverlay"></div>
             <nav class="nav-links" id="navLinks">
-                <a href="/index.html#about">關於我們</a>
+                <a href="index.html#about">關於我們</a>
                 <div class="nav-item-services" id="navItemServices">
-                    <a href="/index.html#services" id="servicesTrigger">專業服務</a>
+                    <a href="index.html#services" id="servicesTrigger">專業服務</a>
                     <div class="services-dropdown" id="servicesDropdown">
-                        <a href="/service-closeup.html"><span class="dot"></span>Close-up · 近距離魔術</a>
-                        <a href="/service-stage.html"><span class="dot"></span>Manipulation · 舞台手彩魔術</a>
-                        <a href="/service-interactive.html"><span class="dot"></span>Interactive · 互動舞台魔術</a>
-                        <a href="/service-clown.html"><span class="dot"></span>Clown · 小丑及造型氣球</a>
-                        <a href="/service-kids.html"><span class="dot"></span>Kids Party · 親子派對魔術</a>
-                        <a href="/service-workshop.html"><span class="dot"></span>Workshop · 魔術教學工作坊</a>
-                        <a href="/service-bubble.html"><span class="dot"></span>Bubble Show · 泡泡秀</a>
-                        <a href="/service-facechange.html"><span class="dot"></span>Face Changing · 川劇變臉</a>
+                        <a href="service-closeup.html"><span class="dot"></span>Close-up · 近距離魔術</a>
+                        <a href="service-stage.html"><span class="dot"></span>Manipulation · 舞台手彩魔術</a>
+                        <a href="service-interactive.html"><span class="dot"></span>Interactive · 互動舞台魔術</a>
+                        <a href="service-clown.html"><span class="dot"></span>Clown · 小丑及造型氣球</a>
+                        <a href="service-kids.html"><span class="dot"></span>Kids Party · 親子派對魔術</a>
+                        <a href="service-workshop.html"><span class="dot"></span>Workshop · 魔術教學工作坊</a>
+                        <a href="service-bubble.html"><span class="dot"></span>Bubble Show · 泡泡秀</a>
+                        <a href="service-facechange.html"><span class="dot"></span>Face Changing · 川劇變臉</a>
                     </div>
                 </div>
-                <a href="/index.html#media">影音專區</a>
-                <a href="/index.html#team">核心團隊</a>
-                <a href="/index.html#contact">聯絡查詢</a>
+                <a href="index.html#media">影音專區</a>
+                <a href="index.html#team">核心團隊</a>
+                <a href="index.html#contact">聯絡查詢</a>
             </nav>
+            <!-- 右側操作按鈕區：完美將 EN 按鈕固定在電腦版最右端 -->
             <div class="nav-right-actions">
-                <a href="/service-closeupen.html" class="lang-switch">EN</a>
+                <a href="service-closeupen.html" class="lang-switch">EN</a>
                 <button class="hamburger" id="hamburger" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks">
                     <span></span><span></span><span></span>
                 </button>
@@ -808,45 +804,35 @@
                         <div class="carousel-slides">
                             <!-- Slide 1 -->
                             <div class="carousel-slide active">
-                                <img src="/images/service_closeup_main.jpg" 
-                                     alt="澳門頂級近距離魔術表演" 
-                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800'; this.onerror=function(){ this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23111%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23aaa%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2220%22%3EImage Unavailable%3C/text%3E%3C/svg%3E'; }">
+                                <img src="images/service_closeup_main.jpg" alt="澳門頂級近距離魔術表演" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <!-- Slide 2 -->
                             <div class="carousel-slide">
-                                <img src="/images/closeup2.jpg" 
-                                     alt="商業酒會迎賓互動" 
-                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800'; this.onerror=function(){ this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23111%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23aaa%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2220%22%3EImage Unavailable%3C/text%3E%3C/svg%3E'; }">
+                                <img src="images/closeup2.jpg" alt="商業酒會迎賓互動" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <!-- Slide 3 -->
                             <div class="carousel-slide">
-                                <img src="/images/closeup3.jpg" 
-                                     alt="奢侈品牌VIP客製" 
-                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800'; this.onerror=function(){ this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23111%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23aaa%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2220%22%3EImage Unavailable%3C/text%3E%3C/svg%3E'; }">
+                                <img src="images/closeup3.jpg" alt="奢侈品牌VIP客製" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <!-- Slide 4 -->
                             <div class="carousel-slide">
-                                <img src="/images/closeup4.jpg" 
-                                     alt="紙牌近景指法奇蹟" 
-                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'; this.onerror=function(){ this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23111%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23aaa%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2220%22%3EImage Unavailable%3C/text%3E%3C/svg%3E'; }">
+                                <img src="images/closeup4.jpg" alt="紙牌近景指法奇蹟" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <!-- Slide 5 -->
                             <div class="carousel-slide">
-                                <img src="/images/closeup5.jpg" 
-                                     alt="中英雙語高端商務演出" 
-                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516280440614-37939bbacd6a?auto=format&fit=crop&q=80&w=800'; this.onerror=function(){ this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23111%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23aaa%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2220%22%3EImage Unavailable%3C/text%3E%3C/svg%3E'; }">
+                                <img src="images/closeup5.jpg" alt="中英雙語高端商務演出" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516280440614-37939bbacd6a?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <!-- Slide 6 -->
                             <div class="carousel-slide">
-                                <img src="/images/closeup6.jpg" 
-                                     alt="零距離驚奇視覺瞬間" 
-                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800'; this.onerror=function(){ this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23111%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23aaa%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2220%22%3EImage Unavailable%3C/text%3E%3C/svg%3E'; }">
+                                <img src="images/closeup6.jpg" alt="零距離驚奇視覺瞬間" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800'">
                             </div>
                         </div>
                         
+                        <!-- 導航控制鍵 -->
                         <button class="carousel-arrow prev" id="carouselPrev" aria-label="上一張圖片">&#10094;</button>
                         <button class="carousel-arrow next" id="carouselNext" aria-label="下一張圖片">&#10095;</button>
 
+                        <!-- 指示圓點 -->
                         <div class="carousel-dots" id="carouselDots">
                             <span class="dot active" data-index="0"></span>
                             <span class="dot" data-index="1"></span>
@@ -871,6 +857,7 @@
             </div>
 
             <div class="formats-grid">
+                <!-- 形式 01 -->
                 <div class="format-card fade-up">
                     <span class="format-icon">Ⅰ</span>
                     <h3>雞尾酒會巡迴 · Strolling</h3>
@@ -881,6 +868,8 @@
                         <li>適合：商業公關酒會、婚宴迎賓、時尚派對</li>
                     </ul>
                 </div>
+
+                <!-- 形式 02 -->
                 <div class="format-card fade-up">
                     <span class="format-icon">Ⅱ</span>
                     <h3>貴賓桌前互動 · Table-to-Table</h3>
@@ -891,6 +880,8 @@
                         <li>適合：企業年會、慈善晚宴、五星酒店宴席</li>
                     </ul>
                 </div>
+
+                <!-- 形式 03 -->
                 <div class="format-card fade-up">
                     <span class="format-icon">Ⅲ</span>
                     <h3>奢華品牌客製 · Luxury Branding</h3>
@@ -903,6 +894,7 @@
                 </div>
             </div>
 
+            <!-- 奢華客製實績 -->
             <div class="custom-banner fade-up">
                 <div class="custom-info">
                     <h3>頂級精品認證的客製實力</h3>
@@ -922,6 +914,7 @@
             <span class="section-tag">Our Advantages</span>
             <h2 class="section-title">近距離演出的<em>極致優勢</em></h2>
         </div>
+
         <div class="adv-grid">
             <div class="adv-item fade-up">
                 <span class="adv-num">01</span>
@@ -954,7 +947,7 @@
             <p style="color: var(--mist); font-size: 0.95rem; max-width: 600px; margin: 16px auto 0; line-height: 1.85;">
                 無論是數十人的私密 VIP 晚宴，還是逾千人的國際大型商務酒會，我們都能為您規劃最合適的近距離魔術方案。
             </p>
-            <a href="/index.html#contact" class="btn btn-gold">立即預約 / 索取客製報價</a>
+            <a href="index.html#contact" class="btn btn-gold">立即預約 / 索取客製報價</a>
         </div>
     </section>
 
@@ -1001,10 +994,12 @@
         hamburger.addEventListener('click', () => toggleMenu(!navLinks.classList.contains('open')));
         navOverlay.addEventListener('click', () => toggleMenu(false));
 
-        navLinks.querySelectorAll('a[href^="/index.html#"]').forEach(a => {
+        // Close menu panel when clicking standard anchors
+        navLinks.querySelectorAll('a[href^="index.html#"]').forEach(a => {
             a.addEventListener('click', () => toggleMenu(false));
         });
 
+        // Toggle service dropdown accordion under mobile viewport
         servicesTrigger.addEventListener('click', (e) => {
             if (window.innerWidth <= 768) {
                 e.preventDefault();
@@ -1055,12 +1050,13 @@
             });
         });
 
-        // 初始化輪播
+        // Initialize slideshow
         startAutoSlide();
 
         // ─── Scroll Intersection Observer Animations ───
         const fadeEls = document.querySelectorAll('.fade-up');
 
+        // Assign stagger delay to siblings within same parent containers
         document.querySelectorAll('.formats-grid, .adv-grid').forEach(grid => {
             grid.querySelectorAll('.fade-up').forEach((child, i) => {
                 child.style.transitionDelay = (i * 100) + 'ms';
@@ -1080,4 +1076,3 @@
     </script>
 </body>
 </html>
-```
