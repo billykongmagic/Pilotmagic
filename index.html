@@ -1741,30 +1741,14 @@
             <div class="section-rule"><span></span></div>
         </div>
         <div class="video-grid fade-up">
-            <!-- 影片 1 -->
+            <!-- 影片 1：直接在下面貼上您的第一支影片連結 (支援手機/電腦分享格式) -->
             <div class="video-wrapper">
-                <div class="video-container">
-                    <!-- 註：您可以更換 src 裡面「embed/」後面的 YouTube ID。例如下方的「EAN-MaRWDmU」 -->
-                    <iframe 
-                        src="https://youtube.com/shorts/THykEwJR1lE?is=i3QVfXiWUB85qJU-" 
-                        title="精選澳門演出精華剪輯"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
+                <div class="video-container" data-youtube="https://youtube.com/shorts/THykEwJR1lE?is=VdkjwYTr7O9yYlyG"></div>
                 <div class="video-caption">精選澳門演出精華剪輯</div>
             </div>
-            <!-- 影片 2 -->
+            <!-- 影片 2：直接在下面貼上您的第二支影片連結 (支援手機/電腦分享格式) -->
             <div class="video-wrapper">
-                <div class="video-container">
-                    <!-- 註：您可以更換 src 裡面「embed/」後面的 YouTube ID。例如下方的「8b5G_N-ZpD4」 -->
-                    <iframe 
-                        src="https://https://youtu.be/SDjyESXXXKg?is=vwzLb3vRvXGFc9p_" 
-                        title="大型商業品牌活動現場直擊"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
+                <div class="video-container" data-youtube="https://youtu.be/SDjyESXXXKg?is=QER8TZbdOFLjtiil"></div>
                 <div class="video-caption">大型商業品牌活動現場直擊</div>
             </div>
         </div>
@@ -2052,6 +2036,34 @@
     </footer>
 
     <script>
+        // ── Smart YouTube Auto-Embed Engine ──
+        // 這裡會自動捕捉各種 YouTube 分享格式並在網頁中生成 iframe 播放器
+        document.querySelectorAll('[data-youtube]').forEach(el => {
+            const url = el.getAttribute('data-youtube').trim();
+            let videoId = '';
+            
+            // 正則表達式：兼容電腦網址、手機短網址、Embed網址、短片(shorts)
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|shorts\/)([^#\&\?]*).*/;
+            const match = url.match(regExp);
+            
+            if (match && match[2].length === 11) {
+                videoId = match[2];
+            } else {
+                videoId = url; // 如果使用者直接輸入 11 碼 ID
+            }
+            
+            if (videoId) {
+                el.innerHTML = `<iframe 
+                    src="https://www.youtube.com/embed/${videoId}?rel=0&showinfo=0&modestbranding=1" 
+                    title="YouTube video player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>`;
+            } else {
+                el.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold-pale);font-size:0.8rem;">影片載入失敗，請確認網址</div>`;
+            }
+        });
+
         // ── Hero Slider ──
         const slides = document.querySelectorAll('.slide');
         let current = 0;
