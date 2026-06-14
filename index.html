@@ -1,3 +1,4 @@
+```html
 <html lang="zh-HK">
 <head>
     <meta charset="UTF-8">
@@ -37,9 +38,6 @@
     <style>
         /* ══════════════════════════════════════════
            DESIGN SYSTEM — Arcane Luxury
-           Palette: Deep obsidian · Aged gold · Ghost white
-           Type: Cinzel (display) + Cormorant Garamond (body)
-           Mood: A master illusionist's private theatre
         ══════════════════════════════════════════ */
         :root {
             --obsidian:      #06040f;
@@ -94,7 +92,7 @@
         img { display: block; max-width: 100%; }
 
         /* ══════════════════════════════════════════
-           HEADER
+           HEADER & NAVIGATION (按鈕調至最右端優化)
         ══════════════════════════════════════════ */
         header {
             position: fixed;
@@ -128,42 +126,15 @@
             align-items: center;
         }
 
-        /* 加大 Logo 預設尺寸為 86px，並增加平滑變形效果 */
         .logo img { height: 86px; width: auto; transition: height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
-        /* Hamburger button */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            gap: 5px;
-            width: 36px;
-            height: 36px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 4px;
-            z-index: 1100;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 100%;
-            height: 1.5px;
-            background: var(--gold-pale);
-            transition: transform 0.35s ease, opacity 0.25s ease;
-            transform-origin: center;
-        }
-
-        .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-        .hamburger.open span:nth-child(2) { opacity: 0; }
-        .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-        /* ─── 選單排版與 100% 完美對齊控制 ─── */
+        /* 導航選單靠右並與最右側按鈕保持完美間隔 */
         .nav-links {
             display: flex;
             gap: 36px;
             align-items: center;
+            margin-left: auto;
+            margin-right: 36px;
         }
 
         .nav-links > a,
@@ -179,7 +150,6 @@
             transition: color 0.3s ease;
         }
 
-        /* 統一 hover 底部金線效果 */
         .nav-links > a::after,
         .nav-item-services > a::after {
             content: '';
@@ -200,14 +170,12 @@
             color: var(--gold-pale);
         }
 
-        /* Services dropdown 結構對齊優化 */
         .nav-item-services {
             position: relative;
             display: flex;
             align-items: center;
         }
 
-        /* 增加感應區域防止滑鼠滑出中斷 */
         .nav-item-services::after {
             content: '';
             position: absolute;
@@ -273,6 +241,62 @@
             flex-shrink: 0;
         }
 
+        /* 右側按鈕容器行為 */
+        .nav-right-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            z-index: 1100;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 36px;
+            height: 36px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 1.5px;
+            background: var(--gold-pale);
+            transition: transform 0.35s ease, opacity 0.25s ease;
+            transform-origin: center;
+        }
+
+        .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+        .lang-switch {
+            font-family: 'Cinzel', serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-antique);
+            border: 1px solid rgba(184,146,42,0.45);
+            padding: 6px 14px;
+            border-radius: 2px;
+            background: transparent;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .lang-switch:hover {
+            background: rgba(184,146,42,0.1);
+            border-color: var(--gold-bright);
+            color: var(--gold-shimmer);
+        }
+
         /* ══════════════════════════════════════════
            HERO SECTION
         ══════════════════════════════════════════ */
@@ -306,7 +330,6 @@
 
         .slide.active { opacity: 1; }
 
-        /* Layered dark overlay with vignette */
         .slide::before {
             content: '';
             position: absolute;
@@ -384,7 +407,6 @@
             margin-right: auto;
         }
 
-        /* Scroll indicator */
         .scroll-hint {
             position: absolute;
             bottom: 5%;
@@ -636,7 +658,6 @@
             overflow: hidden;
         }
 
-        /* Placeholder for missing service images */
         .service-img-placeholder {
             width: 100%;
             height: 100%;
@@ -819,11 +840,10 @@
             border-color: rgba(184,146,42,0.4);
         }
 
-        /* Responsive 16:9 Aspect Ratio Box for YouTube Iframe */
         .video-container {
             position: relative;
             width: 100%;
-            padding-top: 56.25%; /* 16:9 ratio */
+            padding-top: 56.25%;
             background: #000;
         }
 
@@ -1255,7 +1275,7 @@
         }
 
         /* ══════════════════════════════════════════
-           FADE-IN ANIMATION ON SCROLL
+           ANIMATIONS
         ══════════════════════════════════════════ */
         .fade-up {
             opacity: 0;
@@ -1287,7 +1307,7 @@
         .glow-gold   { background: var(--gold-antique); }
 
         /* ══════════════════════════════════════════
-           RESPONSIVE
+           RESPONSIVE & MOBILE OPTIMIZATION
         ══════════════════════════════════════════ */
         @media (max-width: 1280px) {
             .services-grid { grid-template-columns: repeat(4, 1fr); }
@@ -1299,7 +1319,6 @@
         }
 
         @media (max-width: 768px) {
-            /* Nav bar base layout fixed */
             .nav-container {
                 flex-direction: row;
                 justify-content: space-between;
@@ -1307,11 +1326,9 @@
                 padding: 12px 20px;
                 width: 100%;
             }
-            /* 手機版 Logo 調大為 64px */
             .logo img { height: 64px; }
             .hamburger { display: flex; }
 
-            /* Mobile menu panel layout and spacing fixed */
             .nav-links {
                 display: none;
                 position: fixed;
@@ -1331,11 +1348,11 @@
                 z-index: 1050;
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
+                margin: 0;
             }
 
             .nav-links.open { display: flex; }
 
-            /* Ensure all mobile link entries align flawlessly */
             .nav-links > a, 
             .nav-item-services {
                 width: 100%;
@@ -1352,7 +1369,6 @@
 
             .nav-links > a::after { display: none !important; }
 
-            /* Custom alignment inside accordion wrapper */
             .nav-item-services {
                 flex-direction: column;
                 align-items: flex-start;
@@ -1370,10 +1386,9 @@
 
             .nav-item-services > a::after { display: none !important; }
 
-            /* Inline Mobile dropdown styling */
             .services-dropdown {
                 position: static;
-                display: none; /* Toggle handled via click/touch */
+                display: none;
                 transform: none;
                 border: none;
                 background: none;
@@ -1398,7 +1413,6 @@
 
             .services-dropdown a:hover { padding-left: 8px; }
 
-            /* Overlay backdrop behind sidebar drawer */
             .nav-overlay {
                 display: none;
                 position: fixed;
@@ -1410,7 +1424,6 @@
             }
             .nav-overlay.open { display: block; }
 
-            /* Hero structure adaptivity */
             .hero-section {
                 height: 100svh;
                 height: 100vh;
@@ -1428,29 +1441,32 @@
             .cta-buttons { gap: 12px; flex-direction: column; align-items: center; }
             .btn { padding: 13px 28px; font-size: 0.68rem; width: 100%; max-width: 280px; }
 
-            /* Sections responsive spacing */
             .page-section { padding: 72px 16px 52px; }
             .section-title { font-size: clamp(1.4rem, 4.5vw, 1.9rem); }
 
-            /* About grid column collapse */
             .about-layout { grid-template-columns: 1fr; gap: 36px; }
             .about-image-frame { display: none; }
             .stats-row { gap: 16px; }
             .stat-num { font-size: 1.8rem; }
 
-            /* Services layout adjustment */
             .services-grid { grid-template-columns: 1fr; gap: 0; }
 
-            /* Media galleries fallback */
             .video-grid { grid-template-columns: 1fr; gap: 16px; }
             .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 3px; }
             .clients-wrap { grid-template-columns: 1fr; }
             .why-grid { grid-template-columns: 1fr 1fr; }
 
-            /* Form responsive container padding */
             .contact-layout { grid-template-columns: 1fr; gap: 36px; }
             .contact-form-box { padding: 24px 18px; }
             .contact-brand h2 { font-size: 1.4rem; }
+
+            .nav-right-actions {
+                gap: 12px;
+            }
+            .lang-switch {
+                font-size: 0.58rem;
+                padding: 5px 11px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1458,37 +1474,6 @@
             .gallery-grid { grid-template-columns: repeat(3, 1fr); }
             .team-grid { grid-template-columns: 1fr; }
             .stat-num { font-size: 1.6rem; }
-        }
-
-        /* ══════════════════════════════════════════
-           LANGUAGE SWITCH BUTTON
-        ══════════════════════════════════════════ */
-        .lang-switch {
-            font-family: 'Cinzel', serif;
-            font-size: 0.62rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--gold-antique);
-            border: 1px solid rgba(184,146,42,0.45);
-            padding: 6px 14px;
-            border-radius: 2px;
-            background: transparent;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-        .lang-switch:hover {
-            background: rgba(184,146,42,0.1);
-            border-color: var(--gold-bright);
-            color: var(--gold-shimmer);
-        }
-        @media (max-width: 768px) {
-            .lang-switch {
-                font-size: 0.58rem;
-                padding: 5px 11px;
-            }
         }
     </style>
 </head>
@@ -1502,10 +1487,6 @@
                     <img src="images/logo.png" alt="百樂魔術有限公司 Pilot Magic">
                 </a>
             </div>
-            <button class="hamburger" id="hamburger" aria-label="開啟選單">
-                <span></span><span></span><span></span>
-            </button>
-            <a href="indexen.html" class="lang-switch">EN</a>
             <div class="nav-overlay" id="navOverlay"></div>
             <nav class="nav-links" id="navLinks">
                 <a href="#about">關於我們</a>
@@ -1526,6 +1507,13 @@
                 <a href="#team">核心團隊</a>
                 <a href="#contact">聯絡查詢</a>
             </nav>
+            <!-- 右側行為按鈕容器 -->
+            <div class="nav-right-actions">
+                <a href="indexen.html" class="lang-switch">EN</a>
+                <button class="hamburger" id="hamburger" aria-label="開啟選單">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -1665,7 +1653,7 @@
                 </div>
                 <div class="service-body">
                     <h3>Clown · 小丑及造型氣球師</h3>
-                    <p class="tagline">深受大小朋友歡迎的歡樂項目。</p>
+                    <p class="tagline">深受大小朋友歡迎的歡樂項目項目。</p>
                     <p>現場製作各式精美造型氣球互動，瞬間炒熱現場氣氛。</p>
                     <div class="service-suitable">
                         <strong>服務內容</strong>
@@ -1771,12 +1759,10 @@
             <div class="section-rule"><span></span></div>
         </div>
         <div class="video-grid fade-up">
-            <!-- 影片 1：直接在下面貼上您的第一支影片連結 (支援手機/電腦分享格式) -->
             <div class="video-wrapper">
                 <div class="video-container" data-youtube="https://youtube.com/shorts/THykEwJR1lE?is=VdkjwYTr7O9yYlyG"></div>
                 <div class="video-caption">精選澳門演出精華剪輯</div>
             </div>
-            <!-- 影片 2：直接在下面貼上您的第二支影片連結 (支援手機/電腦分享格式) -->
             <div class="video-wrapper">
                 <div class="video-container" data-youtube="https://youtu.be/SDjyESXXXKg?is=QER8TZbdOFLjtiil"></div>
                 <div class="video-caption">大型商業品牌活動現場直擊</div>
@@ -2067,19 +2053,16 @@
 
     <script>
         // ── Smart YouTube Auto-Embed Engine ──
-        // 這裡會自動捕捉各種 YouTube 分享格式並在網頁中生成 iframe 播放器
         document.querySelectorAll('[data-youtube]').forEach(el => {
             const url = el.getAttribute('data-youtube').trim();
             let videoId = '';
-            
-            // 正則表達式：兼容電腦網址、手機短網址、Embed網址、短片(shorts)
             const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|shorts\/)([^#\&\?]*).*/;
             const match = url.match(regExp);
             
             if (match && match[2].length === 11) {
                 videoId = match[2];
             } else {
-                videoId = url; // 如果使用者直接輸入 11 碼 ID
+                videoId = url;
             }
             
             if (videoId) {
@@ -2103,12 +2086,11 @@
             slides[current].classList.add('active');
         }, 3500);
 
-        // ── Intersection Observer — fade-up on scroll ──
+        // ── Intersection Observer ──
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    // stagger children
                     entry.target.querySelectorAll('.stagger > *').forEach((child, i) => {
                         child.style.transitionDelay = (i * 80) + 'ms';
                         child.classList.add('fade-up', 'visible');
@@ -2145,7 +2127,6 @@
             navOverlay.classList.toggle('open', open);
             document.body.style.overflow = open ? 'hidden' : '';
             if(!open) {
-                // Reset dropdown state when menu is closed
                 servicesDropdown.classList.remove('open');
             }
         }
@@ -2153,12 +2134,10 @@
         hamburger.addEventListener('click', () => toggleMenu(!navLinks.classList.contains('open')));
         navOverlay.addEventListener('click', () => toggleMenu(false));
 
-        // Close menu panel when clicking standard anchors
         navLinks.querySelectorAll('a[href^="#"]:not(#servicesTrigger)').forEach(a => {
             a.addEventListener('click', () => toggleMenu(false));
         });
 
-        // Toggle service dropdown accordion under mobile viewports
         servicesTrigger.addEventListener('click', (e) => {
             if (window.innerWidth <= 768) {
                 e.preventDefault();
@@ -2169,3 +2148,5 @@
 
 </body>
 </html>
+
+```
