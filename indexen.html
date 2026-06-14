@@ -1,0 +1,2171 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilot Magic Co., Ltd. | Professional Magician & Entertainment in Macau</title>
+    <meta name="description" content="Pilot Magic Co., Ltd. — Macau's premier magic and entertainment company for over 20 years. Close-up magic, stage illusions, interactive shows, kids parties, workshops and more for corporate events, galas and private functions.">
+    <meta name="keywords" content="Macau magician, Macau magic show, Macau entertainment, close-up magic Macau, corporate event magician Macau, stage magic Macau, Pilot Magic, magic workshop Macau, kids party magician Macau">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD 結構化數據 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EntertainmentBusiness",
+      "name": "Pilot Magic Co., Ltd.",
+      "url": "https://www.pilotmagic.com/",
+      "telephone": "+853-6655-1654",
+      "email": "Bpilotmagic@gmail.com",
+      "priceRange": "$$",
+      "image": "https://www.pilotmagic.com/images/logo.png",
+      "description": "Macau's premier magic and entertainment company for over 20 years, offering close-up magic, stage illusions, interactive shows, workshops and bespoke corporate event entertainment.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Macau",
+        "addressCountry": "MO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.1987",
+        "longitude": "113.5439"
+      }
+    }
+    </script>
+
+    <style>
+        /* ══════════════════════════════════════════
+           DESIGN SYSTEM — Arcane Luxury
+           Palette: Deep obsidian · Aged gold · Ghost white
+           Type: Cinzel (display) + Cormorant Garamond (body)
+           Mood: A master illusionist's private theatre
+        ══════════════════════════════════════════ */
+        :root {
+            --obsidian:      #06040f;
+            --void:          #0d0818;
+            --velvet:        #120c22;
+            --velvet-mid:    #1c1235;
+            --purple-deep:   #2a1250;
+            --purple-glow:   #5c2d9a;
+            --gold-antique:  #b8922a;
+            --gold-bright:   #d4a84b;
+            --gold-pale:     #e8c97a;
+            --gold-shimmer:  #f5e0a0;
+            --cream:         #f5f0e8;
+            --mist:          #c9bdd8;
+            --ghost:         rgba(245,240,232,0.6);
+            --divider:       rgba(184,146,42,0.2);
+            --glow-soft:     rgba(92,45,154,0.15);
+            --glow-gold:     rgba(212,168,75,0.12);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html {
+            scroll-behavior: smooth;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: var(--obsidian);
+            color: var(--cream);
+            font-family: 'Noto Serif TC', 'Cormorant Garamond', Georgia, serif;
+            line-height: 1.75;
+            width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ─── Noise texture overlay ─── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.4;
+        }
+
+        a { text-decoration: none; color: inherit; transition: color 0.35s ease; }
+        ul { list-style: none; }
+        img { display: block; max-width: 100%; }
+
+        /* ══════════════════════════════════════════
+           HEADER
+        ══════════════════════════════════════════ */
+        header {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            max-width: 100%;
+            z-index: 1000;
+            background: rgba(6, 4, 15, 0.82);
+            backdrop-filter: blur(20px) saturate(1.4);
+            -webkit-backdrop-filter: blur(20px) saturate(1.4);
+            border-bottom: 1px solid var(--divider);
+            transition: background 0.4s ease;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-antique), transparent);
+            opacity: 0.6;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 16px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* 加大 Logo 預設尺寸為 86px，並增加平滑變形效果 */
+        .logo img { height: 86px; width: auto; transition: height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+        /* Hamburger button */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 36px;
+            height: 36px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            z-index: 1100;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 1.5px;
+            background: var(--gold-pale);
+            transition: transform 0.35s ease, opacity 0.25s ease;
+            transform-origin: center;
+        }
+
+        .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+        /* ─── 選單排版與 100% 完美對齊控制 ─── */
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            align-items: center;
+        }
+
+        .nav-links > a,
+        .nav-item-services > a {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--mist);
+            position: relative;
+            padding-bottom: 4px;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        /* 統一 hover 底部金線效果 */
+        .nav-links > a::after,
+        .nav-item-services > a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 1px;
+            background: var(--gold-bright);
+            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .nav-links > a:hover::after,
+        .nav-item-services:hover > a::after {
+            width: 100%;
+        }
+
+        .nav-links > a:hover,
+        .nav-item-services:hover > a {
+            color: var(--gold-pale);
+        }
+
+        /* Services dropdown 結構對齊優化 */
+        .nav-item-services {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 增加感應區域防止滑鼠滑出中斷 */
+        .nav-item-services::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            height: 20px;
+        }
+
+        .services-dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 16px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(13, 8, 24, 0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--divider);
+            border-top: 1px solid var(--gold-antique);
+            min-width: 240px;
+            padding: 12px 0;
+            z-index: 2000;
+            border-radius: 2px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(184,146,42,0.08);
+            transform-origin: top center;
+            animation: dropdownFadeIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes dropdownFadeIn {
+            from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+
+        .nav-item-services:hover .services-dropdown { display: block; }
+
+        .services-dropdown a {
+            display: flex;
+            align-items: center;
+            padding: 10px 24px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--mist);
+            white-space: nowrap;
+            transition: color 0.25s ease, background 0.25s ease, padding-left 0.25s ease;
+        }
+
+        .services-dropdown a:hover {
+            color: var(--gold-pale);
+            background: rgba(184,146,42,0.06);
+            padding-left: 30px;
+        }
+
+        .services-dropdown a span.dot {
+            display: inline-block;
+            width: 4px; height: 4px;
+            background: var(--gold-antique);
+            border-radius: 50%;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        /* ══════════════════════════════════════════
+           HERO SECTION
+        ══════════════════════════════════════════ */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.4s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            will-change: opacity;
+        }
+
+        .slide.active { opacity: 1; }
+
+        /* Layered dark overlay with vignette */
+        .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at center, transparent 20%, rgba(6,4,15,0.6) 100%),
+                linear-gradient(180deg, rgba(6,4,15,0.4) 0%, rgba(6,4,15,0.0) 40%, rgba(6,4,15,0.85) 100%);
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 14%;
+            left: 0;
+            right: 0;
+            padding: 0 24px;
+            text-align: center;
+            z-index: 10;
+            animation: heroReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        @keyframes heroReveal {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-eyebrow {
+            font-family: 'Cinzel', serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--gold-bright);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .hero-eyebrow::before, .hero-eyebrow::after {
+            content: '';
+            width: 40px; height: 1px;
+            background: var(--gold-antique);
+            opacity: 0.7;
+        }
+
+        .hero-content h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 0.04em;
+            color: #fff;
+            margin-bottom: 18px;
+            text-shadow: 0 4px 40px rgba(0,0,0,0.8), 0 0 80px rgba(92,45,154,0.3);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-content p.subtitle {
+            font-size: 1rem;
+            color: var(--gold-pale);
+            margin-bottom: 14px;
+            font-weight: 300;
+            letter-spacing: 0.06em;
+        }
+
+        .hero-content p.desc {
+            font-size: 0.95rem;
+            color: var(--mist);
+            margin-bottom: 42px;
+            line-height: 1.9;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Scroll indicator */
+        .scroll-hint {
+            position: absolute;
+            bottom: 5%;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.5;
+            animation: pulse 2.5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .scroll-hint span {
+            font-family: 'Cinzel', serif;
+            font-size: 0.58rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold-pale);
+        }
+
+        .scroll-arrow {
+            width: 1px; height: 40px;
+            background: linear-gradient(to bottom, var(--gold-antique), transparent);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.35; transform: translateY(0); }
+            50% { opacity: 0.7; transform: translateY(6px); }
+        }
+
+        /* ══════════════════════════════════════════
+           CTA BUTTONS
+        ══════════════════════════════════════════ */
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            font-family: 'Cinzel', serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 14px 36px;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.08);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+
+        .btn:hover::before { transform: translateX(0); }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold-antique), var(--gold-bright));
+            color: var(--obsidian);
+            border: none;
+            box-shadow: 0 4px 24px rgba(184,146,42,0.3);
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(135deg, var(--gold-bright), var(--gold-pale));
+            box-shadow: 0 6px 32px rgba(212,168,75,0.5), 0 0 0 1px var(--gold-pale);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--gold-pale);
+            border: 1px solid rgba(184,146,42,0.5);
+        }
+
+        .btn-outline:hover {
+            background: rgba(184,146,42,0.08);
+            border-color: var(--gold-bright);
+            color: var(--gold-shimmer);
+            transform: translateY(-2px);
+        }
+
+        /* ══════════════════════════════════════════
+           SECTIONS — Common
+        ══════════════════════════════════════════ */
+        .page-section {
+            padding: 110px 40px 80px;
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-tag {
+            font-family: 'Cinzel', serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.45em;
+            text-transform: uppercase;
+            color: var(--gold-bright);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 600;
+            color: var(--cream);
+            letter-spacing: 0.04em;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .section-title em {
+            font-style: italic;
+            color: var(--gold-pale);
+        }
+
+        .section-rule {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .section-rule::before, .section-rule::after {
+            content: '';
+            width: 60px; height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-antique));
+        }
+
+        .section-rule::after {
+            background: linear-gradient(to left, transparent, var(--gold-antique));
+        }
+
+        .section-rule span {
+            width: 6px; height: 6px;
+            background: var(--gold-bright);
+            transform: rotate(45deg);
+            display: block;
+            box-shadow: 0 0 8px var(--gold-antique);
+        }
+
+        /* ══════════════════════════════════════════
+           ABOUT SECTION
+        ══════════════════════════════════════════ */
+        #about { background: var(--void); }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text .lead {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--gold-pale);
+            margin-bottom: 28px;
+            line-height: 1.7;
+        }
+
+        .about-text p {
+            color: var(--mist);
+            font-size: 0.95rem;
+            line-height: 1.95;
+            margin-bottom: 18px;
+        }
+
+        .stats-row {
+            display: flex;
+            gap: 36px;
+            margin-top: 40px;
+            padding-top: 36px;
+            border-top: 1px solid var(--divider);
+        }
+
+        .stat-item { flex: 1; }
+
+        .stat-num {
+            font-family: 'Cinzel', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--gold-bright);
+            line-height: 1;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.78rem;
+            color: var(--mist);
+            letter-spacing: 0.08em;
+            margin-top: 8px;
+            display: block;
+        }
+
+        .about-image-frame {
+            position: relative;
+        }
+
+        .about-image-frame::before {
+            content: '';
+            position: absolute;
+            top: -16px; left: -16px; right: 16px; bottom: 16px;
+            border: 1px solid var(--gold-antique);
+            border-radius: 4px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .about-image-frame img {
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid rgba(184,146,42,0.25);
+            filter: brightness(0.9) contrast(1.05);
+        }
+
+        /* ══════════════════════════════════════════
+           SERVICES
+        ══════════════════════════════════════════ */
+        #services { background: var(--obsidian); }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            background: var(--divider);
+            border: 1px solid var(--divider);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        /* Placeholder for missing service images */
+        .service-img-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--velvet-mid), var(--purple-deep));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            color: var(--gold-antique);
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .service-card {
+            background: var(--velvet);
+            display: flex;
+            flex-direction: column;
+            transition: background 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold-bright), transparent);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover { background: var(--velvet-mid); }
+        .service-card:hover::after { transform: scaleX(1); }
+
+        .service-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+        }
+
+        .service-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.75) saturate(0.85);
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease;
+        }
+
+        .service-card:hover .service-img {
+            transform: scale(1.06);
+            filter: brightness(0.6) saturate(0.7);
+        }
+
+        .service-num {
+            position: absolute;
+            top: 12px; left: 16px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            color: var(--gold-pale);
+            background: rgba(6,4,15,0.7);
+            padding: 4px 10px;
+            border-radius: 2px;
+        }
+
+        .service-body {
+            padding: 28px 26px 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-body h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--gold-pale);
+            letter-spacing: 0.06em;
+            margin-bottom: 10px;
+        }
+
+        .service-body .tagline {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--cream);
+            margin-bottom: 14px;
+            line-height: 1.5;
+        }
+
+        .service-body p {
+            font-size: 0.88rem;
+            color: var(--mist);
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .service-suitable {
+            margin-top: auto;
+            padding: 14px;
+            background: rgba(6,4,15,0.35);
+            border-left: 2px solid rgba(184,146,42,0.3);
+        }
+
+        .service-suitable strong {
+            font-family: 'Cinzel', serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.18em;
+            color: var(--gold-antique);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .service-suitable ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px 10px;
+        }
+
+        .service-suitable li {
+            font-size: 0.8rem;
+            color: var(--mist);
+            padding-left: 10px;
+            position: relative;
+        }
+
+        .service-suitable li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--gold-antique);
+            font-size: 0.4rem;
+            top: 5px;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-bright);
+            transition: gap 0.3s ease, color 0.3s ease;
+        }
+
+        .service-link:hover { gap: 14px; color: var(--gold-shimmer); }
+        .service-link::after { content: '→'; }
+
+        /* ══════════════════════════════════════════
+           MEDIA GALLERY & YOUTUBE RESPONSIVE CONTAINER
+        ══════════════════════════════════════════ */
+        #media { background: var(--void); }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .video-wrapper {
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--divider);
+            background: var(--velvet);
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.35s ease, border-color 0.35s ease;
+        }
+
+        .video-wrapper:hover {
+            transform: translateY(-4px);
+            border-color: rgba(184,146,42,0.4);
+        }
+
+        /* Responsive 16:9 Aspect Ratio Box for YouTube Iframe */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 ratio */
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-caption {
+            padding: 14px 18px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold-pale);
+            background: var(--velvet-mid);
+            border-top: 1px solid var(--divider);
+        }
+
+        .gallery-header {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--gold-antique);
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 3px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1;
+            cursor: pointer;
+            background: var(--velvet);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.4s ease;
+            filter: brightness(0.8) saturate(0.8);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(92,45,154,0.4), rgba(184,146,42,0.15));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.12);
+            filter: brightness(1) saturate(1.1);
+        }
+
+        .gallery-item:hover::after { opacity: 1; }
+
+        /* ══════════════════════════════════════════
+           TEAM
+        ══════════════════════════════════════════ */
+        #team { background: var(--obsidian); }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .team-card {
+            background: var(--velvet);
+            border: 1px solid var(--divider);
+            border-radius: 4px;
+            padding: 36px 28px 32px;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.35s ease, transform 0.35s ease;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold-bright), transparent);
+        }
+
+        .team-card:hover {
+            border-color: rgba(184,146,42,0.4);
+            transform: translateY(-4px);
+        }
+
+        .team-avatar {
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 22px;
+            border: 1px solid rgba(184,146,42,0.35);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .team-avatar img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.9) saturate(0.85); }
+
+        .team-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cream);
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .team-role {
+            font-family: 'Cinzel', serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-bright);
+            text-align: center;
+            margin-bottom: 22px;
+            display: block;
+        }
+
+        .team-divider {
+            width: 40px; height: 1px;
+            background: var(--gold-antique);
+            margin: 0 auto 20px;
+            opacity: 0.5;
+        }
+
+        .team-bio {
+            font-size: 0.85rem;
+            color: var(--mist);
+            text-align: center;
+            line-height: 1.8;
+            margin-bottom: 22px;
+        }
+
+        .team-highlights {
+            font-size: 0.8rem;
+            color: var(--mist);
+        }
+
+        .team-highlights strong {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold-antique);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .team-highlights li {
+            padding: 5px 0 5px 14px;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.8rem;
+        }
+
+        .team-highlights li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--gold-antique);
+            font-size: 0.38rem;
+            top: 9px;
+        }
+
+        /* ══════════════════════════════════════════
+           CLIENTS
+        ══════════════════════════════════════════ */
+        #clients { background: var(--void); }
+
+        .clients-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            background: var(--divider);
+            border: 1px solid var(--divider);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .client-block {
+            background: var(--velvet);
+            padding: 32px 36px;
+        }
+
+        .client-block h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold-bright);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .client-block h3::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--divider);
+        }
+
+        .client-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .client-tag {
+            font-size: 0.8rem;
+            color: var(--mist);
+            padding: 5px 14px;
+            border: 1px solid rgba(184,146,42,0.12);
+            border-radius: 2px;
+            background: rgba(6,4,15,0.35);
+            transition: border-color 0.3s, color 0.3s;
+        }
+
+        .client-tag:hover { border-color: rgba(184,146,42,0.4); color: var(--gold-pale); }
+
+        /* ══════════════════════════════════════════
+           WHY CHOOSE US
+        ══════════════════════════════════════════ */
+        #why-choose-us { background: var(--velvet); }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: var(--divider);
+        }
+
+        .why-item {
+            background: var(--velvet-mid);
+            padding: 28px 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            transition: background 0.3s;
+        }
+
+        .why-item:hover { background: var(--purple-deep); }
+
+        .why-icon {
+            font-family: 'Cinzel', serif;
+            font-size: 0.68rem;
+            color: var(--gold-bright);
+            background: rgba(184,146,42,0.1);
+            border: 1px solid rgba(184,146,42,0.3);
+            width: 28px; height: 28px;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            border-radius: 2px;
+        }
+
+        .why-text {
+            font-size: 0.88rem;
+            color: var(--mist);
+            line-height: 1.6;
+        }
+
+        /* ══════════════════════════════════════════
+           CONTACT
+        ══════════════════════════════════════════ */
+        #contact { background: var(--obsidian); }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-brand h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--cream);
+            line-height: 1.3;
+            margin-bottom: 6px;
+        }
+
+        .contact-brand .sub {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: var(--gold-bright);
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .contact-brand p {
+            font-size: 0.9rem;
+            color: var(--mist);
+            margin-bottom: 36px;
+            line-height: 1.9;
+        }
+
+        .contact-details { display: grid; gap: 14px; }
+
+        .contact-row {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            font-size: 0.88rem;
+        }
+
+        .contact-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold-antique);
+            min-width: 90px;
+            padding-top: 2px;
+        }
+
+        .contact-value { color: var(--mist); }
+
+        .contact-form-box {
+            background: var(--velvet);
+            border: 1px solid var(--divider);
+            border-radius: 4px;
+            padding: 40px;
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-antique);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(6,4,15,0.5);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 2px;
+            color: var(--cream);
+            font-size: 0.9rem;
+            font-family: 'Noto Serif TC', serif;
+            transition: border-color 0.3s ease;
+            outline: none;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            border-color: rgba(184,146,42,0.5);
+            background: rgba(6,4,15,0.7);
+        }
+
+        .form-input::placeholder, .form-textarea::placeholder {
+            color: rgba(201,189,216,0.3);
+            font-size: 0.85rem;
+        }
+
+        .form-textarea { resize: vertical; min-height: 120px; }
+
+        .form-submit {
+            width: 100%;
+            padding: 15px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--gold-antique), var(--gold-bright));
+            color: var(--obsidian);
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: all 0.35s ease;
+            box-shadow: 0 4px 20px rgba(184,146,42,0.25);
+        }
+
+        .form-submit:hover {
+            background: linear-gradient(135deg, var(--gold-bright), var(--gold-pale));
+            box-shadow: 0 6px 28px rgba(212,168,75,0.4);
+            transform: translateY(-2px);
+        }
+
+        /* ══════════════════════════════════════════
+           FOOTER
+        ══════════════════════════════════════════ */
+        footer {
+            background: var(--obsidian);
+            border-top: 1px solid var(--divider);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--gold-antique);
+            margin-bottom: 12px;
+            opacity: 0.7;
+        }
+
+        .footer-copy {
+            font-size: 0.78rem;
+            color: rgba(201,189,216,0.3);
+        }
+
+        /* ══════════════════════════════════════════
+           FADE-IN ANIMATION ON SCROLL
+        ══════════════════════════════════════════ */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger > * { transition-delay: calc(var(--i, 0) * 80ms); }
+
+        #about { position: relative; }
+        #services { position: relative; }
+        #media { position: relative; }
+
+        .section-bg-glow {
+            position: absolute;
+            width: 600px; height: 600px;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.04;
+            filter: blur(100px);
+        }
+
+        .glow-purple { background: var(--purple-glow); }
+        .glow-gold   { background: var(--gold-antique); }
+
+        /* ══════════════════════════════════════════
+           RESPONSIVE
+        ══════════════════════════════════════════ */
+        @media (max-width: 1280px) {
+            .services-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            /* Nav bar base layout fixed */
+            .nav-container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12px 20px;
+                width: 100%;
+            }
+            /* 手機版 Logo 調大為 64px */
+            .logo img { height: 64px; }
+            .hamburger { display: flex; }
+
+            /* Mobile menu panel layout and spacing fixed */
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0; right: 0;
+                width: 80vw;
+                max-width: 320px;
+                height: 100vh;
+                background: rgba(13, 8, 24, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border-left: 1px solid var(--divider);
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 0;
+                padding: 100px 32px;
+                z-index: 1050;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .nav-links.open { display: flex; }
+
+            /* Ensure all mobile link entries align flawlessly */
+            .nav-links > a, 
+            .nav-item-services {
+                width: 100%;
+            }
+
+            .nav-links > a {
+                font-size: 0.78rem;
+                letter-spacing: 0.2em;
+                color: var(--mist);
+                padding: 14px 0;
+                border-bottom: 1px solid var(--divider);
+                display: block;
+            }
+
+            .nav-links > a::after { display: none !important; }
+
+            /* Custom alignment inside accordion wrapper */
+            .nav-item-services {
+                flex-direction: column;
+                align-items: flex-start;
+                border-bottom: 1px solid var(--divider);
+            }
+
+            .nav-item-services > a {
+                width: 100%;
+                font-size: 0.78rem;
+                letter-spacing: 0.2em;
+                color: var(--mist);
+                padding: 14px 0 10px 0;
+                display: block;
+            }
+
+            .nav-item-services > a::after { display: none !important; }
+
+            /* Inline Mobile dropdown styling */
+            .services-dropdown {
+                position: static;
+                display: none; /* Toggle handled via click/touch */
+                transform: none;
+                border: none;
+                background: none;
+                box-shadow: none;
+                padding: 4px 0 14px 16px;
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+                min-width: 100%;
+                animation: none;
+            }
+
+            .services-dropdown.open {
+                display: block;
+            }
+
+            .services-dropdown a {
+                padding: 8px 0;
+                font-size: 0.65rem;
+                border-bottom: 1px solid rgba(184,146,42,0.08);
+                width: 100%;
+            }
+
+            .services-dropdown a:hover { padding-left: 8px; }
+
+            /* Overlay backdrop behind sidebar drawer */
+            .nav-overlay {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(6,4,15,0.7);
+                z-index: 1040;
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(4px);
+            }
+            .nav-overlay.open { display: block; }
+
+            /* Hero structure adaptivity */
+            .hero-section {
+                height: 100svh;
+                height: 100vh;
+                min-height: 560px;
+                width: 100vw;
+            }
+            .hero-content {
+                bottom: 12%;
+                padding: 0 20px;
+            }
+            .hero-content h1 { font-size: clamp(1.7rem, 6vw, 2.4rem); }
+            .hero-content p.subtitle { font-size: 0.85rem; }
+            .hero-content p.desc { font-size: 0.82rem; margin-bottom: 28px; }
+            .hero-eyebrow { font-size: 0.58rem; letter-spacing: 0.3em; }
+            .cta-buttons { gap: 12px; flex-direction: column; align-items: center; }
+            .btn { padding: 13px 28px; font-size: 0.68rem; width: 100%; max-width: 280px; }
+
+            /* Sections responsive spacing */
+            .page-section { padding: 72px 16px 52px; }
+            .section-title { font-size: clamp(1.4rem, 4.5vw, 1.9rem); }
+
+            /* About grid column collapse */
+            .about-layout { grid-template-columns: 1fr; gap: 36px; }
+            .about-image-frame { display: none; }
+            .stats-row { gap: 16px; }
+            .stat-num { font-size: 1.8rem; }
+
+            /* Services layout adjustment */
+            .services-grid { grid-template-columns: 1fr; gap: 0; }
+
+            /* Media galleries fallback */
+            .video-grid { grid-template-columns: 1fr; gap: 16px; }
+            .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 3px; }
+            .clients-wrap { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr 1fr; }
+
+            /* Form responsive container padding */
+            .contact-layout { grid-template-columns: 1fr; gap: 36px; }
+            .contact-form-box { padding: 24px 18px; }
+            .contact-brand h2 { font-size: 1.4rem; }
+        }
+
+        @media (max-width: 480px) {
+            .why-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+            .team-grid { grid-template-columns: 1fr; }
+            .stat-num { font-size: 1.6rem; }
+        }
+
+        /* ══════════════════════════════════════════
+           LANGUAGE SWITCH BUTTON
+        ══════════════════════════════════════════ */
+        .lang-switch {
+            font-family: 'Cinzel', serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-antique);
+            border: 1px solid rgba(184,146,42,0.45);
+            padding: 6px 14px;
+            border-radius: 2px;
+            background: transparent;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .lang-switch:hover {
+            background: rgba(184,146,42,0.1);
+            border-color: var(--gold-bright);
+            color: var(--gold-shimmer);
+        }
+        @media (max-width: 768px) {
+            .lang-switch {
+                font-size: 0.58rem;
+                padding: 5px 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ══════ HEADER ══════ -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="images/logo.png" alt="百樂魔術有限公司 Pilot Magic">
+                </a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+            <a href="index.html" class="lang-switch">中文</a>
+            <div class="nav-overlay" id="navOverlay"></div>
+            <nav class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <div class="nav-item-services" id="navItemServices">
+                    <a href="#services" id="servicesTrigger">Services</a>
+                    <div class="services-dropdown" id="servicesDropdown">
+                        <a href="service-closeupen.html"><span class="dot"></span>Close-up Magic</a>
+                        <a href="service-stageen.html"><span class="dot"></span>Stage Manipulation Magic</a>
+                        <a href="service-interactiveen.html"><span class="dot"></span>Interactive Show</a>
+                        <a href="service-clownen.html"><span class="dot"></span>Clown & Balloon Art</a>
+                        <a href="service-kidsen.html"><span class="dot"></span>Kids Party Magic</a>
+                        <a href="service-workshopen.html"><span class="dot"></span>Magic Workshop</a>
+                        <a href="service-bubbleen.html"><span class="dot"></span>Bubble Show</a>
+                        <a href="service-facechangeen.html"><span class="dot"></span>Face Changing</a>
+                    </div>
+                </div>
+                <a href="#media">Media</a>
+                <a href="#team">Our Team</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ══════ HERO ══════ -->
+    <section class="hero-section" id="home">
+        <div class="slider-container">
+            <div class="slide active" style="background-image: url('images/hero1.jpg');"></div>
+            <div class="slide" style="background-image: url('images/hero2.jpg');"></div>
+            <div class="slide" style="background-image: url('images/hero3.jpg');"></div>
+            <div class="slide" style="background-image: url('images/hero4.jpg');"></div>
+            <div class="slide" style="background-image: url('images/hero5.jpg');"></div>
+            <div class="slide" style="background-image: url('images/hero6.jpg');"></div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-eyebrow">Macau · Since 1997</p>
+            <h1>Witness the Impossible<br>Create Unforgettable Moments</h1>
+            <p class="subtitle">Professional Magic Shows in Macau · Corporate Events · Bespoke Luxury Entertainment</p>
+            <p class="desc">With over two decades of performance experience, we deliver premium magic entertainment for major PR events, luxury hotel resorts and private functions across Macau.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-gold">Book Now</a>
+                <a href="#contact" class="btn btn-outline">Request a Quote</a>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ══════ ABOUT ══════ -->
+    <section class="page-section" id="about">
+        <div class="section-bg-glow glow-purple" style="top:-200px;left:-200px;"></div>
+        <div class="section-header fade-up">
+            <span class="section-tag">About Pilot Magic</span>
+            <h2 class="section-title">Creating<em> Extraordinary Magic</em> in Macau</h2>
+            <div class="section-rule"><span></span></div>
+        </div>
+        <div class="about-layout">
+            <div class="about-text fade-up">
+                <p class="lead">"Every performance is more than a show — it's an immersive experience that connects audiences and communicates brand values."</p>
+                <p>Founded in 1997, Pilot Magic Co., Ltd. has upheld a commitment to professionalism, creativity and artistry — delivering premium magic entertainment for every type of event across Macau.</p>
+                <p>With over 20 years of experience, we have proudly served government bodies, international luxury brands, five-star hotel resorts and private high-end clients — tailoring every performance to the event theme, venue and audience.</p>
+                <div class="stats-row stagger">
+                    <div class="stat-item" style="--i:0">
+                        <span class="stat-num">20+</span>
+                        <span class="stat-label">Years of Experience</span>
+                    </div>
+                    <div class="stat-item" style="--i:1">
+                        <span class="stat-num">500+</span>
+                        <span class="stat-label">Successful Events</span>
+                    </div>
+                    <div class="stat-item" style="--i:2">
+                        <span class="stat-num">5★</span>
+                        <span class="stat-label">5-Star Hotel Clients</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image-frame fade-up">
+                <img src="images/about_main.jpg" alt="Pilot Magic Professional Team">
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ SERVICES ══════ -->
+    <section class="page-section" id="services">
+        <div class="section-header fade-up">
+            <span class="section-tag">Our Services</span>
+            <h2 class="section-title">Our<em> Entertainment Services</em></h2>
+            <div class="section-rule"><span></span></div>
+        </div>
+        <div class="services-grid fade-up stagger">
+
+            <div class="service-card" style="--i:0">
+                <div class="service-img-wrapper">
+                    <img src="images/service_closeup.jpg" alt="Close-up Magic" class="service-img">
+                    <span class="service-num">01</span>
+                </div>
+                <div class="service-body">
+                    <h3>Close-up Magic</h3>
+                    <p class="tagline">Magic that happens right in your hands.</p>
+                    <p>Our magicians circulate among your guests, letting them witness miracles up close — the perfect ice-breaker for any event.</p>
+                    <div class="service-suitable">
+                        <strong>Ideal For</strong>
+                        <ul>
+                            <li>Corporate cocktails</li><li>Wedding receptions</li>
+                            <li>Luxury VIP hosting</li><li>Gala dinners</li>
+                        </ul>
+                    </div>
+                    <a href="service-closeupen.html" class="service-link">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service-card" style="--i:1">
+                <div class="service-img-wrapper">
+                    <img src="images/service_stage.jpg" alt="Stage Magic" class="service-img">
+                    <span class="service-num">02</span>
+                </div>
+                <div class="service-body">
+                    <h3>Stage Manipulation Magic</h3>
+                    <p class="tagline">No heavy props — just a magician and two bare hands.</p>
+                    <p>High-tempo object manipulation and sleight of hand captivates the entire room in minutes, setting an electrifying tone for the event ahead.</p>
+                    <div class="service-suitable">
+                        <strong>Ideal For</strong>
+                        <ul>
+                            <li>Annual gala dinners</li><li>Brand launch events</li>
+                            <li>Seasonal celebrations</li><li>Mall activations</li>
+                        </ul>
+                    </div>
+                    <a href="service-stageen.html" class="service-link">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service-card" style="--i:2">
+                <div class="service-img-wrapper">
+                    <img src="images/service_interactive.jpg" alt="Interactive Stage Show" class="service-img">
+                    <span class="service-num">03</span>
+                </div>
+                <div class="service-body">
+                    <h3>Interactive Stage Show</h3>
+                    <p class="tagline">Invite your audience to become part of the magic.</p>
+                    <p>Guests become the stars of the show — dramatically boosting audience participation and the energy of any occasion.</p>
+                    <div class="service-suitable">
+                        <strong>Ideal For</strong>
+                        <ul>
+                            <li>Corporate year-end parties</li><li>Community carnivals</li>
+                            <li>Themed parties</li><li>Award ceremonies</li>
+                        </ul>
+                    </div>
+                    <a href="service-interactiveen.html" class="service-link">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service-card" style="--i:3">
+                <div class="service-img-wrapper">
+                    <img src="images/service_clown.jpg" alt="Clown and Balloon Art" class="service-img">
+                    <span class="service-num">04</span>
+                </div>
+                <div class="service-body">
+                    <h3>Clown & Balloon Sculptor</h3>
+                    <p class="tagline">A crowd-pleasing favourite for all ages.</p>
+                    <p>On-the-spot balloon art and clown interactions instantly energise the crowd and delight guests of every age.</p>
+                    <div class="service-suitable">
+                        <strong>Ideal For</strong>
+                        <ul>
+                            <li>Wedding receptions</li><li>Mall roaming shows</li>
+                            <li>Carnival events</li><li>Family activities</li>
+                        </ul>
+                    </div>
+                    <a href="service-clownen.html" class="service-link">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service-card" style="--i:4">
+                <div class="service-img-wrapper">
+                    <img src="images/service_kids.jpg" alt="Kids Party Magic" class="service-img">
+                    <span class="service-num">05</span>
+                </div>
+                <div class="service-body">
+                    <h3>Kids Party Magic</h3>
+                    <p class="tagline">Joyful party entertainment designed just for kids.</p>
+                    <p>Combining fun magic tricks and humorous interactive games to ensure every child is fully immersed in the fun.</p>
+                    <div class="service-suitable">
+                        <strong>Highlights</strong>
+                        <ul>
+                            <li>Interactive fun format</li><li>Balloon giveaways</li>
+                            <li>All age groups welcome</li><li>Joyful family atmosphere</li>
+                        </ul>
+                    </div>
+                    <a href="service-kidsen.html" class="service-link">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service-card" style="--i:5">
+                <div class="service-img-wrapper">
+                    <img src="images/service_workshop.jpg" alt="Magic Workshop" class="service-img">
+                    <span class="service-num">06</span>
+                </div>
+                <div class="service-body">
+                    <h3>Magic Workshop</h3>
+                    <p class="tagline">Master the performing arts through structured learning.</p>
+                    <p>Taught directly by professional magicians, our workshops cultivate creative thinking, confidence and stage presence.</p>
+                    <div class="service-suitable">
+                        <strong>Suitable For</strong>
+                        <ul style="grid-template-columns:1fr">
+                            <li>Schools, community centres, corporate training and recreational classes</li>
+                        </ul>
+                    </div>
+                    <a href="service-workshopen.html" class="service-link">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service-card" style="--i:6">
+                <div class="service-img-wrapper">
+                    <img src="images/service_bubble.jpg" alt="Bubble Show" class="service-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="service-img-placeholder" style="display:none;">Bubble Show</div>
+                    <span class="service-num">07</span>
+                </div>
+                <div class="service-body">
+                    <h3>Bubble Show</h3>
+                    <p class="tagline">Dream-like bubbles — a breathtaking visual spectacle.</p>
+                    <p>Giant bubbles, coloured smoke bubbles and the human-inside-bubble stunt astonish audiences of all ages with wonder and delight.</p>
+                    <div class="service-suitable">
+                        <strong>Ideal For</strong>
+                        <ul>
+                            <li>Mall activations</li><li>Family carnivals</li>
+                            <li>Opening ceremonies</li><li>Children's parties</li>
+                        </ul>
+                    </div>
+                    <a href="service-bubbleen.html" class="service-link">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service-card" style="--i:7">
+                <div class="service-img-wrapper">
+                    <img src="images/service_facechange.jpg" alt="Chinese Face Changing" class="service-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="service-img-placeholder" style="display:none;">Face Changing</div>
+                    <span class="service-num">08</span>
+                </div>
+                <div class="service-body">
+                    <h3>Chinese Face Changing</h3>
+                    <p class="tagline">Instantaneous transformation — a heritage art that stuns.</p>
+                    <p>Drawing from the traditions of Sichuan opera, our performer changes masks on stage in an instant — delivering an unparalleled visual impact and cultural experience.</p>
+                    <div class="service-suitable">
+                        <strong>Ideal For</strong>
+                        <ul>
+                            <li>Luxury business dinners</li><li>Brand launch events</li>
+                            <li>Anniversary celebrations</li><li>VIP banquets</li>
+                        </ul>
+                    </div>
+                    <a href="service-facechangeen.html" class="service-link">Learn More</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════ MEDIA ══════ -->
+    <section class="page-section" id="media">
+        <div class="section-bg-glow glow-gold" style="top:0;right:-200px;"></div>
+        <div class="section-header fade-up">
+            <span class="section-tag">Media Gallery</span>
+            <h2 class="section-title">Media<em> Gallery</em></h2>
+            <div class="section-rule"><span></span></div>
+        </div>
+        <div class="video-grid fade-up">
+            <!-- 影片 1：直接在下面貼上您的第一支影片連結 (支援手機/電腦分享格式) -->
+            <div class="video-wrapper">
+                <div class="video-container" data-youtube="https://youtube.com/shorts/THykEwJR1lE?is=VdkjwYTr7O9yYlyG"></div>
+                <div class="video-caption">Selected Macau Performance Highlights</div>
+            </div>
+            <!-- 影片 2：直接在下面貼上您的第二支影片連結 (支援手機/電腦分享格式) -->
+            <div class="video-wrapper">
+                <div class="video-container" data-youtube="https://youtu.be/SDjyESXXXKg?is=QER8TZbdOFLjtiil"></div>
+                <div class="video-caption">Live Coverage — Major Corporate Brand Events</div>
+            </div>
+        </div>
+        <div class="gallery-header fade-up">— &nbsp; Event Photo Gallery &nbsp; —</div>
+        <div class="gallery-grid fade-up stagger">
+            <div class="gallery-item" style="--i:0"><img src="images/gallery1.jpg"  alt="Performance Photo 01"></div>
+            <div class="gallery-item" style="--i:1"><img src="images/gallery2.jpg"  alt="Performance Photo 02"></div>
+            <div class="gallery-item" style="--i:2"><img src="images/gallery3.jpg"  alt="Performance Photo 03"></div>
+            <div class="gallery-item" style="--i:3"><img src="images/gallery4.jpg"  alt="Performance Photo 04"></div>
+            <div class="gallery-item" style="--i:4"><img src="images/gallery5.jpg"  alt="Performance Photo 05"></div>
+            <div class="gallery-item" style="--i:5"><img src="images/gallery6.jpg"  alt="Performance Photo 06"></div>
+            <div class="gallery-item" style="--i:6"><img src="images/gallery7.jpg"  alt="Performance Photo 07"></div>
+            <div class="gallery-item" style="--i:7"><img src="images/gallery8.jpg"  alt="Performance Photo 08"></div>
+            <div class="gallery-item" style="--i:8"><img src="images/gallery9.jpg"  alt="Performance Photo 09"></div>
+            <div class="gallery-item" style="--i:9"><img src="images/gallery10.jpg" alt="Performance Photo 10"></div>
+            <div class="gallery-item" style="--i:10"><img src="images/gallery11.jpg" alt="Performance Photo 11"></div>
+            <div class="gallery-item" style="--i:11"><img src="images/gallery12.jpg" alt="Performance Photo 12"></div>
+            <div class="gallery-item" style="--i:12"><img src="images/gallery13.jpg" alt="Performance Photo 13"></div>
+            <div class="gallery-item" style="--i:13"><img src="images/gallery14.jpg" alt="Performance Photo 14"></div>
+            <div class="gallery-item" style="--i:14"><img src="images/gallery15.jpg" alt="Performance Photo 15"></div>
+            <div class="gallery-item" style="--i:15"><img src="images/gallery16.jpg" alt="Performance Photo 16"></div>
+            <div class="gallery-item" style="--i:16"><img src="images/gallery17.jpg" alt="Performance Photo 17"></div>
+            <div class="gallery-item" style="--i:18"><img src="images/gallery18.jpg" alt="Performance Photo 18"></div>
+            <div class="gallery-item" style="--i:18"><img src="images/gallery19.jpg" alt="Performance Photo 19"></div>
+            <div class="gallery-item" style="--i:19"><img src="images/gallery20.jpg" alt="Performance Photo 20"></div>
+        </div>
+    </section>
+
+    <!-- ══════ TEAM ══════ -->
+    <section class="page-section" id="team">
+        <div class="section-header fade-up">
+            <span class="section-tag">The Performers</span>
+            <h2 class="section-title">Meet<em> Our Performers</em></h2>
+            <div class="section-rule"><span></span></div>
+        </div>
+        <div class="team-grid">
+
+            <div class="team-card fade-up">
+                <div class="team-avatar">
+                    <img src="images/team_billy.jpg" alt="Billy Kong — Lead Magician">
+                </div>
+                <div class="team-name">江尚峰 Billy Kong</div>
+                <span class="team-role">Lead Magician & Director</span>
+                <div class="team-divider"></div>
+                <p class="team-bio">With over a decade of professional performance experience, Billy has been a fixture at Macau's top five-star hotels, renowned for his highly interactive and bespoke approach.</p>
+                <div class="team-highlights">
+                    <strong>主要經歷</strong>
+                    <ul>
+                        <li>第二屆澳門國際魔術節近距離魔術大賽亞軍</li>
+                        <li>新濠鋒酒店 Aurora 餐廳駐場魔術師（四年）</li>
+                        <li>澳門新濠影匯《魔幻間》助理舞台經理</li>
+                        <li>中國大型駐場魔幻秀明星魔術師</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="team-card fade-up">
+                <div class="team-avatar">
+                    <img src="images/team_brian.jpg" alt="Brian Wong — Professional Magician">
+                </div>
+                <div class="team-name">王啟仁 Brian Wong</div>
+                <span class="team-role">Professional Magician</span>
+                <div class="team-divider"></div>
+                <p class="team-bio">With over ten years of experience, Brian is celebrated for his witty and engaging close-up magic, beloved by families, schools and corporate clients alike.</p>
+                <div class="team-highlights">
+                    <strong>主要經歷</strong>
+                    <ul>
+                        <li>全澳學生魔術公開賽（近景組）季軍</li>
+                        <li>澳門代表參加泰國國際魔術節比賽</li>
+                        <li>澳門城市藝穗節《全民魔法影院》表演者</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="team-card fade-up">
+                <div class="team-avatar">
+                    <img src="images/team_yuma.jpg" alt="Magic Yu Ma — Founder">
+                </div>
+                <div class="team-name">蘇大新 Magic Yu Ma</div>
+                <span class="team-role">Founder & Director</span>
+                <div class="team-divider"></div>
+                <p class="team-bio">With 26 years of professional performance and teaching experience, Yu Ma has been a driving force in promoting magic culture in Macau and producing major magic events.</p>
+                <div class="team-highlights">
+                    <strong>主要身份</strong>
+                    <ul>
+                        <li>國際魔術師協會（IBM）會員</li>
+                        <li>國際職業魔術師協會（IMS）會員</li>
+                        <li>澳門魔術之都魔術師協會創辦人</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="team-card fade-up">
+                <div class="team-avatar">
+                    <img src="images/team_vincent.jpg" alt="Vincent — Multi-disciplinary Entertainer">
+                </div>
+                <div class="team-name">黃嘉偉 Vincent</div>
+                <span class="team-role">Multi-disciplinary Entertainer</span>
+                <div class="team-divider"></div>
+                <p class="team-bio">With 16 years immersed in clown artistry, balloon sculpting, bubble shows and wedding MC work, Vincent brings extraordinary breadth of experience.</p>
+                <div class="team-highlights">
+                    <strong>專業資歷</strong>
+                    <ul>
+                        <li>累積參與超過 200 場大型公開演出</li>
+                        <li>親自主理逾 300 場各類私人與社團派對</li>
+                        <li>長期與政府機構合作，教授逾 300 名學生</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="team-card fade-up">
+                <div class="team-avatar">
+                    <img src="images/team_jin.jpg" alt="JIN — Face Changing Artist">
+                </div>
+                <div class="team-name">京人 JIN</div>
+                <span class="team-role">Chinese Face Changing Artist</span>
+                <div class="team-divider"></div>
+                <p class="team-bio">Macau's professional face changing artist, JIN is dedicated to fusing traditional heritage art with modern staging — delivering a stunning visual impact at luxury events.</p>
+                <div class="team-highlights">
+                    <strong>服務項目與地區</strong>
+                    <ul>
+                        <li>澳門變臉、川劇變臉、專業商演</li>
+                        <li>核心服務：澳門、香港及鄰近地區</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════ CLIENTS ══════ -->
+    <section class="page-section" id="clients">
+        <div class="section-header fade-up">
+            <span class="section-tag">Our Clients</span>
+            <h2 class="section-title">Our<em> Clients</em></h2>
+            <div class="section-rule"><span></span></div>
+        </div>
+        <div class="clients-wrap fade-up">
+            <div class="client-block">
+                <h3>Hotels & Resorts</h3>
+                <div class="client-list">
+                    <span class="client-tag">The Venetian Macao</span>
+                    <span class="client-tag">Wynn Macau</span>
+                    <span class="client-tag">StarWorld Hotel</span>
+                    <span class="client-tag">Crown Hotel</span>
+                    <span class="client-tag">City of Dreams</span>
+                    <span class="client-tag">Altira Macau</span>
+                    <span class="client-tag">Galaxy Entertainment Group</span>
+                    <span class="client-tag">The Arch Hotel</span>
+                </div>
+            </div>
+            <div class="client-block">
+                <h3>Government & Public Bodies</h3>
+                <div class="client-list">
+                    <span class="client-tag">Civil Aviation Authority of Macau</span>
+                    <span class="client-tag">Health Bureau</span>
+                    <span class="client-tag">Public Administration & Civil Service Bureau</span>
+                    <span class="client-tag">Judiciary Police</span>
+                    <span class="client-tag">TDM — Macau Broadcasting</span>
+                    <span class="client-tag">DSE Summer Youth Programme</span>
+                </div>
+            </div>
+            <div class="client-block">
+                <h3>Commercial & Event Partners</h3>
+                <div class="client-list">
+                    <span class="client-tag">CTM Macau Telecom</span>
+                    <span class="client-tag">Sands Macau</span>
+                    <span class="client-tag">Macau Fisherman's Wharf</span>
+                    <span class="client-tag">Macau Tower</span>
+                </div>
+            </div>
+            <div class="client-block">
+                <h3>Charity & Community</h3>
+                <div class="client-list">
+                    <span class="client-tag">Caritas Macau</span>
+                    <span class="client-tag">Macau Youth Association</span>
+                    <span class="client-tag">Macau Volunteers Association</span>
+                    <span class="client-tag">Association for the Deaf and Hard of Hearing</span>
+                    <span class="client-tag">Lee Man Association</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ WHY US ══════ -->
+    <section class="page-section" id="why-choose-us">
+        <div class="section-header fade-up">
+            <span class="section-tag">Why Pilot Magic</span>
+            <h2 class="section-title">Why Choose<em> Pilot Magic</em>?</h2>
+            <div class="section-rule"><span></span></div>
+        </div>
+        <div class="why-grid fade-up stagger">
+            <div class="why-item" style="--i:0">
+                <div class="why-icon">✦</div>
+                <span class="why-text">Over 20 years rooted in Macau's live entertainment scene</span>
+            </div>
+            <div class="why-item" style="--i:1">
+                <div class="why-icon">✦</div>
+                <span class="why-text">Bespoke event design for top luxury brands</span>
+            </div>
+            <div class="why-item" style="--i:2">
+                <div class="why-icon">✦</div>
+                <span class="why-text">Macau's finest team of professional magicians</span>
+            </div>
+            <div class="why-item" style="--i:3">
+                <div class="why-icon">✦</div>
+                <span class="why-text">Experts in all forms of corporate and private event entertainment</span>
+            </div>
+            <div class="why-item" style="--i:4">
+                <div class="why-icon">✦</div>
+                <span class="why-text">Extensive track record at five-star hotels and major casino resorts</span>
+            </div>
+            <div class="why-item" style="--i:5">
+                <div class="why-icon">✦</div>
+                <span class="why-text">Macau's most trusted magic entertainment brand</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ CONTACT ══════ -->
+    <section class="page-section" id="contact">
+        <div class="section-header fade-up">
+            <span class="section-tag">Get In Touch</span>
+            <h2 class="section-title">Contact<em> & Enquiries</em></h2>
+            <div class="section-rule"><span></span></div>
+        </div>
+        <div class="contact-layout">
+            <div class="contact-brand fade-up">
+                <h2>Pilot Magic<br>Co., Ltd.</h2>
+                <span class="sub">Macau's Premier Magic Entertainment</span>
+                <p>Reach out anytime — let us create a bespoke magical experience for your next brand event or private celebration!</p>
+                <div class="contact-details">
+                    <div class="contact-row">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">Bpilotmagic@gmail.com</span>
+                    </div>
+                    <div class="contact-row">
+                        <span class="contact-label">WhatsApp</span>
+                        <span class="contact-value">+853 6655 1654</span>
+                    </div>
+                    <div class="contact-row">
+                        <span class="contact-label">WeChat</span>
+                        <span class="contact-value">billykongmagic</span>
+                    </div>
+                    <div class="contact-row">
+                        <span class="contact-label">Facebook</span>
+                        <span class="contact-value">Pilot Magic</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-box fade-up">
+                <form action="https://formspree.io/f/mpqedbyg" method="POST">
+                    <div class="form-group">
+                        <label class="form-label">Company / Contact Name</label>
+                        <input type="text" name="contact_name" class="form-input" required placeholder="e.g. ABC Ltd. / Mr. Chan">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone / WhatsApp</label>
+                        <input type="text" name="phone" class="form-input" required placeholder="Please enter your phone number">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Event Date & Type</label>
+                        <input type="text" name="event_date_type" class="form-input" placeholder="e.g. 2026 Year-end Gala / Brand Launch">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Your Performance Requirements</label>
+                        <textarea name="requirements" class="form-textarea" rows="4" placeholder="Tell us what you need, e.g. close-up magic, stage show…"></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Submit Enquiry</button>
+                    <a href="https://wa.me/85366551654?text=Hello, I would like to enquire about magic performance services" 
+                       class="btn btn-outline" 
+                       target="_blank"
+                       style="display:block; text-align:center; margin-top:12px; padding:15px;">
+                       💬 WhatsApp Direct Enquiry
+                    </a>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ FOOTER ══════ -->
+    <footer>
+        <div class="footer-logo">Pilot Magic Co., Ltd. · Macau</div>
+        <p class="footer-copy">&copy; 2026 Pilot Magic Co., Ltd. All rights reserved. Rooted in Macau.</p>
+    </footer>
+
+    <script>
+        // ── Smart YouTube Auto-Embed Engine ──
+        // 這裡會自動捕捉各種 YouTube 分享格式並在網頁中生成 iframe 播放器
+        document.querySelectorAll('[data-youtube]').forEach(el => {
+            const url = el.getAttribute('data-youtube').trim();
+            let videoId = '';
+            
+            // 正則表達式：兼容電腦網址、手機短網址、Embed網址、短片(shorts)
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|shorts\/)([^#\&\?]*).*/;
+            const match = url.match(regExp);
+            
+            if (match && match[2].length === 11) {
+                videoId = match[2];
+            } else {
+                videoId = url; // 如果使用者直接輸入 11 碼 ID
+            }
+            
+            if (videoId) {
+                el.innerHTML = `<iframe 
+                    src="https://www.youtube.com/embed/${videoId}?rel=0&showinfo=0&modestbranding=1" 
+                    title="YouTube video player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>`;
+            } else {
+                el.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold-pale);font-size:0.8rem;">Video failed to load. Please check the URL.</div>`;
+            }
+        });
+
+        // ── Hero Slider ──
+        const slides = document.querySelectorAll('.slide');
+        let current = 0;
+        setInterval(() => {
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+        }, 3500);
+
+        // ── Intersection Observer — fade-up on scroll ──
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // stagger children
+                    entry.target.querySelectorAll('.stagger > *').forEach((child, i) => {
+                        child.style.transitionDelay = (i * 80) + 'ms';
+                        child.classList.add('fade-up', 'visible');
+                    });
+                }
+            });
+        }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // ── Header background intensify on scroll ──
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            const isMobile = window.innerWidth <= 768;
+            if (window.scrollY > 60) {
+                header.style.background = 'rgba(6, 4, 15, 0.96)';
+                document.querySelector('.logo img').style.height = isMobile ? '56px' : '68px';
+            } else {
+                header.style.background = 'rgba(6, 4, 15, 0.82)';
+                document.querySelector('.logo img').style.height = isMobile ? '64px' : '86px';
+            }
+        }, { passive: true });
+
+        // ── Hamburger Menu and Accordion for Mobile ──
+        const hamburger = document.getElementById('hamburger');
+        const navLinks  = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
+        const servicesTrigger = document.getElementById('servicesTrigger');
+        const servicesDropdown = document.getElementById('servicesDropdown');
+
+        function toggleMenu(open) {
+            hamburger.classList.toggle('open', open);
+            navLinks.classList.toggle('open', open);
+            navOverlay.classList.toggle('open', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+            if(!open) {
+                // Reset dropdown state when menu is closed
+                servicesDropdown.classList.remove('open');
+            }
+        }
+
+        hamburger.addEventListener('click', () => toggleMenu(!navLinks.classList.contains('open')));
+        navOverlay.addEventListener('click', () => toggleMenu(false));
+
+        // Close menu panel when clicking standard anchors
+        navLinks.querySelectorAll('a[href^="#"]:not(#servicesTrigger)').forEach(a => {
+            a.addEventListener('click', () => toggleMenu(false));
+        });
+
+        // Toggle service dropdown accordion under mobile viewports
+        servicesTrigger.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                servicesDropdown.classList.toggle('open');
+            }
+        });
+    </script>
+
+</body>
+</html>
