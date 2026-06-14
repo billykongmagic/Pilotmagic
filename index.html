@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="zh-HK">
 <head>
@@ -794,7 +795,7 @@
         .service-link::after { content: '→'; }
 
         /* ══════════════════════════════════════════
-           MEDIA GALLERY
+           MEDIA GALLERY & YOUTUBE RESPONSIVE CONTAINER
         ══════════════════════════════════════════ */
         #media { background: var(--void); }
 
@@ -811,9 +812,31 @@
             border: 1px solid var(--divider);
             background: var(--velvet);
             position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.35s ease, border-color 0.35s ease;
         }
 
-        .video-wrapper video { width: 100%; display: block; }
+        .video-wrapper:hover {
+            transform: translateY(-4px);
+            border-color: rgba(184,146,42,0.4);
+        }
+
+        /* Responsive 16:9 Aspect Ratio Box for YouTube Iframe */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 ratio */
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
 
         .video-caption {
             padding: 14px 18px;
@@ -1718,16 +1741,30 @@
             <div class="section-rule"><span></span></div>
         </div>
         <div class="video-grid fade-up">
+            <!-- 影片 1 -->
             <div class="video-wrapper">
-                <video controls poster="images/video_poster1.jpg">
-                    <source src="video1.mp4" type="video/mp4">
-                </video>
+                <div class="video-container">
+                    <!-- 註：您可以更換 src 裡面「embed/」後面的 YouTube ID。例如下方的「EAN-MaRWDmU」 -->
+                    <iframe 
+                        src="https://youtube.com/shorts/THykEwJR1lE?is=i3QVfXiWUB85qJU-" 
+                        title="精選澳門演出精華剪輯"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
                 <div class="video-caption">精選澳門演出精華剪輯</div>
             </div>
+            <!-- 影片 2 -->
             <div class="video-wrapper">
-                <video controls poster="images/video_poster2.jpg">
-                    <source src="video2.mp4" type="video/mp4">
-                </video>
+                <div class="video-container">
+                    <!-- 註：您可以更換 src 裡面「embed/」後面的 YouTube ID。例如下方的「8b5G_N-ZpD4」 -->
+                    <iframe 
+                        src="https://https://youtu.be/SDjyESXXXKg?is=vwzLb3vRvXGFc9p_" 
+                        title="大型商業品牌活動現場直擊"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
                 <div class="video-caption">大型商業品牌活動現場直擊</div>
             </div>
         </div>
@@ -1958,7 +1995,7 @@
             <div class="contact-brand fade-up">
                 <h2>百樂魔術<br>有限公司</h2>
                 <span class="sub">Pilot Magic Co., Ltd.</span>
-                <p>歡迎隨時聯絡我們，為您的下一次品牌公關活動或私人派對打造專屬魔幻體驗！</p>
+                <p>歡迎隨時聯絡我們，為您的下一次品牌公關活動 or 私人派對打造專屬魔幻體驗！</p>
                 <div class="contact-details">
                     <div class="contact-row">
                         <span class="contact-label">Email</span>
@@ -2090,3 +2127,5 @@
 
 </body>
 </html>
+
+```
