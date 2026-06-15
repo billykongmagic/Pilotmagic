@@ -55,7 +55,12 @@
         }
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; width: 100%; overflow-x: hidden; }
+        html {
+            scroll-behavior: smooth;
+            width: 100%;
+            overflow-x: hidden;
+            background-color: var(--obsidian);
+        }
         body {
             background-color: var(--obsidian);
             color: var(--cream);
@@ -96,21 +101,14 @@
         }
         .logo img { height: 86px; width: auto; transition: height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
-        /* 漢堡選單 (手機版) */
-        .hamburger {
-            display: none; flex-direction: column; justify-content: center; gap: 5px;
-            width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 1100;
+        /* 導航連結排版 */
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            align-items: center;
+            margin-left: auto;
+            margin-right: 36px;
         }
-        .hamburger span {
-            display: block; width: 100%; height: 1.5px; background: var(--gold-pale);
-            transition: transform 0.35s ease, opacity 0.25s ease; transform-origin: center;
-        }
-        .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-        .hamburger.open span:nth-child(2) { opacity: 0; }
-        .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-        /* 導航連結與下拉選單 */
-        .nav-links { display: flex; gap: 36px; align-items: center; }
         .nav-links > a, .nav-item-services > a {
             font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.18em;
             text-transform: uppercase; color: var(--mist); position: relative; padding-bottom: 4px; display: inline-block; transition: color 0.3s ease;
@@ -132,10 +130,6 @@
             border-radius: 2px; box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(184,146,42,0.08);
             transform-origin: top center; animation: dropdownFadeIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        @keyframes dropdownFadeIn {
-            from { opacity: 0; transform: translateX(-50%) translateY(10px); }
-            to { opacity: 1; transform: translateX(-50%) translateY(0); }
-        }
         .nav-item-services:hover .services-dropdown { display: block; }
         .services-dropdown a {
             display: flex; align-items: center; padding: 10px 24px; font-family: 'Cinzel', serif; font-size: 0.65rem;
@@ -143,6 +137,32 @@
         }
         .services-dropdown a:hover { color: var(--gold-pale); background: rgba(184,146,42,0.06); padding-left: 30px; }
         .services-dropdown a span.dot { display: inline-block; width: 4px; height: 4px; background: var(--gold-antique); border-radius: 50%; margin-right: 12px; flex-shrink: 0; }
+
+        /* 右側行為操作容器 */
+        .nav-right-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            z-index: 1100;
+        }
+        .hamburger {
+            display: none; flex-direction: column; justify-content: center; gap: 5px;
+            width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px;
+        }
+        .hamburger span {
+            display: block; width: 100%; height: 1.5px; background: var(--gold-pale);
+            transition: transform 0.35s ease, opacity 0.25s ease; transform-origin: center;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+        .lang-switch {
+            font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--gold-antique); border: 1px solid rgba(184,146,42,0.45); padding: 6px 14px;
+            border-radius: 2px; background: transparent; cursor: pointer; text-decoration: none; transition: all 0.3s ease; white-space: nowrap; flex-shrink: 0;
+        }
+        .lang-switch:hover { background: rgba(184,146,42,0.1); border-color: var(--gold-bright); color: var(--gold-shimmer); }
 
         .inner-hero {
             position: relative; width: 100%; height: 60vh; min-height: 400px;
@@ -251,7 +271,7 @@
                 display: none; position: fixed; top: 0; right: 0; width: 80vw; max-width: 320px; height: 100vh;
                 background: rgba(13, 8, 24, 0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
                 border-left: 1px solid var(--divider); flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 0;
-                padding: 100px 32px; z-index: 1050; overflow-y: auto; -webkit-overflow-scrolling: touch;
+                padding: 100px 32px; z-index: 1050; overflow-y: auto; -webkit-overflow-scrolling: touch; margin: 0;
             }
             .nav-links.open { display: flex; }
             .nav-links > a, .nav-item-services { width: 100%; }
@@ -278,6 +298,9 @@
             .features-grid { grid-template-columns: 1fr; }
             .cta-actions { flex-direction: column; align-items: center; gap: 14px; }
             .btn-premium { width: 100%; max-width: 320px; }
+
+            .nav-right-actions { gap: 12px; }
+            .lang-switch { font-size: 0.58rem; padding: 5px 11px; }
         }
 
         @media (max-width: 480px) {
@@ -289,7 +312,7 @@
 </head>
 <body>
 
-    <!-- ══════ HEADER (與官網完美對齊) ══════ -->
+    <!-- ══════ HEADER ══════ -->
     <header>
         <div class="nav-container">
             <div class="logo">
@@ -297,9 +320,6 @@
                     <img src="images/logo.png" alt="百樂魔術有限公司 Pilot Magic">
                 </a>
             </div>
-            <button class="hamburger" id="hamburger" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks">
-                <span></span><span></span><span></span>
-            </button>
             <div class="nav-overlay" id="navOverlay"></div>
             <nav class="nav-links" id="navLinks">
                 <a href="index.html#about">關於我們</a>
@@ -320,6 +340,12 @@
                 <a href="index.html#team">核心團隊</a>
                 <a href="index.html#contact">聯絡查詢</a>
             </nav>
+            <div class="nav-right-actions">
+                <a href="service-bubbleen.html" class="lang-switch">EN</a>
+                <button class="hamburger" id="hamburger" aria-label="開啟選單">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -430,7 +456,7 @@
             </div>
             <div class="scene-card fade-up">
                 <h4>高端私人 & 兒童派對</h4>
-                <p>專為高端家庭派對、澳門生日宴會打造，提供驚奇的近距離泡泡觸控體驗與人體入泡，給來賓留下一生難忘的美好回憶。</p>
+                <p>專為高端家庭派對、澳門生日宴會打造，提供驚奇的近距離泡泡觸控體驗與人體入泡，給來賓留下一生難忘的回憶。</p>
             </div>
             <div class="scene-card fade-up">
                 <h4>婚宴酒會迎賓</h4>
