@@ -80,14 +80,8 @@
         }
         .nav-container { max-width: 1280px; width: 100%; margin: 0 auto; padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; }
         .logo img { height: 86px; width: auto; transition: height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-        
-        .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 1100; }
-        .hamburger span { display: block; width: 100%; height: 1.5px; background: var(--gold-pale); transition: transform 0.35s ease, opacity 0.25s ease; transform-origin: center; }
-        .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-        .hamburger.open span:nth-child(2) { opacity: 0; }
-        .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-        .nav-links { display: flex; gap: 36px; align-items: center; }
+        .nav-links { display: flex; gap: 36px; align-items: center; margin-left: auto; margin-right: 36px; }
         .nav-links > a, .nav-item-services > a { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mist); position: relative; padding-bottom: 4px; display: inline-block; transition: color 0.3s ease; text-decoration: none;}
         .nav-links > a::after, .nav-item-services > a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold-bright); transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
         .nav-links > a:hover::after, .nav-item-services:hover > a::after { width: 100%; }
@@ -102,6 +96,21 @@
         .services-dropdown a:hover { color: var(--gold-pale); background: rgba(184,146,42,0.06); padding-left: 30px; }
         .services-dropdown a span.dot { display: inline-block; width: 4px; height: 4px; background: var(--gold-antique); border-radius: 50%; margin-right: 12px; flex-shrink: 0; }
 
+        /* 右側按鈕與漢堡容器 */
+        .nav-right-actions { display: flex; align-items: center; gap: 20px; z-index: 1100; }
+        .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; }
+        .hamburger span { display: block; width: 100%; height: 1.5px; background: var(--gold-pale); transition: transform 0.35s ease, opacity 0.25s ease; transform-origin: center; }
+        .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+        .lang-switch {
+            font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--gold-antique); border: 1px solid rgba(184,146,42,0.45); padding: 6px 14px;
+            border-radius: 2px; background: transparent; cursor: pointer; text-decoration: none; transition: all 0.3s ease; white-space: nowrap; flex-shrink: 0;
+        }
+        .lang-switch:hover { background: rgba(184,146,42,0.1); border-color: var(--gold-bright); color: var(--gold-shimmer); }
+
         /* ── FOOTER ── */
         footer { background: var(--obsidian); border-top: 1px solid var(--divider); padding: 40px; text-align: center; }
         .footer-logo { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-antique); margin-bottom: 12px; opacity: 0.7; }
@@ -111,7 +120,7 @@
             .nav-container { flex-direction: row; justify-content: space-between; padding: 12px 20px; }
             .logo img { height: 64px; }
             .hamburger { display: flex; }
-            .nav-links { display: none; position: fixed; top: 0; right: 0; width: 80vw; max-width: 320px; height: 100vh; background: rgba(13, 8, 24, 0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-left: 1px solid var(--divider); flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 0; padding: 100px 32px; z-index: 1050; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+            .nav-links { display: none; position: fixed; top: 0; right: 0; width: 80vw; max-width: 320px; height: 100vh; background: rgba(13, 8, 24, 0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-left: 1px solid var(--divider); flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 0; padding: 100px 32px; z-index: 1050; overflow-y: auto; -webkit-overflow-scrolling: touch; margin: 0; }
             .nav-links.open { display: flex; }
             .nav-links > a, .nav-item-services { width: 100%; }
             .nav-links > a { font-size: 0.78rem; letter-spacing: 0.2em; padding: 14px 0; border-bottom: 1px solid var(--divider); display: block; }
@@ -125,6 +134,8 @@
             .services-dropdown a:hover { padding-left: 8px; }
             .nav-overlay { display: none; position: fixed; inset: 0; background: rgba(6,4,15,0.7); z-index: 1040; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
             .nav-overlay.open { display: block; }
+            .nav-right-actions { gap: 12px; }
+            .lang-switch { font-size: 0.58rem; padding: 5px 11px; }
         }
 
         /* ── HERO ── */
@@ -278,6 +289,12 @@
                 <a href="index.html#team">核心團隊</a>
                 <a href="index.html#contact">聯絡查詢</a>
             </nav>
+            <div class="nav-right-actions">
+                <a href="service-facechangeen.html" class="lang-switch">EN</a>
+                <button class="hamburger" id="hamburger" aria-label="開啟選單">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -379,7 +396,7 @@
                 <div class="feature-card fade-up" style="transition-delay: 250ms;">
                     <div class="feature-icon">03</div>
                     <h3>品牌專屬面譜定製</h3>
-                    <p>可根據企業客戶的品牌主色調、吉祥物或核心標誌（Logo），在演出最後高潮一幕定製化突顯「專屬品牌元素」，極致提升品牌美譽度與深刻記憶點。</p>
+                    <p>可根據企業客戶的品牌主色調、吉祥物 or 核心標誌（Logo），在演出最後高潮一幕定製化突顯「專屬品牌元素」，極致提升品牌美譽度與深刻記憶點。</p>
                 </div>
             </div>
         </div>
@@ -436,7 +453,6 @@
     </footer>
 
     <script>
-        // 1. Fade-up on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -445,7 +461,6 @@
 
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-        // 2. Header scroll shrink
         const header = document.querySelector('header');
         window.addEventListener('scroll', () => {
             const isMobile = window.innerWidth <= 768;
@@ -458,7 +473,6 @@
             }
         }, { passive: true });
 
-        // 3. Hamburger menu
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
         const navOverlay = document.getElementById('navOverlay');
@@ -489,7 +503,6 @@
             });
         }
 
-        // 4. Carousel
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.carousel-dots .dot');
         const prevBtn = document.getElementById('fcPrev');
@@ -519,7 +532,6 @@
             });
         });
 
-        // Touch swipe
         let touchStartX = 0;
         const carouselContainer = document.getElementById('facechangeCarousel');
         if (carouselContainer) {
