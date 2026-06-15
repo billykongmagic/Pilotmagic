@@ -73,7 +73,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "奢華品牌實體名定製 (Luxury Brand Sleight-of-Hand)",
+              "name": "奢華品牌實物名定製 (Luxury Brand Sleight-of-Hand)",
               "description": "轉為品牌方定製實物幻化，以大師級手法優雅呈現。"
             }
           }
@@ -89,8 +89,6 @@
     <style>
         /* ══════════════════════════════════════════
            DESIGN SYSTEM — Arcane Luxury (與首頁完美同步)
-           Palette: Deep obsidian · Aged gold · Ghost white
-           Type: Cinzel (display) + Cormorant Garamond (body)
         ══════════════════════════════════════════ */
         :root {
             --obsidian:      #06040f;
@@ -112,7 +110,12 @@
         }
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; width: 100%; overflow-x: hidden; }
+        html {
+            scroll-behavior: smooth;
+            width: 100%;
+            overflow-x: hidden;
+            background-color: var(--obsidian);
+        }
         body {
             background-color: var(--obsidian);
             color: var(--cream);
@@ -134,7 +137,7 @@
         ul { list-style: none; }
 
         /* ══════════════════════════════════════════
-           HEADER (首頁完全相同完美對齊)
+           HEADER (首頁完美對齊，EN在最右側)
         ══════════════════════════════════════════ */
         header {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
@@ -154,40 +157,15 @@
             display: flex; justify-content: space-between; align-items: center;
         }
         
-        /* 加大 Logo 預設尺寸為 86px，並增加平滑變形效果 */
         .logo img { height: 86px; width: auto; transition: height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
-        /* 漢堡選單 (手機版) */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            gap: 5px;
-            width: 36px;
-            height: 36px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 4px;
-            z-index: 1100;
-        }
-        .hamburger span {
-            display: block;
-            width: 100%;
-            height: 1.5px;
-            background: var(--gold-pale);
-            transition: transform 0.35s ease, opacity 0.25s ease;
-            transform-origin: center;
-        }
-        .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-        .hamburger.open span:nth-child(2) { opacity: 0; }
-        .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-        /* 選單排版與對齊 */
+        /* 選單排版靠右對齊，EN固定在最右側行為容器 */
         .nav-links {
             display: flex;
             gap: 36px;
             align-items: center;
+            margin-left: auto;
+            margin-right: 36px;
         }
         .nav-links > a,
         .nav-item-services > a {
@@ -253,10 +231,6 @@
             transform-origin: top center;
             animation: dropdownFadeIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        @keyframes dropdownFadeIn {
-            from { opacity: 0; transform: translateX(-50%) translateY(10px); }
-            to { opacity: 1; transform: translateX(-50%) translateY(0); }
-        }
         .nav-item-services:hover .services-dropdown { display: block; }
         .services-dropdown a {
             display: flex;
@@ -284,8 +258,61 @@
             flex-shrink: 0;
         }
 
+        /* ─── 右側行為按鈕容器 ─── */
+        .nav-right-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            z-index: 1100;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 36px;
+            height: 36px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 1.5px;
+            background: var(--gold-pale);
+            transition: transform 0.35s ease, opacity 0.25s ease;
+            transform-origin: center;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+        .lang-switch {
+            font-family: 'Cinzel', serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-antique);
+            border: 1px solid rgba(184,146,42,0.45);
+            padding: 6px 14px;
+            border-radius: 2px;
+            background: transparent;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .lang-switch:hover {
+            background: rgba(184,146,42,0.1);
+            border-color: var(--gold-bright);
+            color: var(--gold-shimmer);
+        }
+
         /* ══════════════════════════════════════════
-           SUBPAGE HERO (舞台手彩主題優化)
+           SUBPAGE HERO
         ══════════════════════════════════════════ */
         .sub-hero {
             position: relative; width: 100%; height: 60vh; min-height: 400px;
@@ -296,7 +323,7 @@
         .sub-hero::before {
             content: ''; position: absolute; inset: 0;
             background: radial-gradient(ellipse at center, transparent 10%, rgba(6,4,15,0.85) 100%),
-                        linear-gradient(180deg, rgba(6,4,15,0.5) 0%, rgba(6,4,15,0.95) 100%);
+                        linear-gradient(180deg, rgba(6,4,15,0.5) 0%, rgba(6,4,15,0.0) 40%, rgba(6,4,15,0.92) 100%);
         }
         .sub-hero-content {
             position: relative; z-index: 10; text-align: center; padding: 0 24px; margin-top: 60px;
@@ -611,6 +638,7 @@
                 z-index: 1050;
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
+                margin: 0;
             }
             .nav-links.open { display: flex; }
             .nav-links > a, .nav-item-services {
@@ -690,6 +718,9 @@
             #formats { padding: 60px 0; }
             #formats .formats-inner { padding: 0 20px; }
             #sub-cta { padding: 60px 20px; }
+
+            .nav-right-actions { gap: 12px; }
+            .lang-switch { font-size: 0.58rem; padding: 5px 11px; }
         }
 
         @media (max-width: 480px) {
@@ -702,7 +733,7 @@
 </head>
 <body>
 
-    <!-- ══════ HEADER (與首頁完美同步) ══════ -->
+    <!-- ══════ HEADER (與首頁完全同步) ══════ -->
     <header>
         <div class="nav-container">
             <div class="logo">
@@ -710,9 +741,6 @@
                     <img src="images/logo.png" alt="百樂魔術有限公司 Pilot Magic">
                 </a>
             </div>
-            <button class="hamburger" id="hamburger" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks">
-                <span></span><span></span><span></span>
-            </button>
             <div class="nav-overlay" id="navOverlay"></div>
             <nav class="nav-links" id="navLinks">
                 <a href="index.html#about">關於我們</a>
@@ -733,10 +761,16 @@
                 <a href="index.html#team">核心團隊</a>
                 <a href="index.html#contact">聯絡查詢</a>
             </nav>
+            <div class="nav-right-actions">
+                <a href="service-stageen.html" class="lang-switch">EN</a>
+                <button class="hamburger" id="hamburger" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- ══════ HERO (舞台手彩子頁面) ══════ -->
+    <!-- ══════ HERO ══════ -->
     <section class="sub-hero">
         <div class="sub-hero-content">
             <p class="sub-hero-eyebrow">Stage Manipulation Magic</p>
@@ -745,7 +779,7 @@
         </div>
     </section>
 
-    <!-- ══════ INTRO SECTION (舞台手彩魔術介紹) ══════ -->
+    <!-- ══════ INTRO SECTION ══════ -->
     <section class="page-section">
         <div class="intro-grid">
             <div class="intro-text fade-up">
@@ -754,7 +788,7 @@
                 <p>百樂魔術在舞台手彩領域擁有澳門最具代表性的實力。我們的手彩節目以「高難度純指法編排」、「肢體美學呈現」及「劇院級音樂契合度」著稱。在幾分鐘的磅礡樂章中，純淨無暇的手法演出能瞬間凝聚全場，為您的高端商務盛會或典禮奠定極致不凡、高雅端莊的藝術基調。</p>
             </div>
             
-            <!-- 輪播主圖框架 (6張手彩精選相片自動/手動滑動系統) ─── -->
+            <!-- 輪播主圖框架 (6張手彩精選相片自動/手動滑動系統) -->
             <div class="intro-img fade-up">
                 <div class="frame">
                     <div class="carousel-container" id="stageCarousel">
@@ -804,7 +838,7 @@
         </div>
     </section>
 
-    <!-- ══════ PERFORMANCE FORMATS (舞台純手法表演形式 - 無互動、無高科技) ══════ -->
+    <!-- ══════ PERFORMANCE FORMATS ══════ -->
     <section id="formats">
         <div class="section-bg-glow" style="background-color: rgba(92,45,154,0.15); bottom:-100px; left:-100px;"></div>
         <div class="formats-inner">
@@ -865,7 +899,7 @@
         </div>
     </section>
 
-    <!-- ══════ ADVANTAGES (舞台優勢) ══════ -->
+    <!-- ══════ ADVANTAGES ══════ -->
     <section class="page-section">
         <div class="section-header fade-up">
             <span class="section-tag">Our Advantages</span>
@@ -896,7 +930,7 @@
         </div>
     </section>
 
-    <!-- ══════ CTA SECTION (尊榮預約) ══════ -->
+    <!-- ══════ CTA SECTION ══════ -->
     <section id="sub-cta">
         <div class="fade-up">
             <p class="section-tag">Booking & Inquiry</p>
@@ -908,7 +942,7 @@
         </div>
     </section>
 
-    <!-- ══════ FOOTER (完全同步官網) ══════ -->
+    <!-- ══════ FOOTER ══════ -->
     <footer>
         <div class="footer-logo">Pilot Magic Co., Ltd. · Macau</div>
         <p class="footer-copy">&copy; 2026 百樂魔術有限公司 版權所有。紮根澳門，服務大灣區。</p>
@@ -916,7 +950,6 @@
 
     <!-- ══════ SCRIPTS ══════ -->
     <script>
-        // ─── 導航欄滾動縮放與半透明邏輯 (與首頁完全同步) ───
         const header = document.querySelector('header');
         
         window.addEventListener('scroll', () => {
@@ -930,7 +963,6 @@
             }
         }, { passive: true });
 
-        // ─── 手機版抽屜式導航選單控制 (含手風琴下拉) ───
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
         const navOverlay = document.getElementById('navOverlay');
@@ -950,12 +982,10 @@
         hamburger.addEventListener('click', () => toggleMenu(!navLinks.classList.contains('open')));
         navOverlay.addEventListener('click', () => toggleMenu(false));
 
-        // 點擊常規錨點後自動關閉抽屜
         navLinks.querySelectorAll('a[href^="index.html#"]').forEach(a => {
             a.addEventListener('click', () => toggleMenu(false));
         });
 
-        // 手機版專業服務手風琴下拉菜單
         servicesTrigger.addEventListener('click', (e) => {
             if (window.innerWidth <= 768) {
                 e.preventDefault();
@@ -963,7 +993,6 @@
             }
         });
 
-        // ─── 6張舞台大圖自動與手動投影片輪播邏輯 ───
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.carousel-dots .dot');
         const prevBtn = document.getElementById('carouselPrev');
@@ -1006,7 +1035,6 @@
             });
         });
 
-        // 手機版左滑/右滑手勢支援
         let touchStartX = 0;
         let touchEndX = 0;
         const carouselContainer = document.getElementById('stageCarousel');
@@ -1023,23 +1051,18 @@
         function handleSwipe() {
             const swipeThreshold = 50;
             if (touchStartX - touchEndX > swipeThreshold) {
-                // 向左滑動 -> 下一張
                 updateCarousel(activeIdx + 1);
                 startAutoSlide();
             } else if (touchEndX - touchStartX > swipeThreshold) {
-                // 向右滑動 -> 上一張
                 updateCarousel(activeIdx - 1);
                 startAutoSlide();
             }
         }
 
-        // 初始化自動播放
         startAutoSlide();
 
-        // ─── 滾動監聽淡入淡出動畫 ───
         const fadeEls = document.querySelectorAll('.fade-up');
 
-        // 為網格內的子元素設置交錯延遲
         document.querySelectorAll('.formats-grid, .adv-grid').forEach(grid => {
             grid.querySelectorAll('.fade-up').forEach((child, i) => {
                 child.style.transitionDelay = (i * 100) + 'ms';
