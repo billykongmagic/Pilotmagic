@@ -1,0 +1,87 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- 首頁 (主語系) -->
+  <url>
+    <loc>https://www.pilotmagic.com/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 首頁 (英文版) -->
+  <url>
+    <loc>https://www.pilotmagic.com/indexen.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 專業服務：近距離魔術 -->
+  <url>
+    <loc>https://www.pilotmagic.com/service-closeup.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 專業服務：舞台手彩魔術 -->
+  <url>
+    <loc>https://www.pilotmagic.com/service-stage.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 專業服務：互動舞台魔術 -->
+  <url>
+    <loc>https://www.pilotmagic.com/service-interactive.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 專業服務：小丑及造型氣球 -->
+  <url>
+    <loc>https://www.pilotmagic.com/service-clown.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 專業服務：親子派對魔術 -->
+  <url>
+    <loc>https://www.pilotmagic.com/service-kids.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 專業服務：魔術教學工作坊 -->
+  <url>
+    <loc>https://www.pilotmagic.com/service-workshop.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 專業服務：泡泡秀 -->
+  <url>
+    <loc>https://www.pilotmagic.com/service-bubble.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 專業服務：川劇變臉 -->
+  <url>
+    <loc>https://www.pilotmagic.com/service-facechange.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
+
+```
