@@ -6,9 +6,26 @@
     <title>澳門夢幻泡泡秀表演 Bubble Show | 百樂魔術有限公司 Pilot Magic Co., Ltd. 大灣區專業娛樂策劃</title>
     <meta name="description" content="百樂魔術（Pilot Magic）提供澳門、香港及大灣區最頂級的夢幻泡泡秀表演服務。結合巨型空間泡泡、炫彩煙霧套泡與驚奇人體入泡特技，為澳門博企、奢華酒店、商場節慶、社區嘉年華及私人高端派對量身打造高轉化、吸睛之視覺盛宴。">
     <meta name="keywords" content="澳門泡泡秀, 澳門魔術表演, 大灣區娛樂策劃, 澳門商業公關活動, 澳門派對小丑氣球, 澳門婚禮迎賓表演, 百樂魔術, Pilot Magic, 澳門活動策劃">
+    <link rel="canonical" href="https://pilotmagic.co/service-bubble.html">
+    <!-- ══ 多語言標註 (hreflang) ══ -->
+    <link rel="alternate" hreflang="zh-HK" href="https://pilotmagic.co/service-bubble.html" />
+    <link rel="alternate" hreflang="en" href="https://pilotmagic.co/service-bubbleen.html" />
+    <link rel="alternate" hreflang="x-default" href="https://pilotmagic.co/service-bubble.html" />
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="澳門夢幻泡泡秀表演 | 百樂魔術 Pilot Magic">
+    <meta property="og:description" content="結合巨型空間泡泡、炫彩煙霧套泡與驚奇人體入泡特技，為澳門博企、奢華酒店、商場節慶及私人派對打造視覺盛宴。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://pilotmagic.co/service-bubble.html">
+    <meta property="og:image" content="https://pilotmagic.co/images/service_bubble_main.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- ══ 首屏 Hero 背景圖預載入 (提升 LCP) ══ -->
+    <link rel="preload" as="image" href="images/service_bubble_hero.jpg" fetchpriority="high">
 
     <!-- SEO & GEO 結構化數據 (JSON-LD) -->
     <script type="application/ld+json">
@@ -16,10 +33,10 @@
       "@context": "https://schema.org",
       "@type": "EntertainmentBusiness",
       "name": "百樂魔術有限公司 Pilot Magic Co., Ltd.",
-      "url": "https://www.pilotmagic.com/service-bubble.html",
+      "url": "https://pilotmagic.co/service-bubble.html",
       "telephone": "+853-6655-1654",
       "priceRange": "$$",
-      "image": "images/service_bubble_main.jpg",
+      "image": "https://pilotmagic.co/images/service_bubble_main.jpg",
       "description": "提供澳門、香港及大灣區最專業的夢幻泡泡秀演出，專為商場活動、品牌發布會、星級度假村及私人高端派對設計客製化娛樂項目。",
       "address": {
         "@type": "PostalAddress",
@@ -31,6 +48,40 @@
         "latitude": "22.1987",
         "longitude": "113.5439"
       }
+    }
+    </script>
+
+    <!-- ══════ FAQ 結構化數據 (SEO) ══════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "泡泡秀適合哪些活動場合？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "泡泡秀適合商場節慶、品牌發布會、星級度假村活動、親子嘉年華、社區活動及私人高端派對，老少咸宜、視覺效果震撼。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "泡泡秀有哪些特色環節？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "包含巨型空間泡泡、炫彩煙霧套泡、大師級層疊泡泡、彩虹泡泡風暴及人體入泡體驗等多個驚奇環節。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "泡泡秀需要什麼場地條件？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "建議室內或避風場地，需要一定的表演空間。我們可依據場地環境調整表演方案與泡泡規模。"
+          }
+        }
+      ]
     }
     </script>
 
@@ -317,7 +368,7 @@
         <div class="nav-container">
             <div class="logo">
                 <a href="index.html#home">
-                    <img src="images/logo.png" alt="百樂魔術有限公司 Pilot Magic">
+                    <img src="images/logo.png" alt="百樂魔術有限公司 Pilot Magic" fetchpriority="high" decoding="async">
                 </a>
             </div>
             <div class="nav-overlay" id="navOverlay"></div>
@@ -378,19 +429,19 @@
                                 <img src="images/service_bubble_main.jpg" alt="夢幻泡泡秀精彩演出一" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518173946687-a4c8a383392e?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/bubble2.jpg" alt="夢幻煙霧炫彩魔泡二" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1548345680-f5475ea5df84?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/bubble2.jpg" loading="lazy" decoding="async" alt="夢幻煙霧炫彩魔泡二" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1548345680-f5475ea5df84?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/bubble3.jpg" alt="大師級層疊套泡秀三" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/bubble3.jpg" loading="lazy" decoding="async" alt="大師級層疊套泡秀三" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/bubble4.jpg" alt="巨型彩虹泡泡風暴四" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/bubble4.jpg" loading="lazy" decoding="async" alt="巨型彩虹泡泡風暴四" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/bubble5.jpg" alt="全場大小朋友開心互動五" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/bubble5.jpg" loading="lazy" decoding="async" alt="全場大小朋友開心互動五" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/bubble6.jpg" alt="神奇人體包覆泡泡體驗六" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/bubble6.jpg" loading="lazy" decoding="async" alt="神奇人體包覆泡泡體驗六" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800'">
                             </div>
                         </div>
                         <button class="carousel-arrow prev" id="carouselPrev" aria-label="上一張圖片">&#10094;</button>
