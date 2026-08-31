@@ -13,17 +13,25 @@
     <meta name="keywords" content="Macau clown show, Macau balloon artist, comedy juggling, balloon twisting Macau, kids party Macau, carnival entertainment Macau, Pilot Magic, party clown Macau">
     <meta name="author" content="Pilot Magic Co., Ltd.">
     <link rel="canonical" href="https://pilotmagic.co/service-clownen.html">
+    <!-- ══ 多語言標註 (hreflang) ══ -->
+    <link rel="alternate" hreflang="en" href="https://pilotmagic.co/service-clownen.html" />
+    <link rel="alternate" hreflang="zh-HK" href="https://pilotmagic.co/service-clown.html" />
+    <link rel="alternate" hreflang="x-default" href="https://pilotmagic.co/service-clownen.html" />
+    <link rel="icon" type="image/png" href="images/logo.png">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Comedy Juggling & Interactive Balloon Clown Show | Pilot Magic Macau">
     <meta property="og:description" content="Macau's most popular comedy clown show and balloon sculpting! Ideal for kids parties, school carnivals, and community events. Highly interactive fun.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://pilotmagic.co/service-clownen.html">
-    <meta property="og:image" content="images/service_clown_detail.jpg">
+    <meta property="og:image" content="https://pilotmagic.co/images/service_clown_detail.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- ══ 首屏 Hero 背景圖預載入 (提升 LCP) ══ -->
+    <link rel="preload" as="image" href="images/service_clown_hero.jpg" fetchpriority="high">
 
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
@@ -31,7 +39,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Pilot Magic Co., Ltd.",
-      "image": "images/logo.png",
+      "image": "https://pilotmagic.co/images/logo.png",
       "url": "https://pilotmagic.co/service-clownen.html",
       "telephone": "+853-6655-1654", 
       "priceRange": "$$",
@@ -71,6 +79,40 @@
           }
         ]
       }
+    }
+    </script>
+
+    <!-- ══════ FAQ 結構化數據 (SEO) ══════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What events are clown shows best suited for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our clown shows are perfect for birthday parties, baby banquets, school carnivals, community festivals, mall events and kids parties — friendly, zero-distance interaction that heats up any crowd."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is included in the clown show?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The show includes a comedy juggling act (classic tricks like ball juggling and plate spinning with humorous audience interaction) plus on-the-spot balloon twisting giveaways — book separately or as a duo package."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the clown show be combined with other performances?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The clown juggling show can be combined with magic performances, bubble shows and more as a duo package for a richer entertainment experience."
+          }
+        }
+      ]
     }
     </script>
 
@@ -697,7 +739,7 @@
         <div class="nav-container">
             <div class="logo">
                 <a href="indexen.html#home">
-                    <img src="images/logo.png" alt="Pilot Magic">
+                    <img src="images/logo.png" alt="Pilot Magic" fetchpriority="high" decoding="async">
                 </a>
             </div>
             <div class="nav-overlay" id="navOverlay"></div>
@@ -756,19 +798,19 @@
                                 <img src="images/service_clown_detail.jpg" alt="Macau Comedy Juggling and Interactive Balloon Clown Show Live" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/clown2.jpg" alt="Vibrant Balloon Sculpting on Spot" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/clown2.jpg" loading="lazy" decoding="async" alt="Vibrant Balloon Sculpting on Spot" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/clown3.jpg" alt="Clown Balancing and Juggling Acts" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/clown3.jpg" loading="lazy" decoding="async" alt="Clown Balancing and Juggling Acts" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/clown4.jpg" alt="Lively Interaction with Birthday Children" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/clown4.jpg" loading="lazy" decoding="async" alt="Lively Interaction with Birthday Children" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/clown5.jpg" alt="Community Carnival Juggling Comedy Performance" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/clown5.jpg" loading="lazy" decoding="async" alt="Community Carnival Juggling Comedy Performance" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/clown6.jpg" alt="Special Duo Package: Juggling and Balloon Gifts" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516280440614-37939bbacd6a?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/clown6.jpg" loading="lazy" decoding="async" alt="Special Duo Package: Juggling and Balloon Gifts" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516280440614-37939bbacd6a?auto=format&fit=crop&q=80&w=800'">
                             </div>
                         </div>
                         
