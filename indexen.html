@@ -6,12 +6,16 @@
     <title>Pilot Magic | Premium Corporate Magic & Bespoke Entertainment in Macau</title>
     <meta name="description" content="Pilot Magic delivers high-end corporate magic, bespoke brand entertainment, and VIP event experiences in Macau and the Greater Bay Area. Over 20 years of professional performance expertise.">
     <meta name="keywords" content="Macau magician, premium corporate magic, bespoke event entertainment, VIP party magician Macau, luxury brand magic, Greater Bay Area entertainment, Pilot Magic">
-    <link rel="canonical" href="https://www.pilotmagic.com/indexen.html" />
+    <link rel="canonical" href="https://pilotmagic.co/indexen.html" />
+    <!-- ══ 多語言標註 (hreflang) ══ -->
+    <link rel="alternate" hreflang="en"      href="https://pilotmagic.co/indexen.html" />
+    <link rel="alternate" hreflang="zh-HK"   href="https://pilotmagic.co/" />
+    <link rel="alternate" hreflang="x-default" href="https://pilotmagic.co/" />
 
     <meta property="og:title" content="Pilot Magic | Premium Corporate Magic & Bespoke Entertainment">
     <meta property="og:description" content="Specializing in high-end corporate events and customized brand magic across Macau and the Greater Bay Area.">
-    <meta property="og:image" content="https://www.pilotmagic.com/images/about_main.jpg">
-    <meta property="og:url" content="https://www.pilotmagic.com/indexen.html">
+    <meta property="og:image" content="https://pilotmagic.co/images/about_main.jpg">
+    <meta property="og:url" content="https://pilotmagic.co/indexen.html">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Pilot Magic Co., Ltd.">
@@ -20,16 +24,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;700&display=swap" rel="stylesheet">
 
+    <!-- ══ 首屏 Hero 背景圖預載入 (提升 LCP) ══ -->
+    <link rel="preload" as="image" href="images/hero1.jpg" fetchpriority="high">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": ["EntertainmentBusiness", "LocalBusiness"],
       "name": "Pilot Magic Co., Ltd.",
-      "url": "https://www.pilotmagic.com/indexen.html",
+      "url": "https://pilotmagic.co/indexen.html",
       "telephone": "+853-6655-1654",
       "email": "Bpilotmagic@gmail.com",
       "priceRange": "$$$",
-      "image": "https://www.pilotmagic.com/images/logo.png",
+      "image": "https://pilotmagic.co/images/logo.png",
       "description": "Macau's premier magic and entertainment company, specializing in high-end corporate events, bespoke brand experiences, and VIP entertainment.",
       "address": {
         "@type": "PostalAddress",
@@ -59,6 +66,40 @@
       ],
       "sameAs": [
         "https://www.facebook.com/PilotMagic"
+      ]
+    }
+    </script>
+
+    <!-- ══════ FAQ 結構化數據 (SEO) ══════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What types of magic performances does Pilot Magic offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer close-up magic, stage manipulation magic, interactive stage shows, clown and balloon art, kids party magic, magic workshops, bubble shows and Chinese face changing — all customizable to your event theme."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which regions do you serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our core services cover Macau, Hong Kong and nearby Greater Bay Area cities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I book or request a quote?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can reach us through the website contact form, WhatsApp (+853 6655 1654) or Email (Bpilotmagic@gmail.com)."
+          }
+        }
       ]
     }
     </script>
@@ -364,7 +405,7 @@
             inset: 0;
             background:
                 radial-gradient(ellipse at center, transparent 20%, rgba(6,4,15,0.6) 100%),
-                linear-gradient(180deg, rgba(6,4,15,0.4) 0%, rgba(6,4,15,0.0) 40%, rgba(6,4,15,0.85) 1005);
+                linear-gradient(180deg, rgba(6,4,15,0.4) 0%, rgba(6,4,15,0.0) 40%, rgba(6,4,15,0.85) 100%);
         }
 
         .hero-content {
@@ -1512,7 +1553,7 @@
         <div class="nav-container">
             <div class="logo">
                 <a href="#home">
-                    <img src="images/logo.png" alt="Pilot Magic">
+                    <img src="images/logo.png" alt="Pilot Magic" fetchpriority="high" decoding="async">
                 </a>
             </div>
             <div class="nav-overlay" id="navOverlay"></div>
@@ -1600,7 +1641,7 @@
                 </div>
             </div>
             <div class="about-image-frame fade-up">
-                <img src="images/about_main.jpg" alt="Pilot Magic Professional Team">
+                <img src="images/about_main.jpg" alt="Pilot Magic Professional Team" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
@@ -1616,7 +1657,8 @@
 
             <div class="service-card" style="--i:0">
                 <div class="service-img-wrapper">
-                    <img src="images/service_closeup.jpg" alt="Close-up Magic" class="service-img">
+                    <img src="images/service_closeup.jpg" alt="Close-up Magic" class="service-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="service-img-placeholder" style="display:none;">Close-up</div>
                     <span class="service-num">01</span>
                 </div>
                 <div class="service-body">
@@ -1636,7 +1678,8 @@
 
             <div class="service-card" style="--i:1">
                 <div class="service-img-wrapper">
-                    <img src="images/service_stage.jpg" alt="Stage Magic" class="service-img">
+                    <img src="images/service_stage.jpg" alt="Stage Magic" class="service-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="service-img-placeholder" style="display:none;">Stage</div>
                     <span class="service-num">02</span>
                 </div>
                 <div class="service-body">
@@ -1656,7 +1699,8 @@
 
             <div class="service-card" style="--i:2">
                 <div class="service-img-wrapper">
-                    <img src="images/service_interactive.jpg" alt="Interactive Stage Show" class="service-img">
+                    <img src="images/service_interactive.jpg" alt="Interactive Stage Show" class="service-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="service-img-placeholder" style="display:none;">Interactive</div>
                     <span class="service-num">03</span>
                 </div>
                 <div class="service-body">
@@ -1676,7 +1720,8 @@
 
             <div class="service-card" style="--i:3">
                 <div class="service-img-wrapper">
-                    <img src="images/service_clown.jpg" alt="Clown and Balloon Art" class="service-img">
+                    <img src="images/service_clown.jpg" alt="Clown and Balloon Art" class="service-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="service-img-placeholder" style="display:none;">Clown</div>
                     <span class="service-num">04</span>
                 </div>
                 <div class="service-body">
@@ -1696,7 +1741,8 @@
 
             <div class="service-card" style="--i:4">
                 <div class="service-img-wrapper">
-                    <img src="images/service_kids.jpg" alt="Kids Party Magic" class="service-img">
+                    <img src="images/service_kids.jpg" alt="Kids Party Magic" class="service-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="service-img-placeholder" style="display:none;">Kids Party</div>
                     <span class="service-num">05</span>
                 </div>
                 <div class="service-body">
@@ -1716,7 +1762,8 @@
 
             <div class="service-card" style="--i:5">
                 <div class="service-img-wrapper">
-                    <img src="images/service_workshop.jpg" alt="Magic Workshop" class="service-img">
+                    <img src="images/service_workshop.jpg" alt="Magic Workshop" class="service-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="service-img-placeholder" style="display:none;">Workshop</div>
                     <span class="service-num">06</span>
                 </div>
                 <div class="service-body">
@@ -1735,7 +1782,7 @@
 
             <div class="service-card" style="--i:6">
                 <div class="service-img-wrapper">
-                    <img src="images/service_bubble.jpg" alt="Bubble Show" class="service-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <img src="images/service_bubble.jpg" alt="Bubble Show" class="service-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                     <div class="service-img-placeholder" style="display:none;">Bubble Show</div>
                     <span class="service-num">07</span>
                 </div>
@@ -1756,7 +1803,7 @@
 
             <div class="service-card" style="--i:7">
                 <div class="service-img-wrapper">
-                    <img src="images/service_facechange.jpg" alt="Chinese Face Changing" class="service-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <img src="images/service_facechange.jpg" alt="Chinese Face Changing" class="service-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                     <div class="service-img-placeholder" style="display:none;">Face Changing</div>
                     <span class="service-num">08</span>
                 </div>
@@ -1807,26 +1854,26 @@
         </div>
         <div class="gallery-header fade-up">— &nbsp; Event Photo Gallery &nbsp; —</div>
         <div class="gallery-grid fade-up stagger">
-            <div class="gallery-item" style="--i:0"><img src="images/gallery1.jpg"  alt="Performance Photo 01"></div>
-            <div class="gallery-item" style="--i:1"><img src="images/gallery2.jpg"  alt="Performance Photo 02"></div>
-            <div class="gallery-item" style="--i:2"><img src="images/gallery3.jpg"  alt="Performance Photo 03"></div>
-            <div class="gallery-item" style="--i:3"><img src="images/gallery4.jpg"  alt="Performance Photo 04"></div>
-            <div class="gallery-item" style="--i:4"><img src="images/gallery5.jpg"  alt="Performance Photo 05"></div>
-            <div class="gallery-item" style="--i:5"><img src="images/gallery6.jpg"  alt="Performance Photo 06"></div>
-            <div class="gallery-item" style="--i:6"><img src="images/gallery7.jpg"  alt="Performance Photo 07"></div>
-            <div class="gallery-item" style="--i:7"><img src="images/gallery8.jpg"  alt="Performance Photo 08"></div>
-            <div class="gallery-item" style="--i:8"><img src="images/gallery9.jpg"  alt="Performance Photo 09"></div>
-            <div class="gallery-item" style="--i:9"><img src="images/gallery10.jpg" alt="Performance Photo 10"></div>
-            <div class="gallery-item" style="--i:10"><img src="images/gallery11.jpg" alt="Performance Photo 11"></div>
-            <div class="gallery-item" style="--i:11"><img src="images/gallery12.jpg" alt="Performance Photo 12"></div>
-            <div class="gallery-item" style="--i:12"><img src="images/gallery13.jpg" alt="Performance Photo 13"></div>
-            <div class="gallery-item" style="--i:13"><img src="images/gallery14.jpg" alt="Performance Photo 14"></div>
-            <div class="gallery-item" style="--i:14"><img src="images/gallery15.jpg" alt="Performance Photo 15"></div>
-            <div class="gallery-item" style="--i:15"><img src="images/gallery16.jpg" alt="Performance Photo 16"></div>
-            <div class="gallery-item" style="--i:16"><img src="images/gallery17.jpg" alt="Performance Photo 17"></div>
-            <div class="gallery-item" style="--i:18"><img src="images/gallery18.jpg" alt="Performance Photo 18"></div>
-            <div class="gallery-item" style="--i:18"><img src="images/gallery19.jpg" alt="Performance Photo 19"></div>
-            <div class="gallery-item" style="--i:19"><img src="images/gallery20.jpg" alt="Performance Photo 20"></div>
+            <div class="gallery-item" style="--i:0"><img src="images/gallery1.jpg"  alt="Performance Photo 01" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:1"><img src="images/gallery2.jpg"  alt="Performance Photo 02" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:2"><img src="images/gallery3.jpg"  alt="Performance Photo 03" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:3"><img src="images/gallery4.jpg"  alt="Performance Photo 04" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:4"><img src="images/gallery5.jpg"  alt="Performance Photo 05" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:5"><img src="images/gallery6.jpg"  alt="Performance Photo 06" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:6"><img src="images/gallery7.jpg"  alt="Performance Photo 07" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:7"><img src="images/gallery8.jpg"  alt="Performance Photo 08" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:8"><img src="images/gallery9.jpg"  alt="Performance Photo 09" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:9"><img src="images/gallery10.jpg" alt="Performance Photo 10" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:10"><img src="images/gallery11.jpg" alt="Performance Photo 11" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:11"><img src="images/gallery12.jpg" alt="Performance Photo 12" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:12"><img src="images/gallery13.jpg" alt="Performance Photo 13" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:13"><img src="images/gallery14.jpg" alt="Performance Photo 14" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:14"><img src="images/gallery15.jpg" alt="Performance Photo 15" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:15"><img src="images/gallery16.jpg" alt="Performance Photo 16" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:16"><img src="images/gallery17.jpg" alt="Performance Photo 17" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:17"><img src="images/gallery18.jpg" alt="Performance Photo 18" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:18"><img src="images/gallery19.jpg" alt="Performance Photo 19" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:19"><img src="images/gallery20.jpg" alt="Performance Photo 20" loading="lazy" decoding="async"></div>
         </div>
     </section>
 
@@ -1841,7 +1888,7 @@
 
             <div class="team-card fade-up">
                 <div class="team-avatar">
-                    <img src="images/team_billy.jpg" alt="Billy Kong — Lead Magician">
+                    <img src="images/team_billy.jpg" alt="Billy Kong — Lead Magician" loading="lazy" decoding="async">
                 </div>
                 <div class="team-name">江尚峰 Billy Kong</div>
                 <span class="team-role">Lead Magician & Director</span>
@@ -1860,7 +1907,7 @@
 
             <div class="team-card fade-up">
                 <div class="team-avatar">
-                    <img src="images/team_brian.jpg" alt="Brian Wong — Professional Magician">
+                    <img src="images/team_brian.jpg" alt="Brian Wong — Professional Magician" loading="lazy" decoding="async">
                 </div>
                 <div class="team-name">王啟仁 Brian Wong</div>
                 <span class="team-role">Professional Magician</span>
@@ -1878,7 +1925,7 @@
 
             <div class="team-card fade-up">
                 <div class="team-avatar">
-                    <img src="images/team_yuma.jpg" alt="Magic Yu Ma — Founder">
+                    <img src="images/team_yuma.jpg" alt="Magic Yu Ma — Founder" loading="lazy" decoding="async">
                 </div>
                 <div class="team-name">蘇大新 Magic Yu Ma</div>
                 <span class="team-role">Founder & Director</span>
@@ -1896,7 +1943,7 @@
 
             <div class="team-card fade-up">
                 <div class="team-avatar">
-                    <img src="images/team_vincent.jpg" alt="Vincent — Multi-disciplinary Entertainer">
+                    <img src="images/team_vincent.jpg" alt="Vincent — Multi-disciplinary Entertainer" loading="lazy" decoding="async">
                 </div>
                 <div class="team-name">黃嘉偉 Vincent</div>
                 <span class="team-role">Multi-disciplinary Entertainer</span>
@@ -1914,7 +1961,7 @@
 
             <div class="team-card fade-up">
                 <div class="team-avatar">
-                    <img src="images/team_jin.jpg" alt="JIN — Face Changing Artist">
+                    <img src="images/team_jin.jpg" alt="JIN — Face Changing Artist" loading="lazy" decoding="async">
                 </div>
                 <div class="team-name">京人 JIN</div>
                 <span class="team-role">Chinese Face Changing Artist</span>
@@ -2056,11 +2103,11 @@
                 <form action="https://formspree.io/f/mpqedbyg" method="POST">
                     <div class="form-group">
                         <label class="form-label">Company / Contact Name</label>
-                        <input type="text" name="contact_name" class="form-input" required placeholder="e.g. ABC Ltd. / Mr. Chan">
+                        <input type="text" name="contact_name" class="form-input" required placeholder="e.g. ABC Ltd. / Mr. Chan" autocomplete="name">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Phone / WhatsApp</label>
-                        <input type="text" name="phone" class="form-input" required placeholder="Please enter your phone number">
+                        <input type="text" name="phone" class="form-input" required placeholder="Please enter your phone number" autocomplete="tel">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Event Date & Type</label>
