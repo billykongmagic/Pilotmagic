@@ -13,6 +13,11 @@
     <meta name="keywords" content="Macau magician, Macau magic show, close-up magic, corporate event magic, luxury brand bespoke magic, Billy Kong, Pilot Magic, Macau Magician, Close-up Magic Macau, Corporate Event Entertainment">
     <meta name="author" content="Pilot Magic Co., Ltd.">
     <link rel="canonical" href="https://pilotmagic.co/service-closeupen.html">
+    <!-- ══ 多語言標註 (hreflang) ══ -->
+    <link rel="alternate" hreflang="en"    href="https://pilotmagic.co/service-closeupen.html" />
+    <link rel="alternate" hreflang="zh-HK" href="https://pilotmagic.co/service-closeup.html" />
+    <link rel="alternate" hreflang="x-default" href="https://pilotmagic.co/service-closeup.html" />
+    <link rel="icon" type="image/png" href="images/logo.png">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
@@ -42,7 +47,7 @@
         "latitude": "22.1987",
         "longitude": "113.5439"
       },
-      "sameAs": ["https://pilotmagic.co/indexen.html"],
+      "sameAs": ["https://www.facebook.com/PilotMagic", "https://pilotmagic.co/indexen.html"],
       "knowsAbout": ["Close-up Magic","Brand Customization","Luxury Event Entertainment","Corporate Magic Performance","Bilingual Magic Show"],
       "memberOf": {
         "@type": "Organization",
@@ -73,9 +78,46 @@
     }
     </script>
 
+    <!-- ══════ FAQ 結構化數據 (SEO) ══════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What events are close-up magic best suited for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Close-up magic is ideal for corporate receptions, wedding receptions, VIP receptions, corporate dinners, luxury brand launches and fine watch & jewelry exhibitions — perfect for breaking the ice and sparking conversation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between close-up magic and stage magic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Close-up magic happens just inches from your guests, without stage sets or lighting, emphasizing personal interaction and social ice-breaking. Stage magic suits larger events with bigger audiences and grander scale."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you create a bespoke magic show for our brand?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We have crafted brand-specific magic for luxury houses like Hermès, seamlessly weaving products, logos or brand stories into magical effects to deeply connect with your target audience."
+          }
+        }
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- ══ 首屏 Hero 背景圖預載入 (提升 LCP) ══ -->
+    <link rel="preload" as="image" href="images/service_closeup_hero.jpg" fetchpriority="high">
 
     <style>
         /* ══════════════════════════════════════════
@@ -744,7 +786,7 @@
         <div class="nav-container">
             <div class="logo">
                 <a href="indexen.html#home">
-                    <img src="images/logo.png" alt="Pilot Magic">
+                    <img src="images/logo.png" alt="Pilot Magic" fetchpriority="high" decoding="async">
                 </a>
             </div>
             <div class="nav-overlay" id="navOverlay"></div>
@@ -803,19 +845,19 @@
                                 <img src="images/service_closeup_main.jpg" alt="Macau Premier Close-up Magic Performance" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/closeup2.jpg" alt="Interactive Guest Welcome Magic" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/closeup2.jpg" alt="Interactive Guest Welcome Magic" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/closeup3.jpg" alt="Luxury Brand VIP Customization" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/closeup3.jpg" alt="Luxury Brand VIP Customization" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/closeup4.jpg" alt="Sleight of Hand Sleek Card Artistry" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/closeup4.jpg" alt="Sleight of Hand Sleek Card Artistry" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/closeup5.jpg" alt="Bilingual Corporate High-End Magic" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516280440614-37939bbacd6a?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/closeup5.jpg" alt="Bilingual Corporate High-End Magic" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516280440614-37939bbacd6a?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/closeup6.jpg" alt="Intimate Interactive Visual Miracles" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/closeup6.jpg" alt="Intimate Interactive Visual Miracles" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800'">
                             </div>
                         </div>
                         
