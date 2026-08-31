@@ -12,6 +12,11 @@
     <meta name="keywords" content="Interactive Stage Magic Macau, Corporate Event Magician Macau, Grand Illusion Macau, Brand Launch Magic, Award Ceremony Entertainment, Billy Kong, Pilot Magic, Macau Magician, Stage Magic Show">
     <meta name="author" content="Pilot Magic Co., Ltd. · 百樂魔術有限公司">
     <link rel="canonical" href="https://pilotmagic.co/service-interactiveen.html">
+    <!-- ══ 多語言標註 (hreflang) ══ -->
+    <link rel="alternate" hreflang="en" href="https://pilotmagic.co/service-interactiveen.html" />
+    <link rel="alternate" hreflang="zh-HK" href="https://pilotmagic.co/service-interactive.html" />
+    <link rel="alternate" hreflang="x-default" href="https://pilotmagic.co/service-interactiveen.html" />
+    <link rel="icon" type="image/png" href="images/logo.png">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
@@ -68,9 +73,46 @@
     }
     </script>
 
+    <!-- ══════ FAQ 結構化數據 (SEO) ══════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What events are interactive stage magic best suited for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ideal for corporate annual dinners, award ceremonies, brand launches, festive banquets and mall events — making the audience the star of the show."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the audience participate in the show?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our magicians invite guests on stage to co-create miracles, with full-venue voting, callouts and other interactive formats that engage everyone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the show duration be customized?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. From 10-minute warm-up acts to full 30-45 minute stage shows, we tailor the performance to your event needs."
+          }
+        }
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- ══ 首屏 Hero 背景圖預載入 (提升 LCP) ══ -->
+    <link rel="preload" as="image" href="images/service_interactive_hero.jpg" fetchpriority="high">
 
     <style>
         /* ══════════════════════════════════════════
@@ -565,7 +607,7 @@
         <div class="nav-container">
             <div class="logo">
                 <a href="index.html#home">
-                    <img src="images/logo.png" alt="Pilot Magic Co., Ltd. · 百樂魔術">
+                    <img src="images/logo.png" alt="Pilot Magic Co., Ltd. · 百樂魔術" fetchpriority="high" decoding="async">
                 </a>
             </div>
             <div class="nav-overlay" id="navOverlay"></div>
@@ -625,19 +667,19 @@
                                 <img src="images/service_interactive_main.jpg" alt="Pilot Magic interactive stage show Macau" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/interactive2.jpg" alt="Corporate gala interactive magic" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1504150558240-0b4fd8946624?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/interactive2.jpg" loading="lazy" decoding="async" alt="Corporate gala interactive magic" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1504150558240-0b4fd8946624?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/interactive3.jpg" alt="Brand launch stage illusion" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/interactive3.jpg" loading="lazy" decoding="async" alt="Brand launch stage illusion" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/interactive4.jpg" alt="Grand illusion visual spectacle" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/interactive4.jpg" loading="lazy" decoding="async" alt="Grand illusion visual spectacle" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/interactive5.jpg" alt="Award ceremony magic finale" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/interactive5.jpg" loading="lazy" decoding="async" alt="Award ceremony magic finale" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/interactive6.jpg" alt="Bilingual stage magic full audience" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/interactive6.jpg" loading="lazy" decoding="async" alt="Bilingual stage magic full audience" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'">
                             </div>
                         </div>
                         <button class="carousel-arrow prev" id="carouselPrev" aria-label="Previous image">&#10094;</button>
