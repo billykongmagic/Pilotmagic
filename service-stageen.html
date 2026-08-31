@@ -12,6 +12,10 @@
     <meta name="keywords" content="Macau stage magic, manipulation magic Macau, corporate event entertainment, gala dinner magic show, elite sleight of hand Macau, Billy Kong, Pilot Magic, resort theatre show">
     <meta name="author" content="Pilot Magic Co., Ltd.">
     <link rel="canonical" href="https://pilotmagic.co/service-stageen.html">
+    <link rel="alternate" hreflang="en"    href="https://pilotmagic.co/service-stageen.html" />
+    <link rel="alternate" hreflang="zh-HK" href="https://pilotmagic.co/service-stage.html" />
+    <link rel="alternate" hreflang="x-default" href="https://pilotmagic.co/service-stage.html" />
+    <link rel="icon" type="image/png" href="images/logo.png">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
@@ -43,7 +47,7 @@
         "latitude": "22.1987",
         "longitude": "113.5439"
       },
-      "sameAs": ["https://pilotmagic.co/indexen.html"],
+      "sameAs": ["https://www.facebook.com/PilotMagic", "https://pilotmagic.co"],
       "knowsAbout": ["Stage Manipulation Magic", "Classical Sleight of Hand", "Luxury Event Entertainment", "Corporate Show Customization", "Theatrical Magic Performance"],
       "memberOf": {
         "@type": "Organization",
@@ -81,10 +85,75 @@
       }
     }
     </script>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What types of events are best suited for a Stage Manipulation show?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "From corporate annual dinners with hundreds of attendees to grand galas of thousands at five-star integrated resorts — a manipulation show sets an elegant, theatrical tone for annual banquets, brand launches, resort events, government carnivals and corporate celebrations alike."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How is Stage Manipulation different from other magic shows?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Stage Manipulation is the most demanding discipline of the magical arts — pure sleight of hand. No bulky mechanical props, no high-tech projections: cards, coins, silks and billiard balls are conjured purely by a pair of hands refined through millions of repetitions."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What performance formats are available?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Three signature directions: the Classical Stage Manipulation show — wordless mastery under the spotlight set to majestic classical scores; the Theatrical Silent Narrative — a poetic programme blending mime aesthetics with silks and feathers; and Bespoke Luxury Brand Sleight-of-Hand."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is the Bespoke Luxury Brand performance?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Entirely free of multimedia projections or LED screens, your actual products — timepieces, rare jewellery, fine fragrances, leather accessories — elegantly materialize from the magician's sleeves and empty hands, creating an unforgettable brand moment."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What are the venue and technical requirements?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Highly flexible with fast setup and strike — from grand hotel ballrooms to villa lawns. We provide a professional lighting, sound and staging Rider for your event director, and coordinate closely with on-site engineers on live-feed camera angles, so even the back rows enjoy a zero-dead-angle view."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is the team's track record?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Pilot Magic is a regular guest performer at Macau's five-star resorts — The Venetian, Wynn, Studio City and City of Dreams — and has staged celebrations for leading institutions such as STDM and CTM, plus opening finales for Asia-Pacific corporate leadership summits. Led by Billy Kong of Franz Harary's Asian team, trained by Hollywood and internationally renowned magic directors."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I inquire about availability and pricing?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Every show is tailored to your event's nature, venue scale and performance slot. Use the booking button below with your event date, venue, expected attendance and preferred performance time — we will check availability and provide a quotation right away."
+            }
+        }
+    ]
+}
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="images/service_stage_hero.jpg" fetchpriority="high">
 
     <style>
         /* ══════════════════════════════════════════
@@ -543,6 +612,28 @@
         .adv-item p { font-size: 0.82rem; color: var(--mist); line-height: 1.75; }
 
         /* CTA */
+        /* ══════ FAQ ══════ */
+        .faq-list { max-width: 800px; margin: 40px auto 0; text-align: left; }
+        .faq-item { border: 1px solid var(--divider); border-radius: 12px; margin-bottom: 14px;
+                    background: rgba(18, 12, 34, 0.55); overflow: hidden;
+                    transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+        .faq-item[open] { border-color: var(--gold-antique); box-shadow: 0 0 24px var(--glow-gold); }
+        .faq-question { padding: 18px 52px 18px 22px; font-size: 15px; font-weight: 700;
+                        color: var(--gold-pale); cursor: pointer; outline: none; position: relative; list-style: none;
+                        font-family: 'Noto Serif TC', 'Cormorant Garamond', Georgia, serif; }
+        .faq-question::-webkit-details-marker { display: none; }
+        .faq-question::after { content: '＋'; position: absolute; right: 20px; top: 50%;
+                              transform: translateY(-50%); color: var(--gold-antique);
+                              transition: color 0.3s ease; }
+        .faq-item[open] .faq-question::after { content: '－'; color: var(--gold-bright); }
+        .faq-answer { padding: 0 22px 20px; font-size: 14px; line-height: 1.85; color: var(--mist);
+                     border-top: 1px solid var(--divider); }
+        .faq-answer p { margin-top: 14px; }
+        @media (max-width: 768px) {
+            .faq-question { padding: 15px 44px 15px 16px; font-size: 14px; }
+            .faq-answer { padding: 0 16px 16px; }
+        }
+
         #sub-cta {
             background: linear-gradient(180deg, var(--void) 0%, var(--obsidian) 100%);
             border-top: 1px solid var(--divider); text-align: center; padding: 90px 40px;
@@ -732,7 +823,7 @@
         <div class="nav-container">
             <div class="logo">
                 <a href="indexen.html#home">
-                    <img src="images/logo.png" alt="Pilot Magic">
+                    <img src="images/logo.png" fetchpriority="high" alt="Pilot Magic">
                 </a>
             </div>
             <div class="nav-overlay" id="navOverlay"></div>
@@ -791,19 +882,19 @@
                                 <img src="images/service_stage_main.jpg" alt="Macau Premium Stage Manipulation Magic Show" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/stage2.jpg" alt="Spectacular Stage Card Manipulation" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516280440614-37939bbacd6a?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/stage2.jpg" loading="lazy" decoding="async" alt="Spectacular Stage Card Manipulation" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516280440614-37939bbacd6a?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/stage3.jpg" alt="Grand Resort Annual Dinner Performance" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1460881680858-30d872d5b530?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/stage3.jpg" loading="lazy" decoding="async" alt="Grand Resort Annual Dinner Performance" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1460881680858-30d872d5b530?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/stage4.jpg" alt="Corporate Gala Light Manipulation Staging" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/stage4.jpg" loading="lazy" decoding="async" alt="Corporate Gala Light Manipulation Staging" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/stage5.jpg" alt="Billy Kong Finger Dexterity Closeup" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/stage5.jpg" loading="lazy" decoding="async" alt="Billy Kong Finger Dexterity Closeup" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/stage6.jpg" alt="Bespoke luxury brand item materialization" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/stage6.jpg" loading="lazy" decoding="async" alt="Bespoke luxury brand item materialization" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'">
                             </div>
                         </div>
                         
@@ -917,7 +1008,45 @@
     </section>
 
     <!-- ══════ CTA SECTION ══════ -->
-    <section id="sub-cta">
+        <!-- ══════ FAQ ══════ -->
+    <section class="page-section" id="faq">
+        <div class="fade-up">
+            <p class="section-tag">Frequently Asked Questions</p>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary class="faq-question">What types of events are best suited for a Stage Manipulation show?</summary>
+                    <div class="faq-answer"><p>From corporate annual dinners with hundreds of attendees to grand galas of thousands at five-star integrated resorts — a manipulation show sets an elegant, theatrical tone for annual banquets, brand launches, resort events, government carnivals and corporate celebrations alike.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">How is Stage Manipulation different from other magic shows?</summary>
+                    <div class="faq-answer"><p>Stage Manipulation is the most demanding discipline of the magical arts — pure sleight of hand. No bulky mechanical props, no high-tech projections: cards, coins, silks and billiard balls are conjured purely by a pair of hands refined through millions of repetitions.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">What performance formats are available?</summary>
+                    <div class="faq-answer"><p>Three signature directions: the Classical Stage Manipulation show — wordless mastery under the spotlight set to majestic classical scores; the Theatrical Silent Narrative — a poetic programme blending mime aesthetics with silks and feathers; and Bespoke Luxury Brand Sleight-of-Hand.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">What is the Bespoke Luxury Brand performance?</summary>
+                    <div class="faq-answer"><p>Entirely free of multimedia projections or LED screens, your actual products — timepieces, rare jewellery, fine fragrances, leather accessories — elegantly materialize from the magician's sleeves and empty hands, creating an unforgettable brand moment.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">What are the venue and technical requirements?</summary>
+                    <div class="faq-answer"><p>Highly flexible with fast setup and strike — from grand hotel ballrooms to villa lawns. We provide a professional lighting, sound and staging Rider for your event director, and coordinate closely with on-site engineers on live-feed camera angles, so even the back rows enjoy a zero-dead-angle view.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">What is the team's track record?</summary>
+                    <div class="faq-answer"><p>Pilot Magic is a regular guest performer at Macau's five-star resorts — The Venetian, Wynn, Studio City and City of Dreams — and has staged celebrations for leading institutions such as STDM and CTM, plus opening finales for Asia-Pacific corporate leadership summits. Led by Billy Kong of Franz Harary's Asian team, trained by Hollywood and internationally renowned magic directors.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">How do I inquire about availability and pricing?</summary>
+                    <div class="faq-answer"><p>Every show is tailored to your event's nature, venue scale and performance slot. Use the booking button below with your event date, venue, expected attendance and preferred performance time — we will check availability and provide a quotation right away.</p></div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+<section id="sub-cta">
         <div class="fade-up">
             <p class="section-tag">Booking & Inquiry</p>
             <h2 class="section-title">Set a Miraculous Tone for<em> Your Grand Event</em></h2>
