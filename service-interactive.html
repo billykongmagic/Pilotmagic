@@ -12,6 +12,11 @@
     <meta name="keywords" content="澳門互動舞台魔術, 澳門魔術師, 舞台魔術表演, 互動魔術, 企業年會魔術, 商業發布會魔術, 頒獎典禮表演, Billy Kong, 百樂魔術, Pilot Magic, Interactive Stage Magic Macau">
     <meta name="author" content="百樂魔術有限公司 Pilot Magic Co., Ltd.">
     <link rel="canonical" href="https://pilotmagic.co/service-interactive.html">
+    <!-- ══ 多語言標註 (hreflang) ══ -->
+    <link rel="alternate" hreflang="zh-HK" href="https://pilotmagic.co/service-interactive.html" />
+    <link rel="alternate" hreflang="en" href="https://pilotmagic.co/service-interactiveen.html" />
+    <link rel="alternate" hreflang="x-default" href="https://pilotmagic.co/service-interactive.html" />
+    <link rel="icon" type="image/png" href="images/logo.png">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
@@ -68,9 +73,46 @@
     }
     </script>
 
+    <!-- ══════ FAQ 結構化數據 (SEO) ══════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "互動舞台魔術適合哪些活動？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "適合企業年會、頒獎典禮、品牌發布會、節慶晚宴及商場活動，讓觀眾成為表演主角，大幅提升現場參與感。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "互動魔術如何讓觀眾參與？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "魔術師會邀請賓客上台共同完成奇蹟，配合全場投票、喊話等多種互動形式，讓每位觀眾都投入其中。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "演出時長可以客製嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。從10分鐘的暖場演出到完整30-45分鐘的舞台秀均可依活動需求客製規劃。"
+          }
+        }
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- ══ 首屏 Hero 背景圖預載入 (提升 LCP) ══ -->
+    <link rel="preload" as="image" href="images/service_interactive_hero.jpg" fetchpriority="high">
 
     <style>
         /* ══════════════════════════════════════════
@@ -654,7 +696,7 @@
         <div class="nav-container">
             <div class="logo">
                 <a href="index.html#home">
-                    <img src="images/logo.png" alt="百樂魔術有限公司 Pilot Magic">
+                    <img src="images/logo.png" alt="百樂魔術有限公司 Pilot Magic" fetchpriority="high" decoding="async">
                 </a>
             </div>
             <div class="nav-overlay" id="navOverlay"></div>
@@ -714,19 +756,19 @@
                                 <img src="images/service_interactive_main.jpg" alt="澳門頂級互動舞台魔術表演" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/interactive2.jpg" alt="企業年會互動魔術" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1504150558240-0b4fd8946624?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/interactive2.jpg" loading="lazy" decoding="async" alt="企業年會互動魔術" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1504150558240-0b4fd8946624?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/interactive3.jpg" alt="品牌發布會舞台魔術" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/interactive3.jpg" loading="lazy" decoding="async" alt="品牌發布會舞台魔術" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/interactive4.jpg" alt="大型舞台視覺幻象" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/interactive4.jpg" loading="lazy" decoding="async" alt="大型舞台視覺幻象" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/interactive5.jpg" alt="頒獎典禮壓軸魔術" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/interactive5.jpg" loading="lazy" decoding="async" alt="頒獎典禮壓軸魔術" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/interactive6.jpg" alt="雙語舞台互動全場參與" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/interactive6.jpg" loading="lazy" decoding="async" alt="雙語舞台互動全場參與" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'">
                             </div>
                         </div>
                         <button class="carousel-arrow prev" id="carouselPrev" aria-label="上一張圖片">&#10094;</button>
