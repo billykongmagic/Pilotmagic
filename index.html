@@ -7,13 +7,17 @@
     <title>百樂魔術 Pilot Magic | 澳門高端商業魔術策劃與專業娛樂表演</title>
     <meta name="description" content="百樂魔術（Pilot Magic）紮根澳門逾20年，專注於高端商務、專業形象及品牌定制魔術娛樂。提供頂級澳門魔術師團隊、近距離魔術、商業發布會及VIP宴會表演策劃。">
     <meta name="keywords" content="澳門魔術, 澳門專業魔術師, 高端商業魔術, 品牌定制表演, 公關活動策劃, 澳門尾牙表演, VIP宴會魔術, 大灣區娛樂策劃, 百樂魔術, Pilot Magic">
-    <link rel="canonical" href="https://www.pilotmagic.com/" />
+    <link rel="canonical" href="https://pilotmagic.co/" />
+    <!-- ══ 多語言標註 (hreflang) ══ -->
+    <link rel="alternate" hreflang="zh-HK" href="https://pilotmagic.co/" />
+    <link rel="alternate" hreflang="en"    href="https://pilotmagic.co/indexen.html" />
+    <link rel="alternate" hreflang="x-default" href="https://pilotmagic.co/" />
 
     <!-- ══════ Open Graph / 社群分享優化 (WhatsApp, Facebook, WeChat) ══════ -->
     <meta property="og:title" content="百樂魔術 Pilot Magic | 澳門高端商業魔術策劃">
     <meta property="og:description" content="專注於高端商務與品牌定制的專業魔術策劃，為澳門及大灣區企業帶來極致的沉浸式體驗。">
-    <meta property="og:image" content="https://www.pilotmagic.com/images/about_main.jpg">
-    <meta property="og:url" content="https://www.pilotmagic.com/">
+    <meta property="og:image" content="https://pilotmagic.co/images/about_main.jpg">
+    <meta property="og:url" content="https://pilotmagic.co/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_HK">
     <meta property="og:site_name" content="百樂魔術有限公司 Pilot Magic Co., Ltd.">
@@ -23,17 +27,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;700&display=swap" rel="stylesheet">
 
+    <!-- ══ 首屏 Hero 背景圖預載入 (提升 LCP) ══ -->
+    <link rel="preload" as="image" href="images/hero1.jpg" fetchpriority="high">
+
     <!-- ══════ 進階 JSON-LD 結構化數據 (SEO & GEO) ══════ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": ["EntertainmentBusiness", "LocalBusiness"],
       "name": "百樂魔術有限公司 Pilot Magic Co., Ltd.",
-      "url": "https://www.pilotmagic.com/",
+      "url": "https://pilotmagic.co/",
       "telephone": "+853-6655-1654",
       "email": "Bpilotmagic@gmail.com",
       "priceRange": "$$$",
-      "image": "https://www.pilotmagic.com/images/logo.png",
+      "image": "https://pilotmagic.co/images/logo.png",
       "description": "紮根澳門逾20年，專注於高端商務、專業形象及品牌定制魔術娛樂體驗策劃。",
       "address": {
         "@type": "PostalAddress",
@@ -63,6 +70,40 @@
       ],
       "sameAs": [
         "https://www.facebook.com/PilotMagic"
+      ]
+    }
+    </script>
+
+    <!-- ══════ FAQ 結構化數據 (SEO) ══════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "百樂魔術提供哪些類型的魔術表演？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "提供近距離魔術、舞台手彩魔術、互動舞台魔術、小丑及氣球造型、親子派對、魔術工作坊、泡泡秀與川劇變臉等多種服務，可依活動主題客製化設計。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "服務範圍覆蓋哪些地區？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "核心服務澳門、香港及鄰近大灣區城市。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "如何預約或查詢演出報價？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可透過網站聯絡表單、WhatsApp（+853 6655 1654）或 Email（Bpilotmagic@gmail.com）查詢，將依活動形式、場地與需求提供合適方案。"
+          }
+        }
       ]
     }
     </script>
@@ -1516,7 +1557,7 @@
         <div class="nav-container">
             <div class="logo">
                 <a href="#home">
-                    <img src="images/logo.png" alt="百樂魔術有限公司 Pilot Magic">
+                    <img src="images/logo.png" alt="百樂魔術有限公司 Pilot Magic" fetchpriority="high" decoding="async">
                 </a>
             </div>
             <div class="nav-overlay" id="navOverlay"></div>
@@ -1604,7 +1645,7 @@
                 </div>
             </div>
             <div class="about-image-frame fade-up">
-                <img src="images/about_main.jpg" alt="百樂魔術專業團隊">
+                <img src="images/about_main.jpg" alt="百樂魔術專業團隊" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
@@ -1620,7 +1661,8 @@
 
             <div class="service-card" style="--i:0">
                 <div class="service-img-wrapper">
-                    <img src="images/service_closeup.jpg" alt="近距離魔術" class="service-img">
+                    <img src="images/service_closeup.jpg" alt="近距離魔術" class="service-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="service-img-placeholder" style="display:none;">Close-up</div>
                     <span class="service-num">01</span>
                 </div>
                 <div class="service-body">
@@ -1640,7 +1682,8 @@
 
             <div class="service-card" style="--i:1">
                 <div class="service-img-wrapper">
-                    <img src="images/service_stage.jpg" alt="舞台魔術" class="service-img">
+                    <img src="images/service_stage.jpg" alt="舞台魔術" class="service-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="service-img-placeholder" style="display:none;">Stage</div>
                     <span class="service-num">02</span>
                 </div>
                 <div class="service-body">
@@ -1660,7 +1703,8 @@
 
             <div class="service-card" style="--i:2">
                 <div class="service-img-wrapper">
-                    <img src="images/service_interactive.jpg" alt="互動舞台魔術" class="service-img">
+                    <img src="images/service_interactive.jpg" alt="互動舞台魔術" class="service-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="service-img-placeholder" style="display:none;">Interactive</div>
                     <span class="service-num">03</span>
                 </div>
                 <div class="service-body">
@@ -1680,7 +1724,8 @@
 
             <div class="service-card" style="--i:3">
                 <div class="service-img-wrapper">
-                    <img src="images/service_clown.jpg" alt="小丑及造型氣球" class="service-img">
+                    <img src="images/service_clown.jpg" alt="小丑及造型氣球" class="service-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="service-img-placeholder" style="display:none;">Clown</div>
                     <span class="service-num">04</span>
                 </div>
                 <div class="service-body">
@@ -1700,7 +1745,8 @@
 
             <div class="service-card" style="--i:4">
                 <div class="service-img-wrapper">
-                    <img src="images/service_kids.jpg" alt="親子派對魔術" class="service-img">
+                    <img src="images/service_kids.jpg" alt="親子派對魔術" class="service-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="service-img-placeholder" style="display:none;">Kids Party</div>
                     <span class="service-num">05</span>
                 </div>
                 <div class="service-body">
@@ -1720,7 +1766,8 @@
 
             <div class="service-card" style="--i:5">
                 <div class="service-img-wrapper">
-                    <img src="images/service_workshop.jpg" alt="魔術工作坊" class="service-img">
+                    <img src="images/service_workshop.jpg" alt="魔術工作坊" class="service-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="service-img-placeholder" style="display:none;">Workshop</div>
                     <span class="service-num">06</span>
                 </div>
                 <div class="service-body">
@@ -1739,7 +1786,7 @@
 
             <div class="service-card" style="--i:6">
                 <div class="service-img-wrapper">
-                    <img src="images/service_bubble.jpg" alt="泡泡秀表演" class="service-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <img src="images/service_bubble.jpg" alt="泡泡秀表演" class="service-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                     <div class="service-img-placeholder" style="display:none;">Bubble Show</div>
                     <span class="service-num">07</span>
                 </div>
@@ -1760,7 +1807,7 @@
 
             <div class="service-card" style="--i:7">
                 <div class="service-img-wrapper">
-                    <img src="images/service_facechange.jpg" alt="川劇變臉表演" class="service-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <img src="images/service_facechange.jpg" alt="川劇變臉表演" class="service-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                     <div class="service-img-placeholder" style="display:none;">Face Changing</div>
                     <span class="service-num">08</span>
                 </div>
@@ -1810,26 +1857,26 @@
         </div>
         <div class="gallery-header fade-up">— &nbsp; 精彩活動劇照庫 &nbsp; —</div>
         <div class="gallery-grid fade-up stagger">
-            <div class="gallery-item" style="--i:0"><img src="images/gallery1.jpg"  alt="演出相片 01"></div>
-            <div class="gallery-item" style="--i:1"><img src="images/gallery2.jpg"  alt="演出相片 02"></div>
-            <div class="gallery-item" style="--i:2"><img src="images/gallery3.jpg"  alt="演出相片 03"></div>
-            <div class="gallery-item" style="--i:3"><img src="images/gallery4.jpg"  alt="演出相片 04"></div>
-            <div class="gallery-item" style="--i:4"><img src="images/gallery5.jpg"  alt="演出相片 05"></div>
-            <div class="gallery-item" style="--i:5"><img src="images/gallery6.jpg"  alt="演出相片 06"></div>
-            <div class="gallery-item" style="--i:6"><img src="images/gallery7.jpg"  alt="演出相片 07"></div>
-            <div class="gallery-item" style="--i:7"><img src="images/gallery8.jpg"  alt="演出相片 08"></div>
-            <div class="gallery-item" style="--i:8"><img src="images/gallery9.jpg"  alt="演出相片 09"></div>
-            <div class="gallery-item" style="--i:9"><img src="images/gallery10.jpg" alt="演出相片 10"></div>
-            <div class="gallery-item" style="--i:10"><img src="images/gallery11.jpg" alt="演出相片 11"></div>
-            <div class="gallery-item" style="--i:11"><img src="images/gallery12.jpg" alt="演出相片 12"></div>
-            <div class="gallery-item" style="--i:12"><img src="images/gallery13.jpg" alt="演出相片 13"></div>
-            <div class="gallery-item" style="--i:13"><img src="images/gallery14.jpg" alt="演出相片 14"></div>
-            <div class="gallery-item" style="--i:14"><img src="images/gallery15.jpg" alt="演出相片 15"></div>
-            <div class="gallery-item" style="--i:15"><img src="images/gallery16.jpg" alt="演出相片 16"></div>
-            <div class="gallery-item" style="--i:16"><img src="images/gallery17.jpg" alt="演出相片 17"></div>
-            <div class="gallery-item" style="--i:18"><img src="images/gallery18.jpg" alt="演出相片 18"></div>
-            <div class="gallery-item" style="--i:18"><img src="images/gallery19.jpg" alt="演出相片 19"></div>
-            <div class="gallery-item" style="--i:19"><img src="images/gallery20.jpg" alt="演出相片 20"></div>
+            <div class="gallery-item" style="--i:0"><img src="images/gallery1.jpg"  alt="演出相片 01" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:1"><img src="images/gallery2.jpg"  alt="演出相片 02" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:2"><img src="images/gallery3.jpg"  alt="演出相片 03" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:3"><img src="images/gallery4.jpg"  alt="演出相片 04" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:4"><img src="images/gallery5.jpg"  alt="演出相片 05" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:5"><img src="images/gallery6.jpg"  alt="演出相片 06" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:6"><img src="images/gallery7.jpg"  alt="演出相片 07" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:7"><img src="images/gallery8.jpg"  alt="演出相片 08" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:8"><img src="images/gallery9.jpg"  alt="演出相片 09" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:9"><img src="images/gallery10.jpg" alt="演出相片 10" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:10"><img src="images/gallery11.jpg" alt="演出相片 11" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:11"><img src="images/gallery12.jpg" alt="演出相片 12" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:12"><img src="images/gallery13.jpg" alt="演出相片 13" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:13"><img src="images/gallery14.jpg" alt="演出相片 14" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:14"><img src="images/gallery15.jpg" alt="演出相片 15" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:15"><img src="images/gallery16.jpg" alt="演出相片 16" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:16"><img src="images/gallery17.jpg" alt="演出相片 17" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:17"><img src="images/gallery18.jpg" alt="演出相片 18" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:18"><img src="images/gallery19.jpg" alt="演出相片 19" loading="lazy" decoding="async"></div>
+            <div class="gallery-item" style="--i:19"><img src="images/gallery20.jpg" alt="演出相片 20" loading="lazy" decoding="async"></div>
         </div>
     </section>
 
@@ -1844,7 +1891,7 @@
 
             <div class="team-card fade-up">
                 <div class="team-avatar">
-                    <img src="images/team_billy.jpg" alt="江尚峰 Billy Kong">
+                    <img src="images/team_billy.jpg" alt="江尚峰 Billy Kong" loading="lazy" decoding="async">
                 </div>
                 <div class="team-name">江尚峰 Billy Kong</div>
                 <span class="team-role">首席魔術師及負責人</span>
@@ -1863,7 +1910,7 @@
 
             <div class="team-card fade-up">
                 <div class="team-avatar">
-                    <img src="images/team_brian.jpg" alt="王啟仁 Brian Wong">
+                    <img src="images/team_brian.jpg" alt="王啟仁 Brian Wong" loading="lazy" decoding="async">
                 </div>
                 <div class="team-name">王啟仁 Brian Wong</div>
                 <span class="team-role">專業魔術師</span>
@@ -1881,7 +1928,7 @@
 
             <div class="team-card fade-up">
                 <div class="team-avatar">
-                    <img src="images/team_yuma.jpg" alt="蘇大新 Magic Yu Ma">
+                    <img src="images/team_yuma.jpg" alt="蘇大新 Magic Yu Ma" loading="lazy" decoding="async">
                 </div>
                 <div class="team-name">蘇大新 Magic Yu Ma</div>
                 <span class="team-role">創辦人及總監</span>
@@ -1899,7 +1946,7 @@
 
             <div class="team-card fade-up">
                 <div class="team-avatar">
-                    <img src="images/team_vincent.jpg" alt="黃嘉偉 Vincent">
+                    <img src="images/team_vincent.jpg" alt="黃嘉偉 Vincent" loading="lazy" decoding="async">
                 </div>
                 <div class="team-name">黃嘉偉 Vincent</div>
                 <span class="team-role">多方位演藝專家</span>
@@ -1917,7 +1964,7 @@
 
             <div class="team-card fade-up">
                 <div class="team-avatar">
-                    <img src="images/team_jin.jpg" alt="京人 JIN">
+                    <img src="images/team_jin.jpg" alt="京人 JIN" loading="lazy" decoding="async">
                 </div>
                 <div class="team-name">京人 JIN</div>
                 <span class="team-role">川劇變臉藝術家</span>
@@ -2019,7 +2066,7 @@
             </div>
             <div class="why-item" style="--i:5">
                 <div class="why-icon">✦</div>
-                <span class="why-text">澳門本地最具信譽魔術娛樂 brand</span>
+                <span class="why-text">澳門本地最具信譽魔術娛樂品牌</span>
             </div>
         </div>
     </section>
@@ -2059,15 +2106,15 @@
                 <form action="https://formspree.io/f/mpqedbyg" method="POST">
                     <div class="form-group">
                         <label class="form-label">活動單位名稱 / 聯絡人</label>
-                        <input type="text" name="聯絡人" class="form-input" required placeholder="例如：某某有限公司 / 陳先生">
+                        <input type="text" name="聯絡人" class="form-input" required placeholder="例如：某某有限公司 / 陳先生" autocomplete="name">
                     </div>
                     <div class="form-group">
                         <label class="form-label">聯絡電話 / WhatsApp</label>
-                        <input type="text" name="聯絡電話" class="form-input" required placeholder="請輸入您的電話號碼">
+                        <input type="text" name="聯絡電話" class="form-input" required placeholder="請輸入您的電話號碼" autocomplete="tel">
                     </div>
                     <div class="form-group">
                         <label class="form-label">預計活動日期與類型</label>
-                        <input type="text" name="活動日期與類型" class="form-input" placeholder="例如：2026 年尾牙晚宴 / brand發布會">
+                        <input type="text" name="活動日期與類型" class="form-input" placeholder="例如：2026 年尾牙晚宴 / 品牌發布會">
                     </div>
                     <div class="form-group">
                         <label class="form-label">您的具體表演需求</label>
