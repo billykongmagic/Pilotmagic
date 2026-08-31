@@ -13,17 +13,25 @@
     <meta name="keywords" content="澳門小丑表演, 澳門氣球師, 澳門小丑雜耍秀, 澳門扭氣球派發, 澳門兒童派對, 澳門社區嘉年華, 學校活動表演, 百樂魔術, 澳門派對小丑">
     <meta name="author" content="百樂魔術有限公司 Pilot Magic Co., Ltd.">
     <link rel="canonical" href="https://pilotmagic.co/service-clown.html">
+    <!-- ══ 多語言標註 (hreflang) ══ -->
+    <link rel="alternate" hreflang="zh-HK" href="https://pilotmagic.co/service-clown.html" />
+    <link rel="alternate" hreflang="en" href="https://pilotmagic.co/service-clownen.html" />
+    <link rel="alternate" hreflang="x-default" href="https://pilotmagic.co/service-clown.html" />
+    <link rel="icon" type="image/png" href="images/logo.png">
 
     <!-- Open Graph (Facebook / 萬用社群分享優化) -->
     <meta property="og:title" content="澳門歡樂小丑搞笑雜耍與互動氣球秀 | 百樂魔術">
     <meta property="og:description" content="全澳最熱鬧的小丑滑稽雜耍與花式氣球巡遊！適合生日會、校慶、社區活動，零距離炒熱全場氣氛。">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://pilotmagic.co/service-clown.html">
-    <meta property="og:image" content="images/service_clown_detail.jpg">
+    <meta property="og:image" content="https://pilotmagic.co/images/service_clown_detail.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- ══ 首屏 Hero 背景圖預載入 (提升 LCP) ══ -->
+    <link rel="preload" as="image" href="images/service_clown_hero.jpg" fetchpriority="high">
 
     <!-- GEO / AI Search 專用結構化數據 (JSON-LD Schema) -->
     <script type="application/ld+json">
@@ -31,8 +39,8 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "百樂魔術有限公司 Pilot Magic Co., Ltd.",
-      "image": "images/logo.png",
-      "url": "https://www.pilotmagic.co",
+      "image": "https://pilotmagic.co/images/logo.png",
+      "url": "https://pilotmagic.co/service-clown.html",
       "telephone": "+853-6655-1654", 
       "priceRange": "$$",
       "address": {
@@ -71,6 +79,40 @@
           }
         ]
       }
+    }
+    </script>
+
+    <!-- ══════ FAQ 結構化數據 (SEO) ══════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "小丑表演適合哪些活動場合？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "小丑表演非常適合生日會、百日宴、學校嘉年華、社區節慶、商場活動及親子派對，超親切零距離互動，炒熱全場氣氛。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "小丑表演包含哪些內容？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "包含歡樂滑稽雜耍秀（拋球、轉盤等經典特技與幽默互動）以及現場快速扭製花式卡通氣球派發，兩大板塊可單選或雙拼。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "小丑表演可以與其他節目組合嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。小丑雜耍可與魔術表演、泡泡秀等組合成雙拼套餐，為活動提供更豐富的娛樂體驗。"
+          }
+        }
+      ]
     }
     </script>
 
@@ -698,7 +740,7 @@
         <div class="nav-container">
             <div class="logo">
                 <a href="index.html#home">
-                    <img src="images/logo.png" alt="百樂魔術有限公司 Pilot Magic">
+                    <img src="images/logo.png" alt="百樂魔術有限公司 Pilot Magic" fetchpriority="high" decoding="async">
                 </a>
             </div>
             <div class="nav-overlay" id="navOverlay"></div>
@@ -759,23 +801,23 @@
                             </div>
                             <!-- Slide 2 -->
                             <div class="carousel-slide">
-                                <img src="images/clown2.jpg" alt="花式卡通氣球現場派發" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/clown2.jpg" loading="lazy" decoding="async" alt="花式卡通氣球現場派發" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <!-- Slide 3 -->
                             <div class="carousel-slide">
-                                <img src="images/clown3.jpg" alt="小丑歡樂拋球平衡特技表演" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/clown3.jpg" loading="lazy" decoding="async" alt="小丑歡樂拋球平衡特技表演" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <!-- Slide 4 -->
                             <div class="carousel-slide">
-                                <img src="images/clown4.jpg" alt="生日派對小朋友逗趣互動" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/clown4.jpg" loading="lazy" decoding="async" alt="生日派對小朋友逗趣互動" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <!-- Slide 5 -->
                             <div class="carousel-slide">
-                                <img src="images/clown5.jpg" alt="社區嘉年華與觀眾幽默平衡秀" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/clown5.jpg" loading="lazy" decoding="async" alt="社區嘉年華與觀眾幽默平衡秀" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'">
                             </div>
                             <!-- Slide 6 -->
                             <div class="carousel-slide">
-                                <img src="images/clown6.jpg" alt="雙拼套餐：雜耍與現場造型氣球驚喜" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516280440614-37939bbacd6a?auto=format&fit=crop&q=80&w=800'">
+                                <img src="images/clown6.jpg" loading="lazy" decoding="async" alt="雙拼套餐：雜耍與現場造型氣球驚喜" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516280440614-37939bbacd6a?auto=format&fit=crop&q=80&w=800'">
                             </div>
                         </div>
                         
